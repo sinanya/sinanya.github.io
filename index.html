@@ -156,74 +156,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://sinanya.github.io/2021/06/10/ceshi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sinanya">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="司南的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/10/ceshi/" class="post-title-link" itemprop="url">ceshi</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-06-10 22:32:22 / 修改时间：22:40:38" itemprop="dateCreated datePublished" datetime="2021-06-10T22:32:22+08:00">2021-06-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">心得</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/.io//aaa.jpg" alt="aaa">;</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://sinanya.github.io/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -255,7 +187,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-10 00:18:01" itemprop="dateModified" datetime="2021-06-10T00:18:01+08:00">2021-06-10</time>
+                <time title="修改时间：2021-06-10 23:19:14" itemprop="dateModified" datetime="2021-06-10T23:19:14+08:00">2021-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,11 +213,11 @@
           <h1 id="SQL注入——报错注入-sqli-labs-Less-5-and-Less-6"><a href="#SQL注入——报错注入-sqli-labs-Less-5-and-Less-6" class="headerlink" title="SQL注入——报错注入 sqli-labs Less-5 and Less-6"></a>SQL注入——报错注入 sqli-labs Less-5 and Less-6</h1><h2 id="报错注入原理"><a href="#报错注入原理" class="headerlink" title="报错注入原理"></a>报错注入原理</h2><blockquote>
 <p>报错注入形式上是两个嵌套的查询，即select…(select…)，里面的select被称为子查询，它的执行顺序也是先执行子查询，然后再执行外面的select，双注入主要涉及到几个sql函数：<br>rand()随机函数，返回0~1之间的某个值<br>floor(a)取整函数，返回小于等于a，且最接近于a的一个整数<br>count()聚合函数也称作计数函数，返回查询对象的总数<br>group by clause分组语句，按照查询结果分组<br>通过报错来显示具体的信息。</p>
 <p>以sqli-labs-Less5为例：<br>键入id后：</p>
-<p><img src="C:\Users\LENOVO\Desktop\20210223173231598.png" alt="图标1"></p>
+<p><img src="../images/Post1_image1.jpg" alt="键入id后"></p>
 <p>加个反斜杠后：</p>
-<p><img src="C:\Users\LENOVO\Desktop\2021022317335832.png" alt="图标2"></p>
+<p><img src="../images/Post1_image2.jpg" alt="加个反斜杠后"></p>
 <p>分析可知这是自带一个单引号注入<br>接着我们闭合单引号并进行联合查询（union select 1, 2, 3）</p>
-<p><img src="C:\Users\LENOVO\Desktop\20210223174554201.png" alt="图标3"></p>
+<p><img src="../images/Post1_image3.jpg" alt="联合查询后"></p>
 <p>依旧无法获得显示位<br>那怎样才能看到报错信息?</p>
 <hr>
 <h2 id="这里介绍一下floor-rand-0-2"><a href="#这里介绍一下floor-rand-0-2" class="headerlink" title="这里介绍一下floor(rand(0)*2)"></a>这里介绍一下floor(rand(0)*2)</h2><p>查询的时使用rand()，该值会被执行多次。在使用group by时，floor(rand(0)*2)会被执行一次，如果虚表不存在记录，在插入虚表的时候会再被执行一次。在一次多记录的查询过程中 floor(rand(0)*2)的值是固定的，为011011</p>
@@ -304,6 +236,7 @@
 </blockquote>
 <hr>
 <p>Less-6是一样的，把单引号改为双引号。</p>
+<hr>
 
       
     </div>
@@ -475,7 +408,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
