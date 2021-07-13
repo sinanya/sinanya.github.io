@@ -179,10 +179,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-07-12 23:31:07 / 修改时间：23:38:04" itemprop="dateCreated datePublished" datetime="2021-07-12T23:31:07+08:00">2021-07-12</time>
+              <time title="创建时间：2021-07-12 23:31:07" itemprop="dateCreated datePublished" datetime="2021-07-12T23:31:07+08:00">2021-07-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-07-13 13:09:03" itemprop="dateModified" datetime="2021-07-13T13:09:03+08:00">2021-07-13</time>
+              </span>
 
           
 
@@ -200,21 +206,26 @@
 <p>私钥：（d，n）</p>
 <p>明文：m</p>
 <p>密文：c</p>
-<h2 id="RSA的三大算法"><a href="#RSA的三大算法" class="headerlink" title="RSA的三大算法"></a>RSA的三大算法</h2><h3 id="密钥生成算法"><a href="#密钥生成算法" class="headerlink" title="密钥生成算法"></a>密钥生成算法</h3><p>1.选择两个大素数p和q</p>
-<p>2.计算n = p * q</p>
-<p>3.计算Φ(n) =  (p - 1)(q - 1)</p>
-<p>4.选择满足以下条件的公开指数e∈{1,2,3,…,Φ(n) - 1}</p>
+<h2 id="RSA的三大算法"><a href="#RSA的三大算法" class="headerlink" title="RSA的三大算法"></a>RSA的三大算法</h2><h3 id="密钥生成算法"><a href="#密钥生成算法" class="headerlink" title="密钥生成算法"></a>密钥生成算法</h3><p>①.选择两个大素数p和q</p>
+<p>②.计算n = p * q</p>
+<p>③.计算Φ(n) =  (p - 1)(q - 1)</p>
+<p>④.选择满足以下条件的公开指数e∈{1,2,3,…,Φ(n) - 1}</p>
 <p>​                        gcd(e, Φ(n)) = 1。</p>
 <p>why? : 条件gcd(e, Φ(n)) = 1保证e的逆元存在模Φ(n)，因此，私钥d始终存在。</p>
-<p>5.计算满足以下条件的私钥d</p>
-<p>​                        d *e ≡ 1 mod Φ(n)</p>
+<p>⑤.计算满足以下条件的私钥d</p>
+<p>​                        e * d ≡ 1 mod Φ(n)</p>
+<p>证明：</p>
+<p>欧拉定理：m^Φ(n) ≡ 1 (mod n) 表示对于任何一个与n互质的正整数m取它的Φ(n)次方，并除于n取余数，结果都永远等于1。</p>
+<p>Φ(n)是欧拉函数，它表示小于等于n的正整数中，有多少个与n互质的数。</p>
+<p>例子：取 n = 6， 会发现在小于6的正整数中只有1和5与6互质，所以Φ(6) = 2。</p>
+<p>对欧拉定理进行简单的变换：首先在等式的两边同取k（任意的正整数）次幂，m^(Φ(n) * k) ≡ 1^ k (mod n) ；接着在两端同乘以m，     m^(Φ(n) * k + 1) ≡ m (mod n) ；将模运算写在等式的左边 m^(Φ(n) * k + 1) mod n = m。与 m^(e * d) mod n = m 进行比对可以发现     e * d = Φ(n) * k + 1（Φ(n) * k + 1就是1 % Φ(n)，k∈Z , 成功推导出上面的⑤) ,  所以e和d的关系可以表示成e = Φ(n) * k + 1/d 。公式      看起来简单，但Φ(n)的计算并不容易，Φ(n)的计算恰恰是公钥加密中最关键的部分。要计算出Φ(n)的唯一办法就是对这个数n做质因数    分解，然而大数的质因数分解是非常困难的。但如果n本身是一个质数，情况就有所不同了。例如对于质数7，小于7并于7互质的数有    1-6，因此Φ(7) = 6。我们可以推广到对于一个质数p，Φ(p) = p - 1。Φ函数还有一个重要的特性：对于任意两个互质的整数p和q，Φ(p     * q) = Φ(p) * Φ(q)，再结合上面推导的Φ(p) = p - 1，就得到了③公式。</p>
 <h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><p>给定公钥(E,N)和明文m，则加密函数为：</p>
 <p>​                        c ≡ m^e mod n</p>
 <p>其中c, m ∈ &#x2124;n。</p>
 <h3 id="解密算法"><a href="#解密算法" class="headerlink" title="解密算法"></a>解密算法</h3><p>给定私钥d及密文c，则解密函数为：</p>
 <p>​                        m ≡ c^d mod n</p>
 <p>其中c, m ∈ &#x2124;n。</p>
-<p>注意：c, m, n, d都是非常长的数字，通常为1024位或更长。值e有时称为加密指数或公开指数；私钥d有时称为解密指数或保密指数</p>
+<p>注意：c, m, n, d都是非常长的数字，通常为1024位或更长。值e有时称为加密指数或公开指数；私钥d有时称为解密指数或保密指数。有趣的是 m^ed mod n = m</p>
 <h3 id="RSA密码体制的一些需求："><a href="#RSA密码体制的一些需求：" class="headerlink" title="RSA密码体制的一些需求："></a>RSA密码体制的一些需求：</h3><p>(1) 由于攻击者可以得到公钥，所以，对于给定的公钥值e和n,确定私钥d在计算上必须是不可行的。（即由公钥无法推出私钥）</p>
 <p>(2)由于x只是唯一地取决于模数n的大小，所以一.次RSA加密的位数不能超过l,其中I指的是n的位长度。</p>
 <p>(3)计算 m^e mod n (即加密) 和 c^d mod n (即解密) 应该相对简单。这意味着我们需要一种能快速计算长整数的指数的方法。</p>
