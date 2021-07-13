@@ -187,7 +187,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-13 13:09:03" itemprop="dateModified" datetime="2021-07-13T13:09:03+08:00">2021-07-13</time>
+                <time title="修改时间：2021-07-13 13:48:05" itemprop="dateModified" datetime="2021-07-13T13:48:05+08:00">2021-07-13</time>
               </span>
 
           
@@ -232,14 +232,14 @@
 <p>(4)给定一个n应该对应很多密钥/公钥对，否则，攻击者就可以发起蛮力攻击(事实证明，这个要求很容易满足)。</p>
 <p>附上这两天做到的基础题：</p>
 <p>1.</p>
-<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/_posts/RSA%E5%9F%BA%E7%A1%80/Post1_image4.jpg" alt="第一题"></p>
+<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/_posts/RSA%E5%9F%BA%E7%A1%80/QQ%E5%9B%BE%E7%89%8720210713134629.png" alt="第一题"></p>
 <p>解题思路：</p>
 <p>我们知道d*e ≡ 1 mod Φ(n)，Φ(n) =  (p - 1)(q - 1)，可以根据这两个公式求得d</p>
 <p>附上代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">p = <span class="number">447685307</span></span><br><span class="line">q = <span class="number">2037</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)  <span class="comment">#求e在phi的乘法逆元，返回e的逆矩阵</span></span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#flag&#123;53616899001&#125;</span></span><br></pre></td></tr></table></figure>
 
 <p>2.</p>
-<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/_posts/RSA%E5%9F%BA%E7%A1%80/Post1_image5.jpg" alt="第二题"></p>
+<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/_posts/RSA%E5%9F%BA%E7%A1%80/QQ%E5%9B%BE%E7%89%8720210713134511.png" alt="第二题"></p>
 <p>解题思路：</p>
 <p>由 d * e ≡ 1 mod Φ(n),  Φ(n) =  (p - 1)(q - 1), n = p * q,  求得d之后，将其带入到 m ≡ c^d mod n，可求得m</p>
 <p>附上代码：</p>
