@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+        
+            攻防世界crypto新手区杂题 | 司南的博客
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">司南的博客</a>
+    <a href="/" class="header-subtitle mdui-typo-headline"></a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Home</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Tags</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Categories</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Archives</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">About</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">Night Mode</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">sinanya</div>
+            <div class="sidebar-description"></div>
+        </div>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xxx@xxx.com" class="mdui-chip-title">E-Mail</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-steam"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Steam</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-weibo"></i></span>
+                    <a target="_blank" rel="noopener" href="https://your.url" class="mdui-chip-title">Weibo</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">Links</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://garybear.cn/hexo-theme-meadow/" class="mdui-list-item mdui-ripple">
+                            Meadow说明文档
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/">攻防世界crypto新手区杂题</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      Posted on:&nbsp;2021-07-15
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      Edited on:&nbsp;2021-07-15
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      In:&nbsp;<a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> > <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        Views:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=攻防世界crypto新手区杂题&url=https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/&pic=https://sinanya.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">Share to Weibo</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=攻防世界crypto新手区杂题&url=https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/&via=sinanya" target="_blank" class="mdui-ripple">Share to Twitter</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/" target="_blank" class="mdui-ripple">Share to Facebook</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/" target="_blank" class="mdui-ripple">Share to Google+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/&title=攻防世界crypto新手区杂题" target="_blank" class="mdui-ripple">Share to LinkedIn</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=司南的博客&title=攻防世界crypto新手区杂题&summary=&pics=https://sinanya.github.io/null&url=https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/" target="_blank" class="mdui-ripple">Share to QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/&text=攻防世界crypto新手区杂题" target="_blank" class="mdui-ripple">Share to Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><p>​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASSIC码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。</p>
+<p><img src="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/Post3_image2-1626325143077.png" alt="base646编码表"></p>
+<p>例如：对字符’3’进行加密，’3’的ASSIC码为51，对应的二进制数为</p>
+<p>base64解密原理就是加密的逆过程，就不再详细介绍了。</p>
+<p>点开附件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Y3liZXJwZWFjZXtXZWxjb21lX3RvX25ld19Xb3JsZCF9</span><br></pre></td></tr></table></figure>
+
+
+
+<p>搞个解密脚本，因为python有base64库，所以实现起来并不难：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">Str1 = <span class="string">&#x27;Y3liZXJwZWFjZXtXZWxjb21lX3RvX25ld19Xb3JsZCF9&#x27;</span></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;flag&#123;&quot;</span> + <span class="built_in">str</span>(base64.b64decode(Str1)) + <span class="string">&quot;&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>根据上面的加密原理，编写一个加密脚本，说不定会在比赛中出现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line">Str1 = <span class="string">&#x27;cyberpeace&#123;Welcome_to_new_World!&#125;&#x27;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">base</span>(<span class="params">string</span>):</span></span><br><span class="line">    oldstr = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    newstr = []</span><br><span class="line">    base = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    base64_list = [<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>, <span class="string">&#x27;K&#x27;</span>, <span class="string">&#x27;L&#x27;</span>, <span class="string">&#x27;M&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;O&#x27;</span>, <span class="string">&#x27;P&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;Q&#x27;</span>, <span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;S&#x27;</span>, <span class="string">&#x27;T&#x27;</span>, <span class="string">&#x27;U&#x27;</span>, <span class="string">&#x27;V&#x27;</span>, <span class="string">&#x27;W&#x27;</span>, <span class="string">&#x27;X&#x27;</span>, <span class="string">&#x27;Y&#x27;</span>, <span class="string">&#x27;Z&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;f&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;g&#x27;</span>, <span class="string">&#x27;h&#x27;</span>, <span class="string">&#x27;i&#x27;</span>, <span class="string">&#x27;j&#x27;</span>, <span class="string">&#x27;k&#x27;</span>, <span class="string">&#x27;l&#x27;</span>, <span class="string">&#x27;m&#x27;</span>, <span class="string">&#x27;n&#x27;</span>, <span class="string">&#x27;o&#x27;</span>, <span class="string">&#x27;p&#x27;</span>, <span class="string">&#x27;q&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, <span class="string">&#x27;s&#x27;</span>, <span class="string">&#x27;t&#x27;</span>, <span class="string">&#x27;u&#x27;</span>, <span class="string">&#x27;v&#x27;</span>,</span><br><span class="line">                   <span class="string">&#x27;w&#x27;</span>, <span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;8&#x27;</span>, <span class="string">&#x27;9&#x27;</span>, <span class="string">&#x27;+&#x27;</span>, <span class="string">&#x27;/&#x27;</span>]</span><br><span class="line">    <span class="comment">#把原始字符串转换为二进制，用bin转换后是0b开头的，所以把b替换了，首位补0补齐8位</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> string:</span><br><span class="line">        oldstr += <span class="string">&#x27;&#123;:08&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>(<span class="built_in">str</span>(<span class="built_in">bin</span>(<span class="built_in">ord</span>(i))).replace(<span class="string">&#x27;0b&#x27;</span>, <span class="string">&#x27;&#x27;</span>)))</span><br><span class="line">    <span class="comment">#把转换好的二进制按照6位一组分好，最后一组不足6位的后面补0</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(oldstr), <span class="number">6</span>):</span><br><span class="line">        newstr.append(<span class="string">&#x27;&#123;:&lt;06&#125;&#x27;</span>.<span class="built_in">format</span>(oldstr[j:j + <span class="number">6</span>]))</span><br><span class="line">    <span class="comment">#在base_list中找到对应的字符，拼接</span></span><br><span class="line">    <span class="keyword">for</span> l <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(newstr)):</span><br><span class="line">        base += base64_list[<span class="built_in">int</span>(newstr[l], <span class="number">2</span>)]</span><br><span class="line">    <span class="comment">#判断base字符结尾补几个‘=’</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) % <span class="number">3</span> == <span class="number">1</span>:</span><br><span class="line">        base += <span class="string">&#x27;==&#x27;</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(string) % <span class="number">3</span> == <span class="number">2</span>:</span><br><span class="line">        base += <span class="string">&#x27;=&#x27;</span></span><br><span class="line">    <span class="keyword">return</span>  base</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(base(Str1))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Caesar"><a href="#Caesar" class="headerlink" title="Caesar"></a>Caesar</h2><p>​    凯撒密码(Caesar Cipher或称恺撒加密、恺撒变换、变换加密、位移加密) 是一种替换加密，明文中的所有字母 都在字母表上向后（或向前）按照一 个固定数目进行偏移后被替换成密文。例，当偏移量是3的时候，所有的字母 A将被替换成D，B变成E，以此类推。</p>
+<p>加解密原理可以表示为：E(x) = (x + n) mod 26，D(x) = (x - n) mod 26。(其中n位偏移量)</p>
+<p>查找相关资料，还存在若干特定的凯撒密码名称：</p>
+<p>偏移量为10：Avocat；偏移量为13：ROT13；偏移量为-5：Cassis(K 6)；偏移量为-6：cassette(K 7)</p>
+<p>点击附件，密文为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oknqdbqmoq&#123;kag_tmhq_xqmdzqp_omqemd_qzodkbfuaz&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过一番试错之后，得到n为12，所以明文为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cyberpeace&#123;you_have_learned_caesar_encryption&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Morse"><a href="#Morse" class="headerlink" title="Morse"></a>Morse</h2><p>​    摩尔斯电码(Morse Code)是由美国人萨缪尔·摩尔斯 在1836年发明的一种时通时断的且通过不同的排列顺序来表达不同英文字母、数字和标点符号的信号代码， 摩尔斯电码主要由以下5种它的代码组成： 1. 点（.） 2. 划（-） 3. 每个字符间短的停顿（通常用空格表示停顿） 4. 每个词之间中等的停顿（通常用 / 划分） 5. 以及句子之间长的停顿</p>
+<p>点击附件，密文为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">11</span> <span class="number">111</span> 010 <span class="number">000</span> <span class="number">0</span> <span class="number">1010</span> <span class="number">111</span> <span class="number">100</span> <span class="number">0</span> <span class="number">00</span> <span class="number">000</span> <span class="number">000</span> <span class="number">111</span> <span class="number">00</span> <span class="number">10</span> <span class="number">1</span> <span class="number">0</span> 010 <span class="number">0</span> <span class="number">000</span> <span class="number">1</span> <span class="number">00</span> <span class="number">10</span> <span class="number">110</span></span><br></pre></td></tr></table></figure>
+
+<p>我们将”1“替换为”-“，”0“替换为”.“，即可得到密文：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-- --- .-. ... . -.-. --- -.. . .. ... ... --- .. -. - . .-. . ... - .. -. --.</span><br></pre></td></tr></table></figure>
+
+<p>通过在线解密工具，得到明文：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MORSECODEISSOINTERESTING</span><br></pre></td></tr></table></figure>
+
+<p>最后改成题目要求的格式即可提交。</p>
+<hr>
+<h2 id="不仅仅是Morse"><a href="#不仅仅是Morse" class="headerlink" title="不仅仅是Morse"></a>不仅仅是Morse</h2><p>点开附件，密文为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--/.-/-.--/..--.-/-..././..--.-/..../.-/...-/./..--.-/.-/-./---/-/...././.-./..--.-/-.././-.-./---/-.././..../..../..../..../.-/.-/.-/.-/.-/-.../.-/.-/-.../-.../-.../.-/.-/-.../-.../.-/.-/.-/.-/.-/.-/.-/.-/-.../.-/.-/-.../.-/-.../.-/.-/.-/.-/.-/.-/.-/-.../-.../.-/-.../.-/.-/.-/-.../-.../.-/.-/.-/-.../-.../.-/.-/-.../.-/.-/.-/.-/-.../.-/-.../.-/.-/-.../.-/.-/.-/-.../-.../.-/-.../.-/.-/.-/-.../.-/.-/.-/-.../.-/.-/-.../.-/-.../-.../.-/.-/-.../-.../-.../.-/-.../.-/.-/.-/-.../.-/-.../.-/-.../-.../.-/.-/.-/-.../-.../.-/-.../.-/.-/.-/-.../.-/.-/-.../.-/.-/-.../.-/.-/.-/.-/-.../-.../.-/-.../-.../.-/.-/-.../-.../.-/.-/-.../.-/.-/-.../.-/.-/.-/-.../.-/.-/-.../.-/.-/-.../.-/.-/-.../.-/-.../.-/.-/-.../-.../.-/-.../.-/.-/.-/.-/-.../-.../.-/-.../.-/.-/-.../-.../.-</span><br></pre></td></tr></table></figure>
+
+<p>根据Morse电码的特性，可知”/“是空格，然后我们直接将其解密，明文为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MAY..--.-BE..--.-HAVE..--.-ANOTHER..--.-DECODEHHHHAAAAABAABBBAABBAAAAAAAABAABABAAAAAAABBABAAABBAAABBAABAAAABABAABAAABBABAAABAAABAABABBAABBBABAAABABABBAAABBABAAABAABAABAAAABBABBAABBAABAABAAABAABAABAABABAABBABAAAABBABAABBA</span><br></pre></td></tr></table></figure>
+
+<p>去除干扰项，剩下就是由’A‘和’B‘组成的密文了。根据这个特性，突然联想到最近刚接触到的古典密码：培根密码，剩下的就是对其解密啦。</p>
+<p>上脚本：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment">#明文，并转换成小写</span></span><br><span class="line">s = <span class="string">&#x27;AAAAABAABBBAABBAAAAAAAABAABABAAAAAAABBABAAABBAAABBAABAAAABABAABAAABBABAAABAAABAABABBAABB&#x27;</span> \</span><br><span class="line">    <span class="string">&#x27;BABAAABABABBAAABBABAAABAABAABAAAABBABBAABBAABAABAAABAABAABAABABAABBABAAAABBABAABBA&#x27;</span></span><br><span class="line">a = s.lower()</span><br><span class="line"></span><br><span class="line"><span class="comment">#培根密码的编码表</span></span><br><span class="line">CODE_TABLE = &#123;</span><br><span class="line">    <span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;aaaaa&#x27;</span>,<span class="string">&#x27;b&#x27;</span>:<span class="string">&#x27;aaaab&#x27;</span>,<span class="string">&#x27;c&#x27;</span>:<span class="string">&#x27;aaaba&#x27;</span>,<span class="string">&#x27;d&#x27;</span>:<span class="string">&#x27;aaabb&#x27;</span>,<span class="string">&#x27;e&#x27;</span>:<span class="string">&#x27;aabaa&#x27;</span>,<span class="string">&#x27;f&#x27;</span>:<span class="string">&#x27;aabab&#x27;</span>,<span class="string">&#x27;g&#x27;</span>:<span class="string">&#x27;aabba&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;h&#x27;</span>:<span class="string">&#x27;aabbb&#x27;</span>,<span class="string">&#x27;i&#x27;</span>:<span class="string">&#x27;abaaa&#x27;</span>,<span class="string">&#x27;j&#x27;</span>:<span class="string">&#x27;abaab&#x27;</span>,<span class="string">&#x27;k&#x27;</span>:<span class="string">&#x27;ababa&#x27;</span>,<span class="string">&#x27;l&#x27;</span>:<span class="string">&#x27;ababb&#x27;</span>,<span class="string">&#x27;m&#x27;</span>:<span class="string">&#x27;abbaa&#x27;</span>,<span class="string">&#x27;n&#x27;</span>:<span class="string">&#x27;abbab&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;o&#x27;</span>:<span class="string">&#x27;abbba&#x27;</span>,<span class="string">&#x27;p&#x27;</span>:<span class="string">&#x27;abbbb&#x27;</span>,<span class="string">&#x27;q&#x27;</span>:<span class="string">&#x27;baaaa&#x27;</span>,<span class="string">&#x27;r&#x27;</span>:<span class="string">&#x27;baaab&#x27;</span>,<span class="string">&#x27;s&#x27;</span>:<span class="string">&#x27;baaba&#x27;</span>,<span class="string">&#x27;t&#x27;</span>:<span class="string">&#x27;baabb&#x27;</span>,<span class="string">&#x27;u&#x27;</span>:<span class="string">&#x27;babaa&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;v&#x27;</span>:<span class="string">&#x27;babab&#x27;</span>,<span class="string">&#x27;w&#x27;</span>:<span class="string">&#x27;babba&#x27;</span>,<span class="string">&#x27;x&#x27;</span>:<span class="string">&#x27;babbb&#x27;</span>,<span class="string">&#x27;y&#x27;</span>:<span class="string">&#x27;bbaaa&#x27;</span>,<span class="string">&#x27;z&#x27;</span>:<span class="string">&#x27;bbaab&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#将明文中每5个字符分开，并映射到编码表</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">peigendecode</span>(<span class="params">peigen</span>):</span></span><br><span class="line">    msg = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    codes = re.findall(<span class="string">r&#x27;.&#123;5&#125;&#x27;</span>, a)</span><br><span class="line">    <span class="keyword">for</span> code <span class="keyword">in</span> codes:</span><br><span class="line">        <span class="keyword">if</span> code ==<span class="string">&#x27;&#x27;</span>:</span><br><span class="line">            msg +=<span class="string">&#x27;&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment">#这句是将键与值进行互换属性，得到另外一个字典</span></span><br><span class="line">            UNCODE = <span class="built_in">dict</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> t:(t[<span class="number">1</span>], t[<span class="number">0</span>]), CODE_TABLE.items()))</span><br><span class="line">            msg += UNCODE[code]</span><br><span class="line">    <span class="keyword">return</span> msg</span><br><span class="line"></span><br><span class="line">flag = peigendecode(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;flag = &quot;</span>, flag)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>培根密码：培根密码(Baconian Cipher)是一种替换密码，每个明文字母被一个由5字符组成的序列替换，最初的加密方式就是由‘A’和‘B’组成序列替换明文(所以你当然也可以用别的字母)，比如字母‘D’ 替换成“aaabb” 。</p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/">
+        <span>RSA基础</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/" id="toc-header" class="mdui-ripple">Table of Contents</a>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#base64"><span class="toc-number">1.</span> <span class="toc-text">base64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Caesar"><span class="toc-number">2.</span> <span class="toc-text">Caesar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Morse"><span class="toc-number">3.</span> <span class="toc-text">Morse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E4%BB%85%E4%BB%85%E6%98%AFMorse"><span class="toc-number">4.</span> <span class="toc-text">不仅仅是Morse</span></a></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">livere</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '',
+    clientSecret: '',
+    repo: '',
+    owner: '',
+    admin: [''],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="lv-container" data-id="city" data-uid="">
+  <script type="text/javascript">
+    (function (d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+      if (typeof LivereTower === 'function') { return; }
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+      e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  </script>
+  <noscript>Please enable JavaScript to view the comments powered by LiveRe.</noscript>
+</div>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2015 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        sinanya
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>Theme: <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a></span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
