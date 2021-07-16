@@ -142,8 +142,8 @@
 
   <aside id="sidebar" class="mdui-drawer">
     <div class="mdui-tab" mdui-tab>
-        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">Overview</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">About</a>
     </div>
 
     
@@ -155,7 +155,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-home"></i>
                     </div>
-                    <div class="mdui-list-item-content">主页</div>
+                    <div class="mdui-list-item-content">Home</div>
                 </a>
             
                 
@@ -163,7 +163,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-bookmark"></i>
                     </div>
-                    <div class="mdui-list-item-content">标签</div>
+                    <div class="mdui-list-item-content">Tags</div>
                 </a>
             
                 
@@ -171,7 +171,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-folder"></i>
                     </div>
-                    <div class="mdui-list-item-content">分类</div>
+                    <div class="mdui-list-item-content">Categories</div>
                 </a>
             
                 
@@ -179,7 +179,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-archive"></i>
                     </div>
-                    <div class="mdui-list-item-content">归档</div>
+                    <div class="mdui-list-item-content">Archives</div>
                 </a>
             
                 
@@ -195,14 +195,14 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-user"></i>
                     </div>
-                    <div class="mdui-list-item-content">关于</div>
+                    <div class="mdui-list-item-content">About</div>
                 </a>
             
             <div class="mdui-list-item mdui-ripple">
                 <div class="mdui-list-item-icon">
                     <i class="iconfont icon-moon"></i>
                 </div>
-                <div class="mdui-list-item-content">夜间模式</div>
+                <div class="mdui-list-item-content">Night Mode</div>
                 <label class="mdui-switch" id="darkmode">
                   <input type="checkbox" id="nightmode_switch"/>
                   <i class="mdui-switch-icon"></i>
@@ -255,7 +255,7 @@
                     <div class="mdui-list-item-icon">
                         <i class="iconfont icon-link"></i>
                     </div>
-                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-list-item-content">Links</div>
                     <div class="mdui-collapse-item-arrow">
                         <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
                     </div>
@@ -290,15 +290,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-07-15
+      Posted on:&nbsp;2021-07-15
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-07-16
+      Edited on:&nbsp;2021-07-16
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> > <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
+      In:&nbsp;<a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> > <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/">攻防世界</a>
     </span>
     
   </div>
@@ -321,13 +321,13 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><p>​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASSIC码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0，但编码的时候是‘=’。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。</p>
+            <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><p>​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASCII码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0，但编码的时候是‘=’。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。</p>
 <p><img s...
           
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/">阅读更多</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/">Read More</a>
         </div>
       </div>
     </article>
@@ -340,15 +340,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-07-12
+      Posted on:&nbsp;2021-07-12
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-07-15
+      Edited on:&nbsp;2021-07-15
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> > <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/">RSA</a>
+      In:&nbsp;<a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> > <a class="category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/">RSA</a>
     </span>
     
   </div>
@@ -377,7 +377,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/">阅读更多</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/">Read More</a>
         </div>
       </div>
     </article>
@@ -390,15 +390,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-05-30
+      Posted on:&nbsp;2021-05-30
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-06-10
+      Edited on:&nbsp;2021-06-10
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/Web%E5%AD%A6%E4%B9%A0-sqlilabs/">Web学习-sqlilabs</a>
+      In:&nbsp;<a class="category-link" href="/categories/Web%E5%AD%A6%E4%B9%A0-sqlilabs/">Web学习-sqlilabs</a>
     </span>
     
   </div>
@@ -426,7 +426,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">阅读更多</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">Read More</a>
         </div>
       </div>
     </article>
@@ -439,15 +439,15 @@
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-05-11
+      Posted on:&nbsp;2021-05-11
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-05-15
+      Edited on:&nbsp;2021-05-15
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E5%BF%83%E5%BE%97/">心得</a> > <a class="category-link" href="/categories/%E5%BF%83%E5%BE%97/Web/">Web</a>
+      In:&nbsp;<a class="category-link" href="/categories/%E5%BF%83%E5%BE%97/">心得</a> > <a class="category-link" href="/categories/%E5%BF%83%E5%BE%97/Web/">Web</a>
     </span>
     
   </div>
@@ -483,7 +483,7 @@
         </div>
         
         <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/05/11/hello-world/">阅读更多</a>
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/2021/05/11/hello-world/">Read More</a>
         </div>
       </div>
     </article>
@@ -518,10 +518,10 @@
     <div class="mdui-row">
       
         <div class="mdui-col-xs-6 mdui-text-right">
-          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>Total Visitors <span id="busuanzi_value_site_uv"></span></span>
         </div>
         <div class="mdui-col-xs-6 mdui-text-left">
-          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>Total Views <span id="busuanzi_value_site_pv"></span></span>
         </div>
       
     </div>
