@@ -302,9 +302,9 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><p>​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数。详细步骤：将字符的ASCII码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0，但编码的时候是‘=’。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。</p>
+    <h2 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h2><p>​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数，而且一定是3个字节变换成4组的6位二进制数。详细步骤：将字符的ASCII码转换成二进制，接着将二进制串每6个为一组，但有时二进制数的个数不那么恰巧就是6的倍数，所以最后一组后面补0，当一组全部都是0的时候编码是”=”。因为计算机的一个字节是占8位，所以每一组高位再补上两个0。最后将二进制数转成十进制后映射到base64编码表，形成新的字符串。</p>
 <p><img src="/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/Post3_image2-1626325143077.png" alt="base646编码表"></p>
-<p>例如：对字符’34’进行加密，对应的ASCII码分别是51和52，对应的二进制串为001100 110011 0100，转换之后就是00001100 00110011 00010000 00000000，编码之后就是’MzQ=’。</p>
+<p>例如：对字符’34’进行加密，对应的ASCII码分别是51和52，对应的二进制串为001100 110011 0100，转换之后就是00001100 00110011 00010000 00000000，编码之后就是”MzQ=”。</p>
 <p>base64解密原理就是加密的逆过程，就不再详细介绍了。</p>
 <p>点开附件：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Y3liZXJwZWFjZXtXZWxjb21lX3RvX25ld19Xb3JsZCF9</span><br></pre></td></tr></table></figure>
