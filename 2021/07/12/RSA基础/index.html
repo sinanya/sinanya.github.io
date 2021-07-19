@@ -238,7 +238,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2021-07-15
+      Edited on:&nbsp;2021-07-20
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -345,6 +345,9 @@
 <p>由 d * e ≡ 1 mod Φ(n),  Φ(n) =  (p - 1)(q - 1), n = p * q,  求得d之后，将其带入到 m ≡ c^d mod n，可求得m</p>
 <p>附上代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">p = <span class="number">447685307</span></span><br><span class="line">q = <span class="number">2037</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line">c = <span class="number">704796792</span></span><br><span class="line">n = p * q</span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)</span><br><span class="line"></span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(m)</span><br></pre></td></tr></table></figure>
+
+<hr>
+
   </div>
   <!--文末结束语-->
   
