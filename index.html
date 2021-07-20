@@ -484,7 +484,7 @@
       
       
         <div class="post-header"> 
-  <a class="post-header-title" href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">这是我的第一篇博客</a>
+  <a class="post-header-title" href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">SQL注入——报错注入 sqli-labs Less-5 and Less-6</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
@@ -492,7 +492,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2021-06-10
+      Edited on:&nbsp;2021-07-20
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -519,7 +519,8 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="SQL注入——报错注入-sqli-labs-Less-5-and-Less-6"><a href="#SQL注入——报错注入-sqli-labs-Less-5-and-Less-6" class="headerlink" title="SQL注入——报错注入 sqli-labs Less-5 and Less-6"></a>SQL注入——报错注入 sqli-labs Less-5 and Less-6</h1><h2 id="报错注入原理"><a href="#报错注入原理" class="headerlink" title="报错注入原理"></a>报错注入原理</h2...
+            <h2 id="报错注入原理"><a href="#报错注入原理" class="headerlink" title="报错注入原理"></a>报错注入原理</h2><blockquote>
+<p>报错注入形式上是两个嵌套的查询，即select…(select…)，里面的select被称为子查询，它的执行顺序也是先执行子查询，然后再执行外面的select，双注入主要涉及到几个sql函数：<br>rand()随机函数，返回0~1之间的某个值<br>floor(a)取整函数，返回小于等于a，且最接近于a的一个整数<br>count()聚合函数也称作计数函数，返回查询对象的总数<br>grou...
           
         </div>
         
