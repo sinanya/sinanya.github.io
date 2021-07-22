@@ -238,7 +238,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      Edited on:&nbsp;2021-07-19
+      Edited on:&nbsp;2021-07-22
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -413,7 +413,7 @@
 <h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><p>点开附件，题目内容如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在一次RSA密钥对生成中，假设p=<span class="number">473398607161</span>，q=<span class="number">4511491</span>，e=<span class="number">17</span></span><br><span class="line">求解出d作为flag提交</span><br></pre></td></tr></table></figure>
 
-<p>简单题，根据e * d = 1 mod Φ(n),  Φ(n) = (p - 1) * (q - 1)，很容易就可以解得d，上脚本：</p>
+<p>简单题，根据e * d ≡ 1 mod Φ(n),  Φ(n) = (p - 1) * (q - 1)，很容易就可以解得d，上脚本：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"></span><br><span class="line">p = <span class="number">473398607161</span></span><br><span class="line">q = <span class="number">4511491</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br></pre></td></tr></table></figure>
 
 <p>解得d为：</p>
