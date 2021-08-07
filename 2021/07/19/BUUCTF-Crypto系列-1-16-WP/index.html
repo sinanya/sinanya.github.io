@@ -557,69 +557,95 @@
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/MD5/212708?fr=aladdin">MD5算法的实现及原理①</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/JieweiWei/md5">MD5算法的实现及原理②</a></p>
 <p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">e00cf25ad42683b3df678c61f42c6bda</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">e00cf25ad42683b3df678c61f42c6bda<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://www.cmd5.com/">通过在线工具</a>进行解密，明文如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">admin1</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">admin1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>提交结果加上”flag{}”就可以啦。</p>
 <hr>
 <h2 id="Url编码"><a href="#Url编码" class="headerlink" title="Url编码"></a>Url编码</h2><p>url编码就是一个字符ascii码的十六进制。不过稍微有些变动，需要在前面加上“%”。比如 “\” ，它的ascii码是92，92的十六进制是5c，所以“\”的url编码就是%5c。 特点：密文中有多个%号符。</p>
 <p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%<span class="number">66</span>%6c%<span class="number">61</span>%<span class="number">67</span>%7b%<span class="number">61</span>%6e%<span class="number">64</span>%<span class="number">20</span>%<span class="number">31</span>%3d%<span class="number">31</span>%7d</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">%</span><span class="token number">66</span><span class="token operator">%</span><span class="token number">6c</span><span class="token operator">%</span><span class="token number">61</span><span class="token operator">%</span><span class="token number">67</span><span class="token operator">%</span><span class="token number">7b</span><span class="token operator">%</span><span class="token number">61</span><span class="token operator">%</span><span class="token number">6e</span><span class="token operator">%</span><span class="token number">64</span><span class="token operator">%</span><span class="token number">20</span><span class="token operator">%</span><span class="token number">31</span><span class="token operator">%</span><span class="token number">3d</span><span class="token operator">%</span><span class="token number">31</span><span class="token operator">%</span><span class="token number">7d</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="http://www.jsons.cn/urlencode/">通过在线工具</a>解密，明文如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;<span class="keyword">and</span> <span class="number">1</span>=<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">flag<span class="token punctuation">&#123;</span><span class="token keyword">and</span> <span class="token number">1</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>直接提交即可。</p>
 <hr>
 <h2 id="一眼就解密"><a href="#一眼就解密" class="headerlink" title="一眼就解密"></a>一眼就解密</h2><p>题目已经有密文：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZmxhZ3tUSEVfRkxBR19PRl9USElTX1NUUklOR30=</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">ZmxhZ3tUSEVfRkxBR19PRl9USElTX1NUUklOR30<span class="token operator">=</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>为什么看一眼就能解密呢？原因在于末尾有一个很明显的”=”，而且密文中存在小写字母，可以排除掉base16和base32。</p>
 <p>直接base64走起，上代码（前面写过的）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">Str1 = <span class="string">&quot;ZmxhZ3tUSEVfRkxBR19PRl9USElTX1NUUklOR30=&quot;</span></span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;flag&#123;&quot;</span> + <span class="built_in">str</span>(base64.b64decode(Str1)) + <span class="string">&quot;&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> base64
+
+Str1 <span class="token operator">=</span> <span class="token string">"ZmxhZ3tUSEVfRkxBR19PRl9USElTX1NUUklOR30="</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"flag&#123;"</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>Str1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>可以得到明文为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;THE_FLAG_OF_THIS_STRING&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">flag<span class="token punctuation">&#123;</span>THE_FLAG_OF_THIS_STRING<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="看我回旋踢"><a href="#看我回旋踢" class="headerlink" title="看我回旋踢"></a>看我回旋踢</h2><p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">synt&#123;5pq1004q-86n5-46q8-o720-oro5on0417r1&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">synt<span class="token punctuation">&#123;</span>5pq1004q<span class="token operator">-</span>86n5<span class="token operator">-</span>46q8<span class="token operator">-</span>o720<span class="token operator">-</span>oro5on0417r1<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>题目明确格式为”flag{}”，在计算了字母序号的相对差，可以明确这是一道简单的Caesar密码题，由于密文中只有小写字母，所以这里我们不考虑大写字母，代码如下（方法笨了点）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cipher = <span class="string">&quot;synt&#123;5pq1004q-86n5-46q8-o720-oro5on0417r1&#125;&quot;</span></span><br><span class="line">plainer = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">25</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> cipher:</span><br><span class="line">        a = <span class="built_in">ord</span>(i)</span><br><span class="line">        <span class="keyword">if</span> <span class="number">96</span> &lt; a <span class="keyword">and</span> a &lt; <span class="number">123</span>:</span><br><span class="line">            plainer += <span class="built_in">chr</span>(<span class="built_in">ord</span>(i) - n)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            plainer += <span class="built_in">chr</span>(<span class="built_in">ord</span>(i))</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(plainer)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cipher <span class="token operator">=</span> <span class="token string">"synt&#123;5pq1004q-86n5-46q8-o720-oro5on0417r1&#125;"</span>
+plainer <span class="token operator">=</span> <span class="token string">""</span>
+
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> cipher<span class="token punctuation">:</span>
+        a <span class="token operator">=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token number">96</span> <span class="token operator">&lt;</span> a <span class="token keyword">and</span> a <span class="token operator">&lt;</span> <span class="token number">123</span><span class="token punctuation">:</span>
+            plainer <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">-</span> n<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            plainer <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>plainer<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解得密文为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;5cd1004d-86a5-46d8-b720-beb5ba0417e1&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">flag<span class="token punctuation">&#123;</span><span class="token number">5cd1004d</span><span class="token operator">-</span><span class="token number">86a5</span><span class="token operator">-</span><span class="token number">46d8</span><span class="token operator">-</span>b720<span class="token operator">-</span>beb5ba0417e1<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="摩丝"><a href="#摩丝" class="headerlink" title="摩丝"></a>摩丝</h2><p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.. .-.. --- ...- . -.-- --- ..-</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token operator">-</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">-</span> <span class="token punctuation">.</span> <span class="token operator">-</span><span class="token punctuation">.</span><span class="token operator">-</span><span class="token operator">-</span> <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">-</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://www.jb51.net/tools/morse.htm">通过在线解密工具</a>，明文如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ILOVEYOU</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">ILOVEYOU<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="password"><a href="#password" class="headerlink" title="password"></a>password</h2><p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">姓名：张三 </span><br><span class="line">生日：<span class="number">19900315</span></span><br><span class="line"></span><br><span class="line">key格式为key&#123;xxxxxxxxxx&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">姓名：张三 
+生日：<span class="token number">19900315</span>
+
+key格式为key<span class="token punctuation">&#123;</span>xxxxxxxxxx<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>看了看大佬的博客，发现这竟然是社会工程学的题！！！</p>
 <p>科普一下什么是<a target="_blank" rel="noopener" href="https://www.aqniu.com/industry/858.html">社会工程学</a>：</p>
 <p>​        在信息安全这个链条中，人的因素是最薄弱的一环节。社会工程就是利用人的薄弱点，通过欺骗手段而入侵计算机系统的一种攻击方法。组织可能采取了很周全的技术安全控制措施，例如：身份鉴别系统、防火墙、入侵检测、加密系统等，但由于员工无意当中通过电话或电子邮件泄露机密信息(如系统口令、IP地址)，或被非法人员欺骗而泄露了组织的机密信息，就可能对组织的信息安全造成严重损害。        社会工程学通常以交谈、欺骗、假冒或口语等方式，从合法用户中套取用户系统的秘密。熟练的社会工程师都是擅长进行信息收集的身体力行者。很多表面上看起来一点用都没有的信息都会被这些人利用起来进行渗透。比如说一个电话号码，一个人的名字，或者工作的ID号码，都可能会被社会工程师所利用。</p>
 <p>题目给的格式中’x’的个数为10，猜测是名字首字母+生日</p>
 <p>答案是：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">key&#123;zs19900315&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">key&#123;zs19900315&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="变异凯撒"><a href="#变异凯撒" class="headerlink" title="变异凯撒"></a>变异凯撒</h2><p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">加密密文：afZ_r9VYfScOeO_UL^RWUc</span><br><span class="line">格式：flag&#123;&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">加密密文：afZ_r9VYfScOeO_UL<span class="token operator">^</span>RWUc
+格式：flag<span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>还是根据题目提供的格式，分析密文与明文之间的ASCII码的关系。分析前四个，发现从第一个字符相差5到第四个字符相差8，总结为公差为1的等差数列。可以借用上题Caesar的脚本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cipher = <span class="string">&quot;afZ_r9VYfScOeO_UL^RWUc&quot;</span></span><br><span class="line">plainer = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">n = <span class="number">5</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> cipher:</span><br><span class="line">    plainer += <span class="built_in">chr</span>(<span class="built_in">ord</span>(i) + n)</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(plainer)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cipher <span class="token operator">=</span> <span class="token string">"afZ_r9VYfScOeO_UL^RWUc"</span>
+plainer <span class="token operator">=</span> <span class="token string">""</span>
+
+n <span class="token operator">=</span> <span class="token number">5</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> cipher<span class="token punctuation">:</span>
+    plainer <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> n<span class="token punctuation">)</span>
+    n <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>plainer<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解得：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;Caesar_variation&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">flag<span class="token punctuation">&#123;</span>Caesar_variation<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="Quoted-printable"><a href="#Quoted-printable" class="headerlink" title="Quoted-printable"></a>Quoted-printable</h2><p>什么是Quoted-printable：</p>
@@ -631,100 +657,220 @@
 <p>如果数据中包含有意义的行结束标志，必须转换为ASCII回车(CR)换行(LF)序列，既不能用原来的ASCII字符也不能用QP编码的”=”转义字符序列。 相反，如果字节值13与10有其它的不是行结束的含义，它们必须QP编码为=0D与=0A.</p>
 <p>quoted-printable编码的数据的每行长度不能超过76个字符. 为满足此要求又不改变被编码文本，在QP编码结果的每行末尾加上软换行(soft line break). 即在每行末尾加上一个”=”, 但并不会出现在解码得到的文本中. </p>
 <p>例如：If you believe that truth=beauty, then surely mathematics is the most beautiful branch of philosophy. 编码后结果是</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">If you believe that truth=3Dbeauty, then surely=<span class="number">20</span>=</span><br><span class="line">mathematics <span class="keyword">is</span> the most beautiful branch of philosophy.</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">If you believe that truth<span class="token operator">=</span>3Dbeauty<span class="token punctuation">,</span> then surely<span class="token operator">=</span><span class="token number">20</span><span class="token operator">=</span>
+mathematics <span class="token keyword">is</span> the most beautiful branch of philosophy<span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </blockquote>
 <p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">=E9=<span class="number">82</span>=A3=E4=BD=A0=E4=B9=9F=E5=BE=<span class="number">88</span>=E6=A3=<span class="number">92</span>=E5=<span class="number">93</span>=A6</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">=</span>E9<span class="token operator">=</span><span class="token number">82</span><span class="token operator">=</span>A3<span class="token operator">=</span>E4<span class="token operator">=</span>BD<span class="token operator">=</span>A0<span class="token operator">=</span>E4<span class="token operator">=</span>B9<span class="token operator">=</span><span class="token number">9F</span><span class="token operator">=</span>E5<span class="token operator">=</span>BE<span class="token operator">=</span><span class="token number">88</span><span class="token operator">=</span>E6<span class="token operator">=</span>A3<span class="token operator">=</span><span class="token number">92</span><span class="token operator">=</span>E5<span class="token operator">=</span><span class="token number">93</span><span class="token operator">=</span>A6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://wtool.com.cn/quoted.html">通过在线解密工具</a>，可得明文为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">那你也很棒哦</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">那你也很棒哦<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="Rabbit"><a href="#Rabbit" class="headerlink" title="Rabbit"></a>Rabbit</h2><p>不懂，直接百度，在百度上关于Rabbit密码的知识很少，所以转去了知网。</p>
-<p><img src="/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/Post4_image2.png"></p>
-<p><img src="/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/Post4_image1.png"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/Post4_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/Post4_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
 <p>点开附件，显示如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U2FsdGVkX1/+ydnDPowGbjjJXhZxm2MP2AgI</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">U2FsdGVkX1<span class="token operator">/</span><span class="token operator">+</span>ydnDPowGbjjJXhZxm2MP2AgI<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>通过<a href>在线工具</a>进行解密，明文如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cute_Rabbit</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Cute_Rabbit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>按照题目格式提交即可。</p>
 <hr>
 <h2 id="篱笆的影子"><a href="#篱笆的影子" class="headerlink" title="篱笆的影子"></a>篱笆的影子</h2><p>点开附件，发现是一道栅栏密码题，估摸着是传统型，密文如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">felhaagv&#123;ewtehtehfilnakgw&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">felhaagv<span class="token punctuation">&#123;</span>ewtehtehfilnakgw<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>搞个脚本解密：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#cipher为密文，count为栏数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decrypto</span>(<span class="params">cipher, count</span>):</span></span><br><span class="line">    cipher_len = <span class="built_in">len</span>(cipher)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#分为多少组，row为组数</span></span><br><span class="line">    <span class="keyword">if</span>(cipher_len % count == <span class="number">0</span>):</span><br><span class="line">        row = <span class="built_in">int</span>(cipher_len / count)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        row = <span class="built_in">int</span>(cipher_len / count + <span class="number">0.5</span>)</span><br><span class="line">    result =  &#123;x: <span class="string">&#x27;&#x27;</span><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(row)&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#对字符进行按组划分</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(cipher_len):</span><br><span class="line">        k = i % row;</span><br><span class="line">        result.update(&#123;k: result[k] + cipher[i]&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#按组输出</span></span><br><span class="line">    plainer = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(row):</span><br><span class="line">        plainer += result[i]</span><br><span class="line">    <span class="built_in">print</span>(plainer)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">20</span>):</span><br><span class="line">    decrypto(<span class="string">&quot;felhaagv&#123;ewtehtehfilnakgw&#125;&quot;</span>, n)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#cipher为密文，count为栏数</span>
+<span class="token keyword">def</span> <span class="token function">decrypto</span><span class="token punctuation">(</span>cipher<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    cipher_len <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>cipher<span class="token punctuation">)</span>
+
+    <span class="token comment">#分为多少组，row为组数</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>cipher_len <span class="token operator">%</span> count <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        row <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>cipher_len <span class="token operator">/</span> count<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        row <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>cipher_len <span class="token operator">/</span> count <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">)</span>
+    result <span class="token operator">=</span>  <span class="token punctuation">&#123;</span>x<span class="token punctuation">:</span> <span class="token string">''</span><span class="token keyword">for</span> x <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">&#125;</span>
+
+    <span class="token comment">#对字符进行按组划分</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>cipher_len<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        k <span class="token operator">=</span> i <span class="token operator">%</span> row<span class="token punctuation">;</span>
+        result<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token punctuation">&#123;</span>k<span class="token punctuation">:</span> result<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> cipher<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+    <span class="token comment">#按组输出</span>
+    plainer <span class="token operator">=</span> <span class="token string">""</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        plainer <span class="token operator">+=</span> result<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>plainer<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    decrypto<span class="token punctuation">(</span><span class="token string">"felhaagv&#123;ewtehtehfilnakgw&#125;"</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后我们在多个结果里面筛选出符合题目格式的明文，明文如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;wethinkwehavetheflag&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">flag&#123;wethinkwehavetheflag&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h2><p>点开附件，题目内容如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在一次RSA密钥对生成中，假设p=<span class="number">473398607161</span>，q=<span class="number">4511491</span>，e=<span class="number">17</span></span><br><span class="line">求解出d作为flag提交</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">在一次RSA密钥对生成中，假设p<span class="token operator">=</span><span class="token number">473398607161</span>，q<span class="token operator">=</span><span class="token number">4511491</span>，e<span class="token operator">=</span><span class="token number">17</span>
+求解出d作为flag提交<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>简单题，根据e * d ≡ 1 mod Φ(n),  Φ(n) = (p - 1) * (q - 1)，很容易就可以解得d，上脚本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"></span><br><span class="line">p = <span class="number">473398607161</span></span><br><span class="line">q = <span class="number">4511491</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)</span><br><span class="line"><span class="built_in">print</span>(d)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> inverse
+<span class="token keyword">import</span> gmpy2
+<span class="token keyword">import</span> libnum
+
+p <span class="token operator">=</span> <span class="token number">473398607161</span>
+q <span class="token operator">=</span> <span class="token number">4511491</span>
+e <span class="token operator">=</span> <span class="token number">17</span>
+phi <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解得d为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">125631357777427553</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token number">125631357777427553</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>按照题目给的格式提交即可。</p>
 <hr>
 <h2 id="丢失的MD5"><a href="#丢失的MD5" class="headerlink" title="丢失的MD5"></a>丢失的MD5</h2><p>点开文件，发现是一个py文件，代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib   </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>,<span class="number">127</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>,<span class="number">127</span>):</span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">32</span>,<span class="number">127</span>):</span><br><span class="line">            m=hashlib.md5()</span><br><span class="line">            m.update(<span class="string">&#x27;TASC&#x27;</span>+<span class="built_in">chr</span>(i)+<span class="string">&#x27;O3RJMV&#x27;</span>+<span class="built_in">chr</span>(j)+<span class="string">&#x27;WDJKX&#x27;</span>+<span class="built_in">chr</span>(k)+<span class="string">&#x27;ZM&#x27;</span>)</span><br><span class="line">            des=m.hexdigest()</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;e9032&#x27;</span> <span class="keyword">in</span> des <span class="keyword">and</span> <span class="string">&#x27;da&#x27;</span> <span class="keyword">in</span> des <span class="keyword">and</span> <span class="string">&#x27;911513&#x27;</span> <span class="keyword">in</span> des:</span><br><span class="line">                <span class="built_in">print</span> des</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib   
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">127</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">127</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span><span class="token number">127</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            m<span class="token operator">=</span>hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            m<span class="token punctuation">.</span>update<span class="token punctuation">(</span><span class="token string">'TASC'</span><span class="token operator">+</span><span class="token builtin">chr</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'O3RJMV'</span><span class="token operator">+</span><span class="token builtin">chr</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'WDJKX'</span><span class="token operator">+</span><span class="token builtin">chr</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'ZM'</span><span class="token punctuation">)</span>
+            des<span class="token operator">=</span>m<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token string">'e9032'</span> <span class="token keyword">in</span> des <span class="token keyword">and</span> <span class="token string">'da'</span> <span class="token keyword">in</span> des <span class="token keyword">and</span> <span class="token string">'911513'</span> <span class="token keyword">in</span> des<span class="token punctuation">:</span>
+                <span class="token keyword">print</span> des<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>整个过程在进行哈希运算，推测输出的内容是答案。</p>
 <p>运行脚本，输出如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flag&#123;e9032994dabac08080091151380478a2&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">flag<span class="token punctuation">&#123;</span>e9032994dabac08080091151380478a2<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <hr>
 <h2 id="Alice与Bob"><a href="#Alice与Bob" class="headerlink" title="Alice与Bob"></a>Alice与Bob</h2><p>这道题给出了解题思路：</p>
 <p>直接分解98554799767为两个素数</p>
-<p><img src="/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/Post4_image3.png" alt="分解结果"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/Post4_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="分解结果"></p>
 <p>分解后，小的放前面，大的放后面，合成一个新的数字，进行md5的32位小写哈希，提交答案。</p>
 <p>代码部分：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">date = <span class="string">&#x27;101999966233&#x27;</span></span><br><span class="line"><span class="comment">#获取MD5加密算法对象</span></span><br><span class="line">hmd5 = hashlib.md5()</span><br><span class="line"><span class="comment">#引入需要加密的字符串，hashlib是对二进制进行加密的，如果直接对字符串加密的话，会报错的。</span></span><br><span class="line"><span class="comment"># 因此需要通过encode将字符串转码成二进制格式。</span></span><br><span class="line">hmd5.update(date.encode(<span class="string">&quot;utf-8&quot;</span>))</span><br><span class="line"><span class="comment">#最后转成16进制字符串</span></span><br><span class="line">sig = hmd5.hexdigest()</span><br><span class="line">sig.upper()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;flag&#123;&quot;</span> + sig + <span class="string">&quot;&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> hashlib
+date <span class="token operator">=</span> <span class="token string">'101999966233'</span>
+<span class="token comment">#获取MD5加密算法对象</span>
+hmd5 <span class="token operator">=</span> hashlib<span class="token punctuation">.</span>md5<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#引入需要加密的字符串，hashlib是对二进制进行加密的，如果直接对字符串加密的话，会报错的。</span>
+<span class="token comment"># 因此需要通过encode将字符串转码成二进制格式。</span>
+hmd5<span class="token punctuation">.</span>update<span class="token punctuation">(</span>date<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#最后转成16进制字符串</span>
+sig <span class="token operator">=</span> hmd5<span class="token punctuation">.</span>hexdigest<span class="token punctuation">(</span><span class="token punctuation">)</span>
+sig<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"flag&#123;"</span> <span class="token operator">+</span> sig <span class="token operator">+</span> <span class="token string">"&#125;"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>答案是：flag{d450209323a847c8d01c6be47c81811a}</p>
 <hr>
 <h2 id="rsarsa"><a href="#rsarsa" class="headerlink" title="rsarsa"></a>rsarsa</h2><p>查看文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Math <span class="keyword">is</span> cool! Use the RSA algorithm to decode the secret message, c, p, q, <span class="keyword">and</span> e are parameters <span class="keyword">for</span> the RSA algorithm.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">p = <span class="number">9648423029010515676590551740010426534945737639235739800643989352039852507298491399561035009163427050370107570733633350911691280297777160200625281665378483</span></span><br><span class="line">q = <span class="number">11874843837980297032092405848653656852760910154543380907650040190704283358909208578251063047732443992230647903887510065547947313543299303261986053486569407</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">c = <span class="number">83208298995174604174773590298203639360540024871256126892889661345742403314929861939100492666605647316646576486526217457006376842280869728581726746401583705899941768214138742259689334840735633553053887641847651173776251820293087212885670180367406807406765923638973161375817392737747832762751690104423869019034</span></span><br><span class="line"></span><br><span class="line">Use RSA to find the secret message</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Math <span class="token keyword">is</span> cool! Use the RSA algorithm to decode the secret message<span class="token punctuation">,</span> c<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">,</span> <span class="token keyword">and</span> e are parameters <span class="token keyword">for</span> the RSA algorithm<span class="token punctuation">.</span>
+
+
+p <span class="token operator">=</span> <span class="token number">9648423029010515676590551740010426534945737639235739800643989352039852507298491399561035009163427050370107570733633350911691280297777160200625281665378483</span>
+q <span class="token operator">=</span> <span class="token number">11874843837980297032092405848653656852760910154543380907650040190704283358909208578251063047732443992230647903887510065547947313543299303261986053486569407</span>
+e <span class="token operator">=</span> <span class="token number">65537</span>
+c <span class="token operator">=</span> <span class="token number">83208298995174604174773590298203639360540024871256126892889661345742403314929861939100492666605647316646576486526217457006376842280869728581726746401583705899941768214138742259689334840735633553053887641847651173776251820293087212885670180367406807406765923638973161375817392737747832762751690104423869019034</span>
+
+Use RSA to find the secret message<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>题目给了两个大素数、公钥、密文，要求的是明文。根据 e * d = 1mod Φ(n)，m  = c ^ d mod n，就可以解得明文。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">import</span> libnum</span><br><span class="line"></span><br><span class="line">p = <span class="number">9648423029010515676590551740010426534945737639235739800643989352039852507298491399561035009163427050370107570733633350911691280297777160200625281665378483</span></span><br><span class="line">q = <span class="number">11874843837980297032092405848653656852760910154543380907650040190704283358909208578251063047732443992230647903887510065547947313543299303261986053486569407</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">c = <span class="number">83208298995174604174773590298203639360540024871256126892889661345742403314929861939100492666605647316646576486526217457006376842280869728581726746401583705899941768214138742259689334840735633553053887641847651173776251820293087212885670180367406807406765923638973161375817392737747832762751690104423869019034</span></span><br><span class="line">n = p * q</span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)</span><br><span class="line"></span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(m)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> inverse
+<span class="token keyword">import</span> gmpy2
+<span class="token keyword">import</span> libnum
+
+p <span class="token operator">=</span> <span class="token number">9648423029010515676590551740010426534945737639235739800643989352039852507298491399561035009163427050370107570733633350911691280297777160200625281665378483</span>
+q <span class="token operator">=</span> <span class="token number">11874843837980297032092405848653656852760910154543380907650040190704283358909208578251063047732443992230647903887510065547947313543299303261986053486569407</span>
+e <span class="token operator">=</span> <span class="token number">65537</span>
+c <span class="token operator">=</span> <span class="token number">83208298995174604174773590298203639360540024871256126892889661345742403314929861939100492666605647316646576486526217457006376842280869728581726746401583705899941768214138742259689334840735633553053887641847651173776251820293087212885670180367406807406765923638973161375817392737747832762751690104423869019034</span>
+n <span class="token operator">=</span> p <span class="token operator">*</span> q
+phi <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
+
+m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>解得明文为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5577446633554466577768879988</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token number">5577446633554466577768879988</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>按照题目的格式提交即可。</p>
 <hr>
 <h2 id="大帝的密码武器"><a href="#大帝的密码武器" class="headerlink" title="大帝的密码武器"></a>大帝的密码武器</h2><p>将文件下载下来后，把后缀修改为”zip”，解压，题目为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">公元前一百年，在罗马出生了一位对世界影响巨大的人物，他生前是罗马三巨头之一。他率先使用了一种简单的加密函，因此这种加密方法以他的名字命名。</span><br><span class="line">以下密文被解开后可以获得一个有意义的单词：FRPHEVGL</span><br><span class="line">你可以用这个相同的加密向量加密附件中的密文，作为答案进行提交。</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">公元前一百年，在罗马出生了一位对世界影响巨大的人物，他生前是罗马三巨头之一。他率先使用了一种简单的加密函，因此这种加密方法以他的名字命名。
+以下密文被解开后可以获得一个有意义的单词：FRPHEVGL
+你可以用这个相同的加密向量加密附件中的密文，作为答案进行提交。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>还是比较简单的，写个脚本解密，然后再按照偏移量加密“密文”，就可以得到答案。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">cipher = <span class="string">&quot;FRPHEVGL&quot;</span></span><br><span class="line">plainer = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, <span class="number">25</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> cipher:</span><br><span class="line">        a = <span class="built_in">ord</span>(i) - n</span><br><span class="line">        <span class="keyword">if</span> a &lt; <span class="number">65</span>:</span><br><span class="line">            plainer += <span class="built_in">chr</span>(a + <span class="number">26</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            plainer += <span class="built_in">chr</span>(a)</span><br><span class="line">    plainer += <span class="string">&quot;\n&quot;</span></span><br><span class="line"><span class="built_in">print</span>(plainer)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cipher <span class="token operator">=</span> <span class="token string">"FRPHEVGL"</span>
+plainer <span class="token operator">=</span> <span class="token string">""</span>
+
+<span class="token keyword">for</span> n <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> cipher<span class="token punctuation">:</span>
+        a <span class="token operator">=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">-</span> n
+        <span class="token keyword">if</span> a <span class="token operator">&lt;</span> <span class="token number">65</span><span class="token punctuation">:</span>
+            plainer <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a <span class="token operator">+</span> <span class="token number">26</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            plainer <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    plainer <span class="token operator">+=</span> <span class="token string">"\n"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>plainer<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>输出结果有多个：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">DPNFCTEJ</span><br><span class="line">COMEBSDI</span><br><span class="line">BNLDARCH</span><br><span class="line">AMKCZQBG</span><br><span class="line">ZLJBYPAF</span><br><span class="line">YKIAXOZE</span><br><span class="line">XJHZWNYD</span><br><span class="line">WIGYVMXC</span><br><span class="line">VHFXULWB</span><br><span class="line">UGEWTKVA</span><br><span class="line">TFDVSJUZ</span><br><span class="line">SECURITY</span><br><span class="line">RDBTQHSX</span><br><span class="line">QCASPGRW</span><br><span class="line">PBZROFQV</span><br><span class="line">OAYQNEPU</span><br><span class="line">NZXPMDOT</span><br><span class="line">MYWOLCNS</span><br><span class="line">LXVNKBMR</span><br><span class="line">KWUMJALQ</span><br><span class="line">JVTLIZKP</span><br><span class="line">IUSKHYJO</span><br><span class="line">HTRJGXIN</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">DPNFCTEJ
+COMEBSDI
+BNLDARCH
+AMKCZQBG
+ZLJBYPAF
+YKIAXOZE
+XJHZWNYD
+WIGYVMXC
+VHFXULWB
+UGEWTKVA
+TFDVSJUZ
+SECURITY
+RDBTQHSX
+QCASPGRW
+PBZROFQV
+OAYQNEPU
+NZXPMDOT
+MYWOLCNS
+LXVNKBMR
+KWUMJALQ
+JVTLIZKP
+IUSKHYJO
+HTRJGXIN<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>根据题目提示，是一个有意义的单词，从中找出了”SECURITY”，得到偏移量为13，接着用相同的偏移量加密。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cipher = <span class="string">&quot;&quot;</span></span><br><span class="line">plainer = <span class="string">&quot;ComeChina&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> plainer:</span><br><span class="line">    a = <span class="built_in">ord</span>(i) + <span class="number">13</span></span><br><span class="line">    <span class="keyword">if</span> a &gt; <span class="number">122</span>:</span><br><span class="line">        cipher += <span class="built_in">chr</span>(a - <span class="number">26</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        cipher += <span class="built_in">chr</span>(a)</span><br><span class="line"><span class="built_in">print</span>(cipher)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cipher <span class="token operator">=</span> <span class="token string">""</span>
+plainer <span class="token operator">=</span> <span class="token string">"ComeChina"</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> plainer<span class="token punctuation">:</span>
+    a <span class="token operator">=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">13</span>
+    <span class="token keyword">if</span> a <span class="token operator">></span> <span class="token number">122</span><span class="token punctuation">:</span>
+        cipher <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a <span class="token operator">-</span> <span class="token number">26</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        cipher <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>cipher<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>得到密文：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PbzrPuvan</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">PbzrPuvan<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>按照题目格式提交即可。</p>
 <hr>
 <h2 id="Windows系统密码"><a href="#Windows系统密码" class="headerlink" title="Windows系统密码"></a>Windows系统密码</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zixiaomuwu/article/details/52252060">Windows系统密码加密方式</a>：</p>
 <p>Windows：<br>SAM文件一般存放在C:\Windows\System32\Config下，存在LM-Hash与NT-Hash两种加密方式。<br>Windows <a target="_blank" rel="noopener" href="http://www.2cto.com/os/">系统</a> 下的hash密码格式为：<br>用户名称:RID:LM-HASH值:NT-HASH值，例如：<br>Administrator:500:C8825DB10F2590EAAAD3B435B51404EE :683020925C5D8569C23AA724774CE6CC:::<br>用户名称为：Administrator<br>RID为：500<br>LM-HASH值为：C8825DB10F2590EAAAD3B435B51404EE<br>NT-HASH值为：683020925C5D8569C23AA724774CE6CC<br>关于Windows下LM-Hash值生成原理：<br>假设明文口令是“Welcome”，首先全部转换成大写“WELCOME”，再做将口令字符串大写转后后的字符串变换成二进制串： “WELCOME”      -&gt; 57454C434F4D4500000000000000<br>说明：如果明文口令经过大写变换后的二进制字符串不足14字节，则需要在其后添加0×00补足14字节。然后切割成两组7字节的数据，分别经str_to_key（）函数处理得到两组8字节数据：<br>57454C434F4D45 -str_to_key()-&gt; 56A25288347A348A<br>00000000000000 -str_to_key()-&gt; 0000000000000000<br>这两组8字节数据将做为DESKEY对魔术字符串“KGS!@#$%”进行标准DES加密<br>“KGS!@#$%” -&gt; 4B47532140232425<br>56A25288347A348A -对4B47532140232425进行标准DES加密-&gt; C23413A8A1E7665F<br>0000000000000000 -对4B47532140232425进行标准DES加密-&gt; AAD3B435B51404EE<br>将加密后的这两组数据简单拼接，就得到了最后的LM Hash<br>LM Hash: C23413A8A1E7665FAAD3B435B51404EE<br>由于LM-Hash只能最大限制14位密码，安全性较差，NT-Hash应运而生。<br>假设明文口令是“123456”，首先转换成Unicode字符串，与LM Hash算法不同，这次不需要添加0×00补足14字节<br>“123456″ -&gt; 310032003300340035003600<br>从ASCII串转换成Unicode串时，使用little-endian序。对所获取的Unicode串进行标准MD4单向哈希，无论数据源有多少字节，MD4固定产生128-bit的哈希值，16字节310032003300340035003600 -进行标准MD4单向哈希-&gt; 32ED87BDB5FDC5E9CBA88547376818D4 就得到了最后的NTLM Hash：<br>NTLM Hash: 32ED87BDB5FDC5E9CBA88547376818D4<br>与LM Hash算法相比，明文口令大小写敏感，无法根据NTLM Hash判断原始明文口令是否小于8字节，摆脱了魔术字符串”KGS!@#$%”。MD4是真正的单向哈希函数，穷举作为数据源出现的明文，难度较大。</p>
 <p>查看文件：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Administrator:<span class="number">500</span>:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</span><br><span class="line">ctf:<span class="number">1002</span>:06af9108f2e1fecf144e2e8adef09efd:a7fcb22a88038f35a8f39d503e7f0062:::</span><br><span class="line">Guest:<span class="number">501</span>:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::</span><br><span class="line">SUPPORT_388945a0:<span class="number">1001</span>:aad3b435b51404eeaad3b435b51404ee:bef14eee40dffbc345eeb3f58e290d56:::</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Administrator<span class="token punctuation">:</span><span class="token number">500</span><span class="token punctuation">:</span>aad3b435b51404eeaad3b435b51404ee<span class="token punctuation">:</span><span class="token number">31d6cfe0d16ae931b73c59d7e0c089c0</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+ctf<span class="token punctuation">:</span><span class="token number">1002</span><span class="token punctuation">:</span><span class="token number">06af9108f2e1fecf144e2e8adef09efd</span><span class="token punctuation">:</span>a7fcb22a88038f35a8f39d503e7f0062<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+Guest<span class="token punctuation">:</span><span class="token number">501</span><span class="token punctuation">:</span>aad3b435b51404eeaad3b435b51404ee<span class="token punctuation">:</span><span class="token number">31d6cfe0d16ae931b73c59d7e0c089c0</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span>
+SUPPORT_388945a0<span class="token punctuation">:</span><span class="token number">1001</span><span class="token punctuation">:</span>aad3b435b51404eeaad3b435b51404ee<span class="token punctuation">:</span>bef14eee40dffbc345eeb3f58e290d56<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>由于不知道明文的一些部分，解密起来很困难，所以这里先做个伏笔吧，等学到更多的知识的时候再过来写脚本解密。</p>
 <p>使用<a target="_blank" rel="noopener" href="https://cmd5.com/">在线解密工具</a>，解得明文为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">good-luck</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">good<span class="token operator">-</span>luck<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>按照格式提交即可。</p>
 <hr>
@@ -784,9 +930,9 @@
       
       <!-- <div class="content">
         信息化时代的步伐点开附件，密文如下：
-1606046152623600817831216121621196386
+606046152623600817831216121621196386
 
-一看
+一看到
       </div> -->
     </a>
   </div>

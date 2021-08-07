@@ -584,18 +584,43 @@
 <p>(4)给定一个n应该对应很多密钥/公钥对，否则，攻击者就可以发起蛮力攻击(事实证明，这个要求很容易满足)。</p>
 <p>附上这两天做到的基础题：</p>
 <p>1.</p>
-<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/Post2_image1.png" alt="第一题"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/Post2_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="第一题"></p>
 <p>解题思路：</p>
 <p>我们知道d*e ≡ 1 mod Φ(n)，Φ(n) =  (p - 1)(q - 1)，可以根据这两个公式求得d</p>
 <p>附上代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">p = <span class="number">447685307</span></span><br><span class="line">q = <span class="number">2037</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)  <span class="comment">#求e在phi的乘法逆元，返回e的逆矩阵</span></span><br><span class="line"><span class="built_in">print</span>(d)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#flag&#123;53616899001&#125;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> inverse
+<span class="token keyword">import</span> gmpy2
+
+p <span class="token operator">=</span> <span class="token number">447685307</span>
+q <span class="token operator">=</span> <span class="token number">2037</span>
+e <span class="token operator">=</span> <span class="token number">17</span>
+
+phi <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phi<span class="token punctuation">)</span>  <span class="token comment">#求e在phi的乘法逆元，返回e的逆矩阵</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+
+
+<span class="token comment">#flag&#123;53616899001&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>2.</p>
-<p><img src="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/Post2_image2.png" alt="第二题"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/Post2_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="第二题"></p>
 <p>解题思路：</p>
 <p>由 d * e ≡ 1 mod Φ(n),  Φ(n) =  (p - 1)(q - 1), n = p * q,  求得d之后，将其带入到 m ≡ c^d mod n，可求得m</p>
 <p>附上代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> inverse</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">p = <span class="number">447685307</span></span><br><span class="line">q = <span class="number">2037</span></span><br><span class="line">e = <span class="number">17</span></span><br><span class="line">c = <span class="number">704796792</span></span><br><span class="line">n = p * q</span><br><span class="line"></span><br><span class="line">phi = (p - <span class="number">1</span>) * (q - <span class="number">1</span>)</span><br><span class="line">d = inverse(e, phi)</span><br><span class="line"></span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n)</span><br><span class="line"><span class="built_in">print</span>(m)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> inverse
+<span class="token keyword">import</span> gmpy2
+
+p <span class="token operator">=</span> <span class="token number">447685307</span>
+q <span class="token operator">=</span> <span class="token number">2037</span>
+e <span class="token operator">=</span> <span class="token number">17</span>
+c <span class="token operator">=</span> <span class="token number">704796792</span>
+n <span class="token operator">=</span> p <span class="token operator">*</span> q
+
+phi <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phi<span class="token punctuation">)</span>
+
+m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
 
