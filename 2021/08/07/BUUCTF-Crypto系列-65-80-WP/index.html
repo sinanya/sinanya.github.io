@@ -794,6 +794,162 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
 
 <p>运行脚本可得flag。</p>
 <hr>
+<h2 id="AFCTF2018-你能看出这是什么加密么"><a href="#AFCTF2018-你能看出这是什么加密么" class="headerlink" title="[AFCTF2018]你能看出这是什么加密么"></a>[AFCTF2018]你能看出这是什么加密么</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">p<span class="token operator">=</span><span class="token number">0x928fb6aa9d813b6c3270131818a7c54edb18e3806942b88670106c1821e0326364194a8c49392849432b37632f0abe3f3c52e909b939c91c50e41a7b8cd00c67d6743b4f</span>
+
+q<span class="token operator">=</span><span class="token number">0xec301417ccdffa679a8dcc4027dd0d75baf9d441625ed8930472165717f4732884c33f25d4ee6a6c9ae6c44aedad039b0b72cf42cab7f80d32b74061</span>
+
+e<span class="token operator">=</span><span class="token number">0x10001</span>
+
+c<span class="token operator">=</span><span class="token number">0x70c9133e1647e95c3cb99bd998a9028b5bf492929725a9e8e6d2e277fa0f37205580b196e5f121a2e83bc80a8204c99f5036a07c8cf6f96c420369b4161d2654a7eccbdaf583204b645e137b3bd15c5ce865298416fd5831cba0d947113ed5be5426b708b89451934d11f9aed9085b48b729449e461ff0863552149b965e22b6</span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>RSA基础题，脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
+<span class="token keyword">import</span> gmpy2
+<span class="token keyword">import</span> sympy
+
+p<span class="token operator">=</span><span class="token number">0x928fb6aa9d813b6c3270131818a7c54edb18e3806942b88670106c1821e0326364194a8c49392849432b37632f0abe3f3c52e909b939c91c50e41a7b8cd00c67d6743b4f</span>
+q<span class="token operator">=</span><span class="token number">0xec301417ccdffa679a8dcc4027dd0d75baf9d441625ed8930472165717f4732884c33f25d4ee6a6c9ae6c44aedad039b0b72cf42cab7f80d32b74061</span>
+e<span class="token operator">=</span><span class="token number">0x10001</span>
+c<span class="token operator">=</span><span class="token number">0x70c9133e1647e95c3cb99bd998a9028b5bf492929725a9e8e6d2e277fa0f37205580b196e5f121a2e83bc80a8204c99f5036a07c8cf6f96c420369b4161d2654a7eccbdaf583204b645e137b3bd15c5ce865298416fd5831cba0d947113ed5be5426b708b89451934d11f9aed9085b48b729449e461ff0863552149b965e22b6</span>
+n <span class="token operator">=</span> p <span class="token operator">*</span> q
+phin <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phin<span class="token punctuation">)</span>
+m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行脚本可得flag。</p>
+<hr>
+<h2 id="AFCTF2018-可怜的RSA"><a href="#AFCTF2018-可怜的RSA" class="headerlink" title="[AFCTF2018]可怜的RSA"></a>[AFCTF2018]可怜的RSA</h2><p>题目中包含了一个pub.key文件和flag.enc文件，通过在线工具可以获取公钥中的内容。</p>
+<p><img "" class="lazyload placeholder" data-original="/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/Post9_image5.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p>接下来就是读取enc文件中的内容，进行解密。脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>PublicKey <span class="token keyword">import</span> RSA
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> PKCS1_OAEP
+<span class="token keyword">from</span> base64 <span class="token keyword">import</span> b64decode
+
+n <span class="token operator">=</span> <span class="token number">79832181757332818552764610761349592984614744432279135328398999801627880283610900361281249973175805069916210179560506497075132524902086881120372213626641879468491936860976686933630869673826972619938321951599146744807653301076026577949579618331502776303983485566046485431039541708467141408260220098592761245010678592347501894176269580510459729633673468068467144199744563731826362102608811033400887813754780282628099443490170016087838606998017490456601315802448567772411623826281747245660954245413781519794295336197555688543537992197142258053220453757666537840276416475602759374950715283890232230741542737319569819793988431443</span>
+e <span class="token operator">=</span> <span class="token number">65537</span>
+d<span class="token operator">=</span><span class="token number">406853230956379689450620815713768871010712825839536410687962650677800895818003893712259622281477453292088146173840036827322518131453630576229976208523593618949818777897059256426591560532784635697190752924923710375949616954069804342573867253630978123632384795587951365482103468722384133084798614863870775897915929475258974188300927376911833763105616386167881813301748585233563049693794370642976326692672223638908164822104832415788577945314264232531947860576966629150456995512932232264881080618006698700677529111454508900582785420549466798020451488168615035256292977390692401388790460066327347700109341639992159475755036449</span>
+p <span class="token operator">=</span> <span class="token number">3133337</span>
+q <span class="token operator">=</span> <span class="token number">25478326064937419292200172136399497719081842914528228316455906211693118321971399936004729134841162974144246271486439695786036588117424611881955950996219646807378822278285638261582099108339438949573034101215141156156408742843820048066830863814362379885720395082318462850002901605689761876319151147352730090957556940842144299887394678743607766937828094478336401159449035878306853716216548374273462386508307367713112073004011383418967894930554067582453248981022011922883374442736848045920676341361871231787163441467533076890081721882179369168787287724769642665399992556052144845878600126283968890273067575342061776244939</span>
+
+
+key_info <span class="token operator">=</span> RSA<span class="token punctuation">.</span>construct<span class="token punctuation">(</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> e<span class="token punctuation">,</span> d<span class="token punctuation">,</span> p<span class="token punctuation">,</span> q<span class="token punctuation">)</span><span class="token punctuation">)</span>
+key <span class="token operator">=</span> RSA<span class="token punctuation">.</span>importKey<span class="token punctuation">(</span>key_info<span class="token punctuation">.</span>exportKey<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+key <span class="token operator">=</span> PKCS1_OAEP<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'flag1.enc'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> b64decode<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+flag <span class="token operator">=</span> key<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行脚本可得flag。</p>
+<hr>
+<hr>
+<h2 id="ACTF新生赛2020-crypto-classic0"><a href="#ACTF新生赛2020-crypto-classic0" class="headerlink" title="[ACTF新生赛2020]crypto-classic0"></a>[ACTF新生赛2020]crypto-classic0</h2><p>题目中有一个加密的howtoencrypto.zip文件、hint.txt、cipher文件，内容如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">hint.txt:
+哼，压缩包的密码？这是小Z童鞋的生日吧&#x3D;&#x3D;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">cipher:
+Ygvdmq[lYate[elghqvakl&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>根据提示盲猜密码是8位，通过ARCHPR软件进行暴力破解zip文件</p>
+<p><img "" class="lazyload placeholder" data-original="/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/Post9_image6.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p>接着压缩包中的内容是一个.c文件，内容如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#include&lt;stdio.h></span>
+
+char flag<span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">**</span><span class="token operator">*</span>
+
+<span class="token builtin">int</span> main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	<span class="token builtin">int</span> i<span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">25</span><span class="token punctuation">;</span>i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-=</span> <span class="token number">3</span><span class="token punctuation">;</span>
+		flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">^</span><span class="token operator">=</span> <span class="token number">0x7</span><span class="token punctuation">;</span>
+		printf<span class="token punctuation">(</span><span class="token string">"%c"</span><span class="token punctuation">,</span>flag<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解密就是加密的逆运算过程，脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cipher <span class="token operator">=</span> <span class="token string">"Ygvdmq[lYate[elghqvakl&#125;"</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> cipher<span class="token punctuation">:</span>
+    i <span class="token operator">=</span> <span class="token builtin">ord</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    i <span class="token operator">^</span><span class="token operator">=</span> <span class="token number">0x7</span>
+    i <span class="token operator">+=</span> <span class="token number">3</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> end<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行脚本可得flag。</p>
+<hr>
+<h2 id="RoarCTF2019-babyRSA"><a href="#RoarCTF2019-babyRSA" class="headerlink" title="[RoarCTF2019]babyRSA"></a>[RoarCTF2019]babyRSA</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> sympy
+<span class="token keyword">import</span> random
+
+<span class="token keyword">def</span> <span class="token function">myGetPrime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    A<span class="token operator">=</span> getPrime<span class="token punctuation">(</span><span class="token number">513</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>A<span class="token punctuation">)</span>
+    B<span class="token operator">=</span>A<span class="token operator">-</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1e3</span><span class="token punctuation">,</span><span class="token number">1e5</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>B<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> sympy<span class="token punctuation">.</span>nextPrime<span class="token punctuation">(</span><span class="token punctuation">(</span>B!<span class="token punctuation">)</span><span class="token operator">%</span>A<span class="token punctuation">)</span>
+p<span class="token operator">=</span>myGetPrime<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#A1=21856963452461630437348278434191434000066076750419027493852463513469865262064340836613831066602300959772632397773487317560339056658299954464169264467234407</span>
+<span class="token comment">#B1=21856963452461630437348278434191434000066076750419027493852463513469865262064340836613831066602300959772632397773487317560339056658299954464169264467140596</span>
+
+q<span class="token operator">=</span>myGetPrime<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#A2=16466113115839228119767887899308820025749260933863446888224167169857612178664139545726340867406790754560227516013796269941438076818194617030304851858418927</span>
+<span class="token comment">#B2=16466113115839228119767887899308820025749260933863446888224167169857612178664139545726340867406790754560227516013796269941438076818194617030304851858351026</span>
+
+r<span class="token operator">=</span>myGetPrime<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+n<span class="token operator">=</span>p<span class="token operator">*</span>q<span class="token operator">*</span>r
+<span class="token comment">#n=85492663786275292159831603391083876175149354309327673008716627650718160585639723100793347534649628330416631255660901307533909900431413447524262332232659153047067908693481947121069070451562822417357656432171870951184673132554213690123308042697361969986360375060954702920656364144154145812838558365334172935931441424096270206140691814662318562696925767991937369782627908408239087358033165410020690152067715711112732252038588432896758405898709010342467882264362733</span>
+c<span class="token operator">=</span><span class="token builtin">pow</span><span class="token punctuation">(</span>flag<span class="token punctuation">,</span>e<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+<span class="token comment">#e=0x1001</span>
+<span class="token comment">#c=75700883021669577739329316795450706204502635802310731477156998834710820770245219468703245302009998932067080383977560299708060476222089630209972629755965140317526034680452483360917378812244365884527186056341888615564335560765053550155758362271622330017433403027261127561225585912484777829588501213961110690451987625502701331485141639684356427316905122995759825241133872734362716041819819948645662803292418802204430874521342108413623635150475963121220095236776428</span>
+<span class="token comment">#so,what is the flag?</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>碰到RSA的新题型，加密过程还是比较清晰的，但是不知道如何求解B! % A。还是去看看大佬的博客，大佬的博客中说道：威尔逊定理。</p>
+<p>当且仅当p为素数时：( p -1 )! ≡ -1 ( mod p )，我们的加密过程x = B! % A。从代码块中我们知道，A是素数，那么就有：</p>
+<p>(A - 1)! ≡ -1 (mod A)，又因为：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">B<span class="token operator">=</span>A<span class="token operator">-</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1e3</span><span class="token punctuation">,</span><span class="token number">1e5</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(A - 1) * (A - 2) * (A - 3) * …… * (B + 1) * B * (B - 1) * …… * 2 * 1 ≡ -1 (mod A)，又有：</p>
+<p>(A - 1) * (A - 2) * (A - 3) * …… * (B + 1) * B * (B - 1) * …… * 2 * 1 ≡ A -1 (mod A)，所以：</p>
+<p>(A - 2) * (A - 3) * …… * (B + 1) * B * (B - 1) * …… * 2 * 1 ≡ 1 (mod A)。</p>
+<p>所以要求B! % A，只要求(A - 2) * (A - 3) * …… * (B + 1) 对A的逆就好了。脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
+<span class="token keyword">import</span> sympy
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> long_to_bytes
+
+A1<span class="token operator">=</span><span class="token number">21856963452461630437348278434191434000066076750419027493852463513469865262064340836613831066602300959772632397773487317560339056658299954464169264467234407</span>
+B1<span class="token operator">=</span><span class="token number">21856963452461630437348278434191434000066076750419027493852463513469865262064340836613831066602300959772632397773487317560339056658299954464169264467140596</span>
+A2<span class="token operator">=</span><span class="token number">16466113115839228119767887899308820025749260933863446888224167169857612178664139545726340867406790754560227516013796269941438076818194617030304851858418927</span>
+B2<span class="token operator">=</span><span class="token number">16466113115839228119767887899308820025749260933863446888224167169857612178664139545726340867406790754560227516013796269941438076818194617030304851858351026</span>
+n<span class="token operator">=</span><span class="token number">85492663786275292159831603391083876175149354309327673008716627650718160585639723100793347534649628330416631255660901307533909900431413447524262332232659153047067908693481947121069070451562822417357656432171870951184673132554213690123308042697361969986360375060954702920656364144154145812838558365334172935931441424096270206140691814662318562696925767991937369782627908408239087358033165410020690152067715711112732252038588432896758405898709010342467882264362733</span>
+e<span class="token operator">=</span><span class="token number">0x1001</span>
+c<span class="token operator">=</span><span class="token number">75700883021669577739329316795450706204502635802310731477156998834710820770245219468703245302009998932067080383977560299708060476222089630209972629755965140317526034680452483360917378812244365884527186056341888615564335560765053550155758362271622330017433403027261127561225585912484777829588501213961110690451987625502701331485141639684356427316905122995759825241133872734362716041819819948645662803292418802204430874521342108413623635150475963121220095236776428</span>
+re <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">def</span> <span class="token function">decrypto</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span> B<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tmp <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token comment">#注意不乘（A - 1）</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>B <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> A <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tmp <span class="token operator">*=</span> i
+        tmp <span class="token operator">%=</span> A
+    B_A <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>tmp<span class="token punctuation">,</span> A<span class="token punctuation">)</span>
+    re <span class="token operator">=</span> sympy<span class="token punctuation">.</span>nextprime<span class="token punctuation">(</span>B_A<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> re
+
+p <span class="token operator">=</span> decrypto<span class="token punctuation">(</span>A1<span class="token punctuation">,</span> B1<span class="token punctuation">)</span>
+q <span class="token operator">=</span> decrypto<span class="token punctuation">(</span>A2<span class="token punctuation">,</span> B2<span class="token punctuation">)</span>
+r <span class="token operator">=</span> n <span class="token operator">//</span> <span class="token punctuation">(</span>p <span class="token operator">*</span> q<span class="token punctuation">)</span>
+phin <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>r <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+d <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>invert<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phin<span class="token punctuation">)</span>
+m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行脚本可得flag。</p>
+<hr>
+<p>明天继续！</p>
 
       </div>
       <div class="post-tags-categories">
