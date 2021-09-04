@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>archives: 2021 | 司南的博客</title>
+  <title>DASCTF八月挑战赛-Crypto | 司南的博客</title>
 
   
     
@@ -476,151 +476,507 @@
 
     <!-- 内容区域 -->
     <main class="main" id="pjax-container" style="margin-top: 0;">
-      <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="lazyload archive-header" data-original="https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c" >
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
-  
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
       
-  </div>
-  <div class="mask-box"></div>
-</div>
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism-okaidia.min.css" rel="stylesheet">
+    
 
-<!-- hash算法 -->
-
-
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
-        
-        
-          
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/archives/2021">2021</a>
-            </div>
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/" class="post-img lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">07-12</span>
-              </div>
-              <a class="post-title" href="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/">RSA基础</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-img lazyload" data-original="/medias/2.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">05-30</span>
-              </div>
-              <a class="post-title" href="/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">SQL注入——报错注入 sqli-labs Less-5 and Less-6</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/2021/05/11/hello-world/" class="post-img lazyload" data-original="/medias/7.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">05-11</span>
-              </div>
-              <a class="post-title" href="/2021/05/11/hello-world/">Hello World</a>
-            </div>
-          </li>
-        
-      </ul>
-    </div>
-  </section>
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
   
-  <!-- <nav class="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/2021/">Prev</a><a class="page-number" href="/archives/2021/">1</a><span class="page-number current">2</span>
-  </nav> -->
-  <div class="page-nav">
-    
-      <a href="/archives/2021/"
-         class="page-nav-pre">
-         <i class="fa fa-angle-left"></i><span class="ml-5">Prev</span>
-      </a>
-    
-    <div class="page-info">
-        <div class="page-info-text">2 / 2</div>
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+<!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/12.jpg" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        DASCTF八月挑战赛-Crypto
+      </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fa fa-calendar"></i> Published in：2021-09-04 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      <div class="post-content">
+        <h2 id="easymath"><a href="#easymath" class="headerlink" title="easymath"></a>easymath</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'flag.txt'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">50</span><span class="token punctuation">)</span>
+<span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">.</span>from_bytes<span class="token punctuation">(</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'flag.txt'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> byteorder<span class="token operator">=</span><span class="token string">'big'</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">.</span>endswith<span class="token punctuation">(</span> <span class="token string">'1862790884563160582365888530869690397667546628710795031544304378154769559410473276482265448754388655981091313419549689169381115573539422545933044902527020209259938095466283008'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>很容易理解，这是flag的低位泄露。分析如下：</p>
+<p>flag的长度保证是小于50位的，然后值对其二进制位右移10000位，我们要根据后面的175位还原出原来的flag。</p>
+<p>(flag * 2 ** 10000) % 10 ** 175  = r % 10 ** 175</p>
+<p>很显然我们要求出2 ** 10000关于10 ** 175的乘法逆元，乘上逆元后左边就只剩下flag。</p>
+<p>而2和10并不互素，所以这里我们要做一下转化10 = 2*5。这样子式子就变为：</p>
+<p>((flag * 2 ** 10000) // 2 ** 175) % 5 ** 175 = (r // 2 ** 175) % 5 ** 175</p>
+<p>记d = inverse(2 ** 9875,  5 ** 175)，然后两边同乘d，式子变为：</p>
+<p>flag = ((r // 2 ** 175) * d) % 5 ** 175。</p>
+<p>脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+
+r <span class="token operator">=</span> <span class="token number">1862790884563160582365888530869690397667546628710795031544304378154769559410473276482265448754388655981091313419549689169381115573539422545933044902527020209259938095466283008</span>
+
+n <span class="token operator">=</span> <span class="token number">5</span> <span class="token operator">**</span> <span class="token number">175</span>
+d <span class="token operator">=</span> inverse<span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">**</span> <span class="token number">9825</span><span class="token punctuation">,</span> <span class="token number">5</span> <span class="token operator">**</span> <span class="token number">175</span><span class="token punctuation">)</span>
+
+<span class="token keyword">assert</span> <span class="token number">400</span> <span class="token operator">&lt;</span> <span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">bin</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+flag <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token punctuation">(</span>r <span class="token operator">//</span> <span class="token punctuation">(</span><span class="token number">2</span> <span class="token operator">**</span> <span class="token number">175</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> d<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行脚本可得flag。</p>
+<hr>
+<h2 id="let’s-play-with-rsa"><a href="#let’s-play-with-rsa" class="headerlink" title="let’s play with rsa~"></a>let’s play with rsa~</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sympy <span class="token keyword">import</span> isprime<span class="token punctuation">,</span>nextprime
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> getPrime <span class="token keyword">as</span> getprime <span class="token punctuation">,</span>long_to_bytes<span class="token punctuation">,</span>bytes_to_long<span class="token punctuation">,</span>inverse
+flag<span class="token operator">=</span><span class="token string">'flag&#123;***************&#125;'</span>
+
+<span class="token keyword">def</span> <span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    p<span class="token operator">=</span>getprime<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    q<span class="token operator">=</span>getprime<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+
+    n<span class="token operator">=</span>p<span class="token operator">*</span>q
+    e<span class="token operator">=</span><span class="token number">65537</span>
+
+    <span class="token keyword">print</span> <span class="token string">"Hello,let's play rsa~\n"</span>
+    <span class="token keyword">print</span> <span class="token string">'Now,I make some numbers,wait a second\n'</span>
+    n1<span class="token operator">=</span>getprime<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+    n2<span class="token operator">=</span>getprime<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span>
+    number<span class="token operator">=</span>n1<span class="token operator">*</span>n2
+    <span class="token keyword">print</span> <span class="token string">"Ok,i will send two numbers to you,one of them was encoded.\n"</span>
+    <span class="token keyword">print</span> <span class="token string">"Encode n1:%d,\n"</span><span class="token operator">%</span><span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span>n1<span class="token punctuation">,</span>e<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span> <span class="token string">"And n2:%d.\n"</span><span class="token operator">%</span>n2
+
+    <span class="token keyword">print</span> <span class="token string">"Information that can now be made public:the public key (n,e):(%d,%d)\n"</span><span class="token operator">%</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span>e<span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            c<span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">raw_input</span><span class="token punctuation">(</span><span class="token string">"ok,now,tell me the value of the number (encode it for safe):"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span> <span class="token string">"Sorry,the input is illeagal, and the integer is accept~"</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+    d<span class="token operator">=</span>inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span><span class="token punctuation">(</span>p<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>q<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    m<span class="token operator">=</span><span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span>d<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> m<span class="token operator">==</span>number<span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">"It's easy and interesting,didn't it?\n"</span>
+        <span class="token keyword">print</span> <span class="token string">"This is the gift for you :"</span><span class="token operator">+</span>flag
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span> <span class="token string">"Emmmmm,there is something wrong, bye~\n"</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    play<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>代码中有一句非常的关键：m == number，理解起来就是通过生成的两个素数n1和n2，两个素数相乘后进行加密，再对其解密如果和明文相等就输出明文。启动靶机给出了加密后的n1、n、e、n2，只要提交密文就可以得到flag。密文的生成公式：</p>
+<p>c = ((n1 * n2) ** e) % n。脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">e <span class="token operator">=</span> <span class="token number">65537</span>
+n1 <span class="token operator">=</span> <span class="token number">4281684153234322736793570732826110435228496604071298381614014612103411963285292091661181096198585763417066159894649796136882349255600116647099492992830479131699180512447087346100010590411637330760414082383912439894478430014159113235841384372868459823261037059965514404942496899085948686463511570222739931845449481769105208494165402376766890960978505572044201124982204811968264047936404645837139998859760790832683265671309641492991977656306651249966825420293791816988256646046791912398609946349861641433720777625735488077978077399320628697597543247654525100220764491617874173532151468549146835310949298910305347314689</span>
+n <span class="token operator">=</span> <span class="token number">16968199504575015403826161090956525370120560769510060476810251051514914607044860043511500850884203470830637113815575064565863402627414531228106899362267623146996733312841536211118974726477473384299526664193050667739309221121461845734719844259125283949384614616768566922412475770786536460770421050794600821354144787292308124933868576111007556537087629674860649813959296258234317334503123760439376687814886170145511268144076905078115523273133821265699505001588345660842257708178097624748253723603020941909053358679870606491458723468721308848254786062259487035482639583026569304157239958559327652122819260370171999870247</span>
+n2 <span class="token operator">=</span> <span class="token number">837193089569070774122955229161414169755372930849584907366353</span>
+
+c <span class="token operator">=</span> <span class="token punctuation">(</span>n1 <span class="token operator">*</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>n2<span class="token punctuation">,</span> e<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> n
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="ezRSA"><a href="#ezRSA" class="headerlink" title="ezRSA"></a>ezRSA</h2><hr>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/song_lee/article/details/107498149">https://blog.csdn.net/song_lee/article/details/107498149</a></p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>sinanya</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/2021/09/04/‘DASCTF八月挑战赛-Crypto/" target="_blank" title="DASCTF八月挑战赛-Crypto">https://sinanya.github.io/2021/09/04/‘DASCTF八月挑战赛-Crypto/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/2021/08/26/CTFSHOW-%E5%90%83%E7%93%9C%E6%9D%AF-Crypto%E7%B3%BB%E5%88%97/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fa fa-angle-right"></i>
+        <div class="title-text">CTFSHOW-吃瓜杯-Crypto系列</div>
+      </div>
+      <!-- <div class="content">
+        闪电五连鞭·一鞭题目如下：
+1bian.sage:
+from Crypto.Util.number import *
+
+
+      </div> -->
+    </a>
   </div>
 
 </div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fa fa-list-ul" aria-hidden="true"></i><span>catalog</span>
+        
+          <div class="toc-open-close">catalog</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+  </script>
+
+
+  
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+    <transition-group tag="ul" :name="names">
+        <li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+            <img :src="image" class="bg-swiper-img">
+        </li>
+    </transition-group>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#appBgSwiper',
+        data: {
+            names: '' || 'fade' || 'fade', // translate-fade fade
+            mark: 0,
+            img: [],
+            bgColor: '',
+            time: null
+        },
+        methods: {   //添加方法
+            change(i, m) {
+                if (i > m) {
+                    // this.names = 'fade';
+                } else if (i < m) {
+                    // this.names = 'fade';
+                } else {
+                    return;
+                }
+                this.mark = i;
+            },
+            prev() {
+                // this.names = 'fade';
+                this.mark--;
+                if (this.mark === -1) {
+                    this.mark = 3;
+                    return
+                }
+            },
+            next() {
+                // this.names = 'fade';
+                this.mark++;
+                if (this.mark === this.img.length) {
+                    this.mark = 0;
+                    return
+                }
+            },
+            autoPlay() {
+                // this.names = 'fade';
+                this.mark++;
+                if (this.mark === this.img.length) {
+                    this.mark = 0;
+                    return
+                }
+            },
+            play() {
+                let bgImgDelay = '' || '180000'
+                let delay = parseInt(bgImgDelay) || 180000;
+                this.time = setInterval(this.autoPlay, delay);
+            },
+            enter() {
+                clearInterval(this.time);
+            },
+            leave() {
+                this.play();
+            }
+        },
+        created() {
+            this.play()
+        },
+        beforeDestroy() {
+            clearInterval(this.time);
+        },
+        mounted() {
+            let prop = ''|| '';
+            let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://') 
+            if (isImg) {
+                let img = prop.split(',');
+                let configRoot = '/'
+                let arrImg = [];
+                img.forEach(el => {
+                    var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+			        var objExp = new RegExp(Expression);
+
+                    if(objExp.test(el)) {
+                        // http or https
+                        arrImg.push(el);
+                    } else {
+                        // 非http or https开头
+                        // 本地文件
+                        let firstStr = el.charAt(0);
+                        if (firstStr == '/') {
+                            el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+                        }
+                        el = configRoot + el;
+                        arrImg.push(el);
+                    }
+                })
+                this.img = arrImg;
+            } else {
+                this.bgColor = prop;
+            }
+        }
+    })
+</script>
+
+<style>
+    .bg-swiper-box {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .bg-swiper-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
     </main>
 
     <!-- 页脚 -->
