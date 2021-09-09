@@ -880,6 +880,19 @@ m <span class="token operator">=</span> <span class="token number">8080423800797
 
 <p>haha，flag就在里面了。</p>
 <hr>
+<h2 id="GUET-CTF2019-NO-SOS"><a href="#GUET-CTF2019-NO-SOS" class="headerlink" title="[GUET-CTF2019]NO SOS"></a>[GUET-CTF2019]NO SOS</h2><p>题目如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">..-.-.-.–…….–..-…-..-…–.-.-….-..-..–.-.-..-.-..—-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>其中的’.’和’–’被修改过，恢复至原样：</p>
+<pre class="line-numbers language-none"><code class="language-none">..-.-.-.--.......--..-...-..-...--.-.-....-..-..--.-.-..-.-..----<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>把’.’换成0，把’-‘换成’1’。二进制转16进制：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">aababababbaaaaaaabbaabaaabaabaaabbababaaaabaabaabbababaababaabbbb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>就是熟悉的培根密码，进行解密：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">FLAGISGUETKKP<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
 <h2 id="NPUCTF2020-共-模-攻-击-（很好的题，打个tag）"><a href="#NPUCTF2020-共-模-攻-击-（很好的题，打个tag）" class="headerlink" title="[NPUCTF2020]共 模 攻 击      （很好的题，打个tag）"></a>[NPUCTF2020]共 模 攻 击      （<strong>很好的题，打个tag</strong>）</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">hint<span class="token punctuation">.</span>py<span class="token punctuation">:</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
