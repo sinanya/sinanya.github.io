@@ -1170,6 +1170,36 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
+<h2 id="UTCTF2020-hill"><a href="#UTCTF2020-hill" class="headerlink" title="[UTCTF2020]hill"></a>[UTCTF2020]hill</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">wznqca<span class="token punctuation">&#123;</span>d4uqop0fk_q1nwofDbzg_eu<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>希尔密码：</p>
+<p>26个字母一次编号：0、1、2、……25。把要加密的密文中的字符依次映射，放入到一个n*n的矩阵，加密的矩阵是自定义的，所以加密的过程是：</p>
+<p>M * A = C</p>
+<p>很显然要想得到M，那就得乘上A的逆矩阵。而本题可以先猜测前面的几个字符“utflag”，这样子就可以找到逆矩阵，假设n = 2，脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> string
+
+s<span class="token operator">=</span><span class="token string">'wznqcaduqopfkqnwofDbzgeu'</span>
+flag_pre <span class="token operator">=</span> <span class="token string">"utctf"</span>
+<span class="token keyword">def</span> <span class="token function">getit</span><span class="token punctuation">(</span>a1<span class="token punctuation">,</span> b1<span class="token punctuation">,</span> c1<span class="token punctuation">,</span> a2<span class="token punctuation">,</span> b2<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> a3<span class="token punctuation">,</span> b3<span class="token punctuation">,</span> c3<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>a1 <span class="token operator">*</span> i <span class="token operator">+</span> b1 <span class="token operator">*</span> j<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span> <span class="token operator">==</span> c1 <span class="token keyword">and</span> <span class="token punctuation">(</span>a2 <span class="token operator">*</span> i <span class="token operator">+</span> b2 <span class="token operator">*</span> j<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span> <span class="token operator">==</span> c2 <span class="token keyword">and</span> <span class="token punctuation">(</span>a3 <span class="token operator">*</span> i <span class="token operator">+</span> b3 <span class="token operator">*</span> j<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span> <span class="token operator">==</span>c3<span class="token punctuation">:</span>
+                <span class="token keyword">return</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">)</span>
+
+x1<span class="token operator">=</span>getit<span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+x2<span class="token operator">=</span>getit<span class="token punctuation">(</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">19</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span>
+
+flag <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    flag <span class="token operator">+=</span> string<span class="token punctuation">.</span>ascii_letters<span class="token punctuation">[</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span>ascii_letters<span class="token punctuation">.</span>index<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> x1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> string<span class="token punctuation">.</span>ascii_letters<span class="token punctuation">.</span>index<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> x1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span><span class="token punctuation">]</span>
+    flag <span class="token operator">+=</span> string<span class="token punctuation">.</span>ascii_letters<span class="token punctuation">[</span><span class="token punctuation">(</span>string<span class="token punctuation">.</span>ascii_letters<span class="token punctuation">.</span>index<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> x2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> string<span class="token punctuation">.</span>ascii_letters<span class="token punctuation">.</span>index<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">*</span> x2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
+<span class="token comment">#utflag&#123;d4nger0us_c1pherText_qq&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
 
       </div>
       <div class="post-tags-categories">
@@ -1208,6 +1238,24 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
 <div class="post-nav">
 
 
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/" class="post-nav-link">
+      <div class="title">
+        <i class="fa fa-angle-left"></i> Prev:
+        <div class="title-text">传统加密技术</div>
+      </div>
+      
+      <!-- <div class="content">
+        传统密码学密码分析学和穷举攻击攻击传统的密码体制有两种通用的方法：
+密码分析学：密码分析学攻击依赖于算法的性质、明文的一
+      </div> -->
+    </a>
+  </div>
 
 
 
