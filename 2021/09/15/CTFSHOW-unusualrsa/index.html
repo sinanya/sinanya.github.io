@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>传统加密技术 | 司南的博客</title>
+  <title>CTFSHOW-unusualrsa | 司南的博客</title>
 
   
     
@@ -503,7 +503,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/11.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/1.jpg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -511,14 +511,14 @@
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        传统加密技术
+        CTFSHOW-unusualrsa
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fa fa-calendar"></i> Published in：2021-09-14 |
+          <i class="fa fa-calendar"></i> Published in：2021-09-15 |
         </span>
       
 
@@ -530,8 +530,8 @@
               密码学
             </a>
           
-            <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E4%BC%A0%E7%BB%9F%E5%AF%86%E7%A0%81%E5%AD%A6/" class="post-detail-header_category">
-              传统密码学
+            <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/CTFSHOW/" class="post-detail-header_category">
+              CTFSHOW
             </a>
           
         </span>
@@ -553,180 +553,151 @@
     <article class="post post-detail">
       
       <div class="post-content">
-        <h1 id="传统密码学"><a href="#传统密码学" class="headerlink" title="传统密码学"></a>传统密码学</h1><h2 id="密码分析学和穷举攻击"><a href="#密码分析学和穷举攻击" class="headerlink" title="密码分析学和穷举攻击"></a>密码分析学和穷举攻击</h2><p>攻击传统的密码体制有两种通用的方法：</p>
-<p><strong>密码分析学</strong>：密码分析学攻击依赖于算法的性质、明文的一般特征和某些明密文对。这种形式的攻击企图利用算法的特征来推导出特定的明文或使用的密钥。</p>
-<p><strong>穷举攻击</strong>：攻击者对一条密文尝试所有可能的密钥直到把它转化为可读的有意义的明文。平均而言，获得成功至少要尝试所有可能密钥的一半。</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>​    表中的唯密文攻击难度最大。一种情况是攻击者知道加密算法，那么一种可能的攻击就是攻击者试遍所有可能密钥的穷举攻击。如果密钥空间非常大，这种方法是行不通的。因此攻击者必须依赖于对密文分身的分析，这一版是运用各种统计方法。使用这种方法，攻击者对隐含的明文类型必须有所了解，比如说明文是英文文本、exe文件、会计文本等。</p>
-<p>​    唯密文攻击时对容易防范的，因为攻击者拥有的信息量最少。但在某些情况下，分析者可以捕获到一段或是更多的明文信息及相应密文，也可能知道某段明文信息的格式等。</p>
-<p>​    与已知明文攻击相关的时可能词攻击。如果攻击者处理的是一般散文信息，他可能对信息的内容一无所知，但如果它处理的是一些特定信息，就可能知道其中的部分内容。例如：知道某件开头的某些关键词，公司的版权信息放在哪个位置。</p>
-<p><strong>注意</strong>：只有相对较弱的算法才抵挡不住唯密文攻击。一般地，加密算法起码也要能经得住已知明文攻击才行。</p>
-<p>如果一个密码体制满足条件：<strong>无论有多少可使用的密文，都不足以唯一地确定密文所对应的明文，则称该加密体制是无条件安全的。</strong></p>
-<p>因此加密算法的使用者应挑选尽量满足以下<strong>标准的算法</strong>：</p>
-<ul>
-<li>破译密码的代价超出密文信息的价值</li>
-<li>破译密码的时间超出密文信息的有效生命期</li>
-</ul>
-<p>​    如果加密体制满足了上述两条标准中的任意一条，则它是<strong>计算上安全</strong>的。</p>
-<h2 id="代替技术"><a href="#代替技术" class="headerlink" title="代替技术"></a>代替技术</h2><h3 id="单表代替密码"><a href="#单表代替密码" class="headerlink" title="单表代替密码"></a>单表代替密码</h3><p>常见的有<strong>Caesar密码</strong>：</p>
-<p>这里不细细讨论其加密和解密算法。</p>
-<p>Caesar密码的三个重要特征使我们可以采用穷举攻击分析方法：</p>
-<ul>
-<li>已知加密和解密算法</li>
-<li>需要测试的密钥只有25个</li>
-<li>明文所用的语言是已知的，且其意义易于识别</li>
-</ul>
-<p>​    如果密文行是26个字母的任意置换，那么就有26！或大于4 x 10^26种可能的密钥。这比DES的密钥空间大10个数量级，好像可以抵挡穷举攻击。不过，攻击办法任然存在，如果攻击者知道明文的属性，他就可以利用语言的一些规律进行攻击。字母的频率是一个突破口，攻击者可以对密文中的字母进行统计，再与标准的字母频率表对比，如果对应的字母所组成字符串是存在的单词，那么这就说明他攻击成功了。</p>
-<p>​    单表代替密码较容易被攻破，因为它带有原始字母使用频率的一些统计学特征。有两种主要的办法可以减少代替密码里明文结构在密文中的残留度：一种是对明文中的多个字母一起加密，另一种是采用多表替代密码。</p>
-<p><strong>Playfair密码</strong></p>
-<p>​    Playfair算法基于一个由密钥词构成的5*5字母矩阵。填充矩阵的方法是：首先将密钥词（去掉重复字母）从左往右、从上到下填再矩阵的格子中，再将剩余的字母按字母表的顺序从左往右、从上到下填在矩阵剩下的格子里。字母I和J暂且当成一个字母。</p>
-<table>
-<thead>
-<tr>
-<th align="center">M</th>
-<th align="center">O</th>
-<th align="center">N</th>
-<th align="center">A</th>
-<th align="center">R</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>C</strong></td>
-<td align="center"><strong>H</strong></td>
-<td align="center"><strong>Y</strong></td>
-<td align="center"><strong>B</strong></td>
-<td align="center"><strong>D</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>E</strong></td>
-<td align="center"><strong>F</strong></td>
-<td align="center"><strong>G</strong></td>
-<td align="center"><strong>I/J</strong></td>
-<td align="center"><strong>K</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>L</strong></td>
-<td align="center"><strong>P</strong></td>
-<td align="center"><strong>Q</strong></td>
-<td align="center"><strong>S</strong></td>
-<td align="center"><strong>T</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>U</strong></td>
-<td align="center"><strong>V</strong></td>
-<td align="center"><strong>W</strong></td>
-<td align="center"><strong>X</strong></td>
-<td align="center"><strong>Z</strong></td>
-</tr>
-</tbody></table>
-<p>对明文按如下规则一次加密两个字母：</p>
-<ul>
-<li>如果该字母对的两个字母是相同的，那么在他们之间加一个填充字母，比如x。例如：balloon先把它变成ba lx lo on 这样的4个字母对。</li>
-<li>落在矩阵同一行的明文字母对中的字母由其右边的字母来替代，每行中最右边的一个字母就用该列中最左边的第一个字母来替代。比如：ar变成RM。</li>
-<li>落在矩阵同一列的明文字母对中的字母由其下面的字母来替代，每行中对下面的一个字母就用该列中最上面的第一个字母来替代，比如：mu变成CM</li>
-<li>其他的每组明文字母对中的字母如下方式替代，该字母所在行为密文所在行，另以字母所在列为密文所在列。比如：hs变成BP，ea变成IM（或JM）。</li>
-</ul>
-<p>​    Playfair密码相对于简单的单表密码是一种巨大的进步。尽管只有26个字母，担忧26 x 26 = 676个字母对，因此识别出单个字母对要困难得多。而且，单个字母得相对频率比字母对的相对频率变化得幅度大，在统计规律上要好，这样利用频率分析字母对就更困难一些。</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>​    曲线体现了加密后字母频率分布被掩盖的程度，而按字母的频率分布来分析替代密码是一种简单的方法。如果频率分布的信息被完全被加密过程给隐藏了，那么密文的频率曲线应该是一条水平的线。图中，Playfair密码虽然有比明文稍平坦的频率分布曲线，但是任然透露大量的信息给密码分析者。</p>
-<p><strong>Hill密码</strong></p>
-<p>由于前面的博客中提及Hill密码的加解密算法，所以这里不再赘述。</p>
-<p>​    同Playfair密码相比，Hill密码的优点是完全隐藏了单字母频率特性。实际上，Hill用的矩阵越大隐藏的频率信息越多。因此一个3 x 3的Hill密码不仅隐藏了单字母的频率特性，还隐藏了双字母的特性。</p>
-<p>​    尽管Hill密码足以抵抗唯密文攻击，但是它较易被已知明文攻击（可以参考**[97-112WP]UTCTF2020hill**）。</p>
+        <h2 id="unusualrsa1"><a href="#unusualrsa1" class="headerlink" title="unusualrsa1"></a>unusualrsa1</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># ********************</span>
+<span class="token comment"># @Author: Lazzaro</span>
+<span class="token comment"># ********************</span>
+
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> getPrime<span class="token punctuation">,</span>bytes_to_long<span class="token punctuation">,</span>long_to_bytes
+<span class="token keyword">from</span> random <span class="token keyword">import</span> randint
+<span class="token keyword">from</span> secret <span class="token keyword">import</span> flag
+
+p <span class="token operator">=</span> getPrime<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+q <span class="token operator">=</span> getPrime<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+n <span class="token operator">=</span> p<span class="token operator">*</span>q
+<span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+
+m <span class="token operator">=</span> bytes_to_long<span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>randint<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">208</span><span class="token operator">+</span>flag<span class="token punctuation">)</span>
+<span class="token keyword">assert</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span>bit_length<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">2044</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span>m<span class="token operator">>></span><span class="token number">315</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span><span class="token number">315</span><span class="token punctuation">)</span>
+c <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+<span class="token comment">#14113948189208713011909396304970377626324044633561155020366406284451614054260708934598840781397326960921718892801653205159753091559901114082556464576477585198060530094478860626532455065960136263963965819002575418616768412539016154873800614138683106056209070597212668250136909436974469812231498651367459717175769611385545792201291192023843434476550550829737236225181770896867698281325858412643953550465132756142888893550007041167700300621499970661661288422834479368072744930285128061160879720771910458653611076539210357701565156322144818787619821653007453741709031635862923191561438148729294430924288173571196757351837</span>
+<span class="token comment">#1520800285708753284739523608878585974609134243280728660335545667177630830064371336150456537012842986526527904043383436211487979254140749228004148347597566264500276581990635110200009305900689510908049771218073767918907869112593870878204145615928290375086195098919355531430003571366638390993296583488184959318678321571278510231561645872308920917404996519309473979203661442792048291421574603018835698487725981963573816645574675640357569465990665689618997534740389987351864738104038598104713275375385003471306823348792559733332094774873827383320058176803218213042061965933143968710199376164960850951030741280074168795136</span>
+<span class="token comment">#6635663565033382363211849843446648120305449056573116171933923595209656581213410699649926913276685818674688954045817246263487415328838542489103709103428412175252447323358040041217431171817865818374522191881448865227314554997131690963910348820833080760482835650538394814181656599175839964284713498394589419605748581347163389157651739759144560719049281761889094518791244702056048080280278984031050608249265997808217512349309696532160108250480622956599732443714546043439089844571655280770141647694859907985919056009576606333143546094941635324929407538860140272562570973340199814409134962729885962133342668270226853146819</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>经典的CopperSmith攻击，明文是一个随机数*208 + flag后转为长整数，然后泄露了高位，直接使用sage恢复。脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">m <span class="token operator">=</span> <span class="token number">1520800285708753284739523608878585974609134243280728660335545667177630830064371336150456537012842986526527904043383436211487979254140749228004148347597566264500276581990635110200009305900689510908049771218073767918907869112593870878204145615928290375086195098919355531430003571366638390993296583488184959318678321571278510231561645872308920917404996519309473979203661442792048291421574603018835698487725981963573816645574675640357569465990665689618997534740389987351864738104038598104713275375385003471306823348792559733332094774873827383320058176803218213042061965933143968710199376164960850951030741280074168795136</span>
+n <span class="token operator">=</span> <span class="token number">14113948189208713011909396304970377626324044633561155020366406284451614054260708934598840781397326960921718892801653205159753091559901114082556464576477585198060530094478860626532455065960136263963965819002575418616768412539016154873800614138683106056209070597212668250136909436974469812231498651367459717175769611385545792201291192023843434476550550829737236225181770896867698281325858412643953550465132756142888893550007041167700300621499970661661288422834479368072744930285128061160879720771910458653611076539210357701565156322144818787619821653007453741709031635862923191561438148729294430924288173571196757351837</span>
+c <span class="token operator">=</span> <span class="token number">6635663565033382363211849843446648120305449056573116171933923595209656581213410699649926913276685818674688954045817246263487415328838542489103709103428412175252447323358040041217431171817865818374522191881448865227314554997131690963910348820833080760482835650538394814181656599175839964284713498394589419605748581347163389157651739759144560719049281761889094518791244702056048080280278984031050608249265997808217512349309696532160108250480622956599732443714546043439089844571655280770141647694859907985919056009576606333143546094941635324929407538860140272562570973340199814409134962729885962133342668270226853146819</span>
+kbits <span class="token operator">=</span> <span class="token number">315</span>
+PR<span class="token punctuation">.</span><span class="token operator">&lt;</span>x<span class="token operator">></span> <span class="token operator">=</span> PolynomialRing<span class="token punctuation">(</span>Zmod<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+f <span class="token operator">=</span> <span class="token punctuation">(</span>m <span class="token operator">+</span> x<span class="token punctuation">)</span><span class="token operator">^</span> <span class="token number">3</span> <span class="token operator">-</span> c
+x0 <span class="token operator">=</span> f<span class="token punctuation">.</span>small_roots<span class="token punctuation">(</span>X <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">^</span> kbits<span class="token punctuation">,</span> beta <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token builtin">int</span><span class="token punctuation">(</span>x0<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>长整数转字符串，flag在字符串的最后面。</p>
 <hr>
-<h3 id="多表代替技术"><a href="#多表代替技术" class="headerlink" title="多表代替技术"></a>多表代替技术</h3><p>​    对简单单表代替的改进方法是在明文消息中采用不停的单表替代。这种方法一般称之为对标代替密码。所有这些方法都有以下的共同特征：</p>
-<ul>
-<li>采用相关的单表代替规则集。</li>
-<li>密钥决定给定变换的具体规则。</li>
-</ul>
-<p><strong>Vigenere密码</strong></p>
-<p>​    多表代替密码中最著名的和最简单的是Vigenere密码。它的代替规则集由26个Caesar密码的代替表组成，其中每一个代替表是对明文字母表以为0~25次后得到的代替单表。典型的是密钥长度小于明文长度，加密一条消息需要与消息一样长的密钥，通常是密钥词的重复而构成的。</p>
-<p>加密的一般过程：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>其本质上是每一个明文字母根据相应的密钥字母用不同的Caesar密码加密。解密方程如下：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image4.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>​    如果密钥词的长度是m，那么密码实际上包含了m个单表代替。例如：以DECEPTIVE作为密钥词，那么处在1，10，19．．．，的字母的加密实际上是单表密码。因此，可以用明文语言的频率特征对这样的单表密码分别进行攻击。为了解决这种攻击，Vigenere提出用一个所谓的”密钥自动生成系统“，它将密钥词和明文自身连接来生成不重复的密钥词。</p>
-<p>例如：</p>
-<p>密钥：deceptivewearediscoveredsav</p>
-<p>密文：wearediscoveredsaveyourself</p>
-<p>​    即使采用了这个方案，它也是易受攻击的。因为密钥和明文具有相同的频率分布特征，所以可以使用统计学的方法对其攻击。</p>
-<p><strong>Vernam密码</strong></p>
-<p>该加密体制可以表述为：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image5.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>其中：</p>
-<p>​        pi是明文第i个二级制位。</p>
-<p>​        ki是密钥第i个二进制位。</p>
-<p>​        ci是密文第i个二进制位。</p>
-<p>解密体制：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image6.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>​    其本质在于构造密钥的方式，Vernam提出使用连续的额磁带，其最终也将循环。所以事实上该体制是使用周期很大的循环周期。尽管使用了很大的循环周期，但是如果有足够的密文，使用已知或可能的明文序列，该方案是可以被破解的。</p>
-<p><strong>一次一密(OTP)</strong></p>
-<p>​    Mauborgne提出了一种对Vernam密码的改进方案，从而达到了最完善的安全性。他建议使用与消息一样长且无重复的随机密钥来加密消息，另外，密钥只对一个消息进行加密，之后丢弃不用。<strong>每一条消息都需要一个与其等长的新密钥</strong>。这是著名的一次一密，它是不可攻破的。它产生的随机输出与明文没有任何统计关系，因为密文不包含明文的任何信息，所以无法攻破。</p>
-<p>​    多个密钥可能产生多个可读的明文，但是没有办法确定哪个才是真正所需的。</p>
-<p>​    一次一密的安全性完全取决于密钥的随机性。如果构成密钥的字符流是真正随机的，那么构成密文的字符流也是真正随机的。</p>
-<p>​    理论上，我们不再需要寻找密码了，一次一密提供了完全的安全性，但在实际中，它存在两个基本难点：</p>
-<ul>
-<li>产生大规模随机密钥有实际困难。任何经常使用的系统都需要建立在某个规则基础上的百万个随机字符，提供这样的真正随机字符是相当艰巨的任务。</li>
-<li>密钥的分配和保护。对每一条发送的消息，需要提供给发送方和接收方等长度的密钥，因此存在庞大的密钥分配问题。</li>
-</ul>
-<p>​    一次一密实际上很少用，主要用于安全性要求很高的低带宽信道。</p>
-<p>​    <strong>一次一密是唯一的具有完善保密的密码体制。</strong></p>
-<h2 id="置换技术"><a href="#置换技术" class="headerlink" title="置换技术"></a>置换技术</h2><p>简单的例子就是<strong>栅栏密码</strong>。</p>
-<p>注意：<strong>置换技术只是改变明文中字符的位置，而不是像替代技术那样改变了明文的内容。</strong></p>
-<p>例子：</p>
-<table>
-<thead>
-<tr>
-<th>4</th>
-<th>3</th>
-<th>1</th>
-<th>2</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>a</td>
-<td>T</td>
-<td>t</td>
-<td>a</td>
-<td>c</td>
-<td>k</td>
-<td>p</td>
-</tr>
-<tr>
-<td>O</td>
-<td>S</td>
-<td>t</td>
-<td>p</td>
-<td>O</td>
-<td>n</td>
-<td>e</td>
-</tr>
-<tr>
-<td>d</td>
-<td>u</td>
-<td>n</td>
-<td>t</td>
-<td>i</td>
-<td>l</td>
-<td>t</td>
-</tr>
-<tr>
-<td>W</td>
-<td>O</td>
-<td>a</td>
-<td>m</td>
-<td>x</td>
-<td>y</td>
-<td>z</td>
-</tr>
-</tbody></table>
-<p>​    其中第一行就是密钥，下面都是明文。加密的原理就是密钥中的数字代表加密后其下面的明文是密文矩阵的第几列。单纯的置换密码因为有者与原始明文相同的字母频率特征而已被识别，上面的列变换密码，密码分析很直观，可以从密文排列成矩阵入手，再来处理列的位置。双字母音节和三字母音节频率表分析可以派上用场。对于上述的加密算法，可以使用相同的密钥对原始明文的多次列变换，从而达到不易被识别的效果。</p>
-<h2 id="转轮机"><a href="#转轮机" class="headerlink" title="转轮机"></a>转轮机</h2><p>​    它利用的是<strong>多层加密原理</strong>。转轮机包括一组相互独立的旋转圆筒，电脉冲可以通过它。每个圆筒有26个输入引脚和26个输出引脚。内部连线使每一个输入仅同唯一一个输出连接。<strong>如果把每个输入输出引脚当作字母表中的一个字母，那么一个圆筒定义了一个单表替换。</strong>每次按下一个输入键，圆筒就旋转一个位置，内部连线也就相应改变了。经过26个明文字母后，圆筒回到初始位置，于是可以得到一个周期为26的多表代替密码。以三个转筒（转子）为例，如果最左边的圆筒转完一圈后（26次），中间的圆筒就转一个引脚的位置。相同，中间的圆筒转完一圈后，第三个圆筒就转一个引脚的位置。所以整个系统重复使用26 * 26 * 26 = 17576个不同的替换字母表。<strong>一个五筒转轮机相当于密钥长度为11881376的Vigenere密码</strong>。</p>
-<h2 id="隐写术"><a href="#隐写术" class="headerlink" title="隐写术"></a>隐写术</h2><p>​    说起隐写术，就会想起谍战片里的加密方法：不可见墨水（加热或其他的方法）可以看见纸上的内容。还有就是双方约定在每句话的第几个字符连起来是明文，字符标记，针刺，打字机的色带校正等等。这些都是比较旧的加密方法，给现代得隐写术指明了方向，比如在暑假就做到一题base64隐写的题目[81-96]RSA &amp; what。</p>
-<p>​    同加密相比，其缺点体现在它需要许多额外的付出来隐藏相对较少的信息。</p>
+<h2 id="unusualrsa2"><a href="#unusualrsa2" class="headerlink" title="unusualrsa2"></a>unusualrsa2</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># ********************</span>
+<span class="token comment"># @Author: Lazzaro</span>
+<span class="token comment"># ********************</span>
+
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> getPrime<span class="token punctuation">,</span>bytes_to_long<span class="token punctuation">,</span>long_to_bytes
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> <span class="token builtin">reduce</span>
+<span class="token keyword">from</span> secret <span class="token keyword">import</span> flag<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y
+
+m <span class="token operator">=</span> bytes_to_long<span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
+p <span class="token operator">=</span> getPrime<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+q <span class="token operator">=</span> getPrime<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+n <span class="token operator">=</span> p<span class="token operator">*</span>q
+<span class="token keyword">print</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
+
+<span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span>y<span class="token punctuation">:</span>x<span class="token operator">&amp;</span>y<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">(</span>i<span class="token operator">-</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">*</span>i<span class="token operator">+</span><span class="token number">6</span><span class="token operator">==</span><span class="token number">0</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">assert</span><span class="token punctuation">(</span><span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span>y<span class="token punctuation">:</span>x<span class="token operator">&amp;</span>y<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">(</span>j<span class="token operator">-</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token operator">*</span>j<span class="token operator">+</span><span class="token number">44</span><span class="token operator">==</span><span class="token number">0</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span>y<span class="token punctuation">:</span>x<span class="token operator">*</span>m<span class="token operator">+</span>y<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span>y<span class="token punctuation">:</span>x<span class="token operator">*</span>m<span class="token operator">+</span>y<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">#23772599983135215481563178266884362291876571759991288577057472733374903836591330410574958472090396886895304944176208711481780781286891334062794555288959410390926474473859289842654809538435377431088422352076225067494924657598298955407771484146155998883073439266427190212827600119365643065276814044272790573450938596830336430371987561905132579730619341196199420897034988685012777895002554746080384319298123154671447844799088258541911028041717897434816921424155687677867019535399434825468160227242441375503664915265223696139025407768146464383537556265875013085702422829200814612395116961538432886116917063119749068212699</span>
+<span class="token comment">#10900151504654409767059699202929100225155892269473271859207513720755903691031362539478242920144073599515746938827937863835169270383721094542639011665235593065932998091574636525973099426040452626893461449084383663453549354608769727777329036059746386523843912382289597182615339786437186169811342356085836838520978047561127661777189045888648773949147220411427306098338616422692914110656004863767719312410906124366000507952960331116878197129010412361636679449281808407214524741732730279777729251515759320442591663641984363061618865267606007355576230009922421807527598213455112981354590909603317525854070358390622096569841</span>
+<span class="token comment">#17298679220717326374674940612143058330715465693318467692839033642321129433471254547497087746971317567301086124779289015934582615377165560688447452762043163082394944604062014490446763247008217251611443338103074143809936437694543761369945095202092750900940979469994907399829695696313513303922266742415376818434932335640062684245008822643258497589196668426788916969378417960200705779461808292296450298558001909603602502604228973101048082095642290047196235959438278631661658312398313171590515776453711432353011579809351076532129444735206408591345372296372378396539831385036814349328459266432393612919118094115543053115450</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">reduce</span>函数：
+<span class="token builtin">reduce</span><span class="token punctuation">(</span>function<span class="token punctuation">,</span> iterable<span class="token punctuation">[</span><span class="token punctuation">,</span> initializer<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+function <span class="token operator">-</span><span class="token operator">-</span> 函数，有两个参数
+iterable <span class="token operator">-</span><span class="token operator">-</span> 可迭代对象
+initializer <span class="token operator">-</span><span class="token operator">-</span> 可选，初始参数<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>例子 ：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> functools <span class="token keyword">import</span> <span class="token builtin">reduce</span>
+
+ <span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span> <span class="token punctuation">:</span>       <span class="token comment"># 两数相加</span>
+   <span class="token keyword">return</span> x <span class="token operator">+</span> y
+ sum1 <span class="token operator">=</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span>add<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 计算列表和：1+2+3+4+5</span>
+ sum2 <span class="token operator">=</span> <span class="token builtin">reduce</span><span class="token punctuation">(</span><span class="token keyword">lambda</span> x<span class="token punctuation">,</span> y<span class="token punctuation">:</span> x<span class="token operator">+</span>y<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 使用 lambda 匿名函数</span>
+ <span class="token keyword">print</span><span class="token punctuation">(</span>sum1<span class="token punctuation">)</span>
+ <span class="token keyword">print</span><span class="token punctuation">(</span>sum2<span class="token punctuation">)</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+结果：
+<span class="token number">15</span>
+<span class="token number">15</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：<strong>reduce返回的数值类型与第二个函数的运算和列表中数值的类型。</strong></p>
+<p>返回到题目，题中的reduce函数的列表中的数值类型为bool类型，这样x,y都是bool类型的值（注意这里的x和y只是reduce函数的表述参数（形参），与后面循环中的x和y无关，for循环中的x和y才是真正的参数）。为了满足assert函数值为True，x和y中的元素都得满足前面的等式。</p>
+<p>题目属于Coppersmith’s Short-pad Attack &amp; Related Message Attack（Franklin-Reiter攻击）</p>
+<p>算出x = [2, 3]; y = [4, 11]。</p>
+<p>把相关参数代入下面的脚本就可以得到flag。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#脚本1</span>
+<span class="token comment">#Sage</span>
+<span class="token keyword">import</span> binascii
+<span class="token keyword">def</span> <span class="token function">attack</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> n<span class="token punctuation">,</span> e<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    PR<span class="token punctuation">.</span><span class="token operator">&lt;</span>x<span class="token operator">>=</span>PolynomialRing<span class="token punctuation">(</span>Zmod<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># replace a,b,c,d</span>
+    g1 <span class="token operator">=</span> <span class="token punctuation">(</span>a<span class="token operator">*</span>x<span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token operator">^</span>e <span class="token operator">-</span> c1
+    g2 <span class="token operator">=</span> <span class="token punctuation">(</span>c<span class="token operator">*</span>x<span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token operator">^</span>e <span class="token operator">-</span> c2
+
+    <span class="token keyword">def</span> <span class="token function">gcd</span><span class="token punctuation">(</span>g1<span class="token punctuation">,</span> g2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> g2<span class="token punctuation">:</span>
+            g1<span class="token punctuation">,</span> g2 <span class="token operator">=</span> g2<span class="token punctuation">,</span> g1 <span class="token operator">%</span> g2
+        <span class="token keyword">return</span> g1<span class="token punctuation">.</span>monic<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span>gcd<span class="token punctuation">(</span>g1<span class="token punctuation">,</span> g2<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+c1 <span class="token operator">=</span> 
+c2 <span class="token operator">=</span> 
+n <span class="token operator">=</span> 
+e <span class="token operator">=</span> 
+m1 <span class="token operator">=</span> attack<span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> n<span class="token punctuation">,</span> e<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>binascii<span class="token punctuation">.</span>unhexlify<span class="token punctuation">(</span><span class="token string">"%x"</span> <span class="token operator">%</span> <span class="token builtin">int</span><span class="token punctuation">(</span>m1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token comment">#脚本2</span>
+<span class="token comment">#Sage</span>
+<span class="token keyword">def</span> <span class="token function">short_pad_attack</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> e<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    PRxy<span class="token punctuation">.</span><span class="token operator">&lt;</span>x<span class="token punctuation">,</span>y<span class="token operator">></span> <span class="token operator">=</span> PolynomialRing<span class="token punctuation">(</span>Zmod<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    PRx<span class="token punctuation">.</span><span class="token operator">&lt;</span>xn<span class="token operator">></span> <span class="token operator">=</span> PolynomialRing<span class="token punctuation">(</span>Zmod<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    PRZZ<span class="token punctuation">.</span><span class="token operator">&lt;</span>xz<span class="token punctuation">,</span>yz<span class="token operator">></span> <span class="token operator">=</span> PolynomialRing<span class="token punctuation">(</span>Zmod<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    g1 <span class="token operator">=</span> x<span class="token operator">^</span>e <span class="token operator">-</span> c1
+    g2 <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">^</span>e <span class="token operator">-</span> c2
+    q1 <span class="token operator">=</span> g1<span class="token punctuation">.</span>change_ring<span class="token punctuation">(</span>PRZZ<span class="token punctuation">)</span>
+    q2 <span class="token operator">=</span> g2<span class="token punctuation">.</span>change_ring<span class="token punctuation">(</span>PRZZ<span class="token punctuation">)</span>
+    h <span class="token operator">=</span> q2<span class="token punctuation">.</span>resultant<span class="token punctuation">(</span>q1<span class="token punctuation">)</span>
+    h <span class="token operator">=</span> h<span class="token punctuation">.</span>univariate_polynomial<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    h <span class="token operator">=</span> h<span class="token punctuation">.</span>change_ring<span class="token punctuation">(</span>PRx<span class="token punctuation">)</span><span class="token punctuation">.</span>subs<span class="token punctuation">(</span>y<span class="token operator">=</span>xn<span class="token punctuation">)</span>
+    h <span class="token operator">=</span> h<span class="token punctuation">.</span>monic<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    kbits <span class="token operator">=</span> n<span class="token punctuation">.</span>nbits<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">//</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>e<span class="token operator">*</span>e<span class="token punctuation">)</span>
+    diff <span class="token operator">=</span> h<span class="token punctuation">.</span>small_roots<span class="token punctuation">(</span>X<span class="token operator">=</span><span class="token number">2</span><span class="token operator">^</span>kbits<span class="token punctuation">,</span> beta<span class="token operator">=</span><span class="token number">0.4</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>  <span class="token comment"># find root &lt; 2^kbits with factor >= n^0.4</span>
+    <span class="token keyword">return</span> diff
+<span class="token keyword">def</span> <span class="token function">related_message_attack</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> diff<span class="token punctuation">,</span> e<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    PRx<span class="token punctuation">.</span><span class="token operator">&lt;</span>x<span class="token operator">></span> <span class="token operator">=</span> PolynomialRing<span class="token punctuation">(</span>Zmod<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    g1 <span class="token operator">=</span> x<span class="token operator">^</span>e <span class="token operator">-</span> c1
+    g2 <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">+</span>diff<span class="token punctuation">)</span><span class="token operator">^</span>e <span class="token operator">-</span> c2
+    <span class="token keyword">def</span> <span class="token function">gcd</span><span class="token punctuation">(</span>g1<span class="token punctuation">,</span> g2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> g2<span class="token punctuation">:</span>
+            g1<span class="token punctuation">,</span> g2 <span class="token operator">=</span> g2<span class="token punctuation">,</span> g1 <span class="token operator">%</span> g2
+        <span class="token keyword">return</span> g1<span class="token punctuation">.</span>monic<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span>gcd<span class="token punctuation">(</span>g1<span class="token punctuation">,</span> g2<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    n <span class="token operator">=</span>
+    e <span class="token operator">=</span>
+    c1 <span class="token operator">=</span>
+    c2 <span class="token operator">=</span>
+    diff <span class="token operator">=</span> short_pad_attack<span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> e<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"difference of two messages is %d"</span> <span class="token operator">%</span> diff<span class="token punctuation">)</span>
+    m1 <span class="token operator">=</span> related_message_attack<span class="token punctuation">(</span>c1<span class="token punctuation">,</span> c2<span class="token punctuation">,</span> diff<span class="token punctuation">,</span> e<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"m1:"</span><span class="token punctuation">,</span> m1<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"m2:"</span><span class="token punctuation">,</span> m1 <span class="token operator">+</span> diff<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
       </div>
       <div class="post-tags-categories">
@@ -748,7 +719,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/09/14/传统加密技术/" target="_blank" title="传统加密技术">https://sinanya.github.io/2021/09/14/传统加密技术/</a>
+    <a href="/2021/09/15/CTFSHOW-unusualrsa/" target="_blank" title="CTFSHOW-unusualrsa">https://sinanya.github.io/2021/09/15/CTFSHOW-unusualrsa/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -766,44 +737,21 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/09/15/CTFSHOW-unusualrsa/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div class="title-text">CTFSHOW-unusualrsa</div>
-      </div>
-      
-      <!-- <div class="content">
-        unusualrsa1题目如下：
-# ********************
-# @Author: Lazzaro
-#
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/" class="post-nav-link">
+    <a href="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div class="title-text">BUUCTF-Crypto系列[97-112]WP</div>
+        <div class="title-text">传统加密技术</div>
       </div>
       <!-- <div class="content">
-        四面八方题目如下：
-key1:security
-key2:information
-
-密文啊这是，骚年加油：zhnjinh
+        传统密码学密码分析学和穷举攻击攻击传统的密码体制有两种通用的方法：
+密码分析学：密码分析学攻击依赖于算法的性质、明文的一
       </div> -->
     </a>
   </div>
