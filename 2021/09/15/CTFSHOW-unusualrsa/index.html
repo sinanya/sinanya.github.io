@@ -719,7 +719,7 @@ m^0x10001%N:
 <p><img "" class="lazyload placeholder" data-original="/2021/09/15/CTFSHOW-unusualrsa/Post15_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
 <p><img "" class="lazyload placeholder" data-original="/2021/09/15/CTFSHOW-unusualrsa/Post15_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
 <p>参考：<a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/4545">https://xz.aliyun.com/t/4545</a></p>
-<p>在求解的过程中，注意φ(n)的计算，并不是通常的φ(n)的计算公式。多项式中每一项都与n互素，而欧拉函数是小于n的与n互素的数的个数，所以φ(n) = p ^ 最高次 - 1。sage脚本如下：</p>
+<p>在求解的过程中，注意φ(n)的计算，并不是通常的φ(n)的计算公式。多项式中每一项都与n互素，而欧拉函数是小于n的与n互素的正整数的个数，所以φ(n) = p ^ 最高次 - 1。sage脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">p<span class="token operator">=</span> <span class="token number">2470567871</span>
 P <span class="token operator">=</span> PolynomialRing<span class="token punctuation">(</span>Zmod<span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">,</span> name <span class="token operator">=</span> <span class="token string">'x'</span><span class="token punctuation">)</span>
 x <span class="token operator">=</span> P<span class="token punctuation">.</span>gen<span class="token punctuation">(</span><span class="token punctuation">)</span>
