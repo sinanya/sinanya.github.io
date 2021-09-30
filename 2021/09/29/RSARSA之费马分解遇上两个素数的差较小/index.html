@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>category: 密码学 | 司南的博客</title>
+  <title>RSARSA之费马分解遇上两个素数的差较小 | 司南的博客</title>
 
   
     
@@ -477,671 +477,518 @@
     <!-- 内容区域 -->
     <main class="main" id="pjax-container" style="margin-top: 0;">
       
-
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-
-<div class="lazyload category-header" data-original="https://pic3.zhimg.com/80/v2-98dcd81cb0d1fee52a807c13cedb8338_1440w.jpg?source=1940ef5c">
-  <div class="category-header-title">
-    category
-  </div>
-  <div class="category-header-desc">
+ <!-- prismjs 代码高亮 -->
+ 
     
-      <span class="title" id="category-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#category-header-desc';
-    const type = 'categoryDetail';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-      
-  </div>
-  <div class="mask-box"></div>
-</div>
-
-
-<div class="category">
-  <div class="category-name">
-    <div class="name" style="background-color: #F8F9F9;">密码学 category</div>
-  </div>
-  <section class="posts">
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
     
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-09-30</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/">2021绿城杯WP</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E2%80%9C%E6%AF%94%E8%B5%9B%E2%80%9D/" rel="tag">“比赛”</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            RSA1题目如下：
-from Crypto.Util.number import *
-import gmpy2
-from flag import flag
-assert flag[:5]==b'flag&#123;'
-
-m = bytes_
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/">
-            <i class="iconfont iconmore" pointer style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
+        <link href="/js/prism/prism-okaidia.min.css" rel="stylesheet">
     
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-09-30</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/09/30/2021%E9%95%BF%E5%9F%8E%E6%9D%AF%E5%A4%8D%E7%8E%B0/">2021长城杯复现</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
 
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E2%80%9C%E6%AF%94%E8%B5%9B%E2%80%9D/" rel="tag">“比赛”</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
-</div>
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
 
 
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/09/30/2021%E9%95%BF%E5%9F%8E%E6%9D%AF%E5%A4%8D%E7%8E%B0/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            baby_rsa比赛中就这一题，我们先来看看题目：
-#!/usr/bin/env python3
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
-from Crypto.Util.number import *
-from secret import flag, v1, v2, m1, 
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/09/30/2021%E9%95%BF%E5%9F%8E%E6%9D%AF%E5%A4%8D%E7%8E%B0/">
-            <i class="iconfont iconmore" pointer style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/09/30/2021%E9%95%BF%E5%9F%8E%E6%9D%AF%E5%A4%8D%E7%8E%B0/" class="lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-09-29</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/09/29/RSARSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3%E9%81%87%E4%B8%8A%E4%B8%A4%E4%B8%AA%E7%B4%A0%E6%95%B0%E7%9A%84%E5%B7%AE%E8%BE%83%E5%B0%8F/">RSARSA之费马分解遇上两个素数的差较小</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/">RSA</a>
-</div>
+<!-- 文章详情页顶部图片和标题 -->
 
 
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/09/29/RSARSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3%E9%81%87%E4%B8%8A%E4%B8%A4%E4%B8%AA%E7%B4%A0%E6%95%B0%E7%9A%84%E5%B7%AE%E8%BE%83%E5%B0%8F/" class="lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            ctfshow切记务必一定要简单from Crypto.Util.number import *
-import random, sys
-
-def get_prime(base, offset):
-    l = base - (1 &lt;
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/09/29/RSARSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3%E9%81%87%E4%B8%8A%E4%B8%A4%E4%B8%AA%E7%B4%A0%E6%95%B0%E7%9A%84%E5%B7%AE%E8%BE%83%E5%B0%8F/">
-            <i class="iconfont iconmore" pointer style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/09/29/RSARSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3%E9%81%87%E4%B8%8A%E4%B8%A4%E4%B8%AA%E7%B4%A0%E6%95%B0%E7%9A%84%E5%B7%AE%E8%BE%83%E5%B0%8F/" class="lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-09-22</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/">伽罗华域</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E6%9C%89%E9%99%90%E5%9F%9F/">有限域</a>
-</div>
 
 
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/" class="lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            GF(2 ^ 3)今天看到《密码编码学与网络安全》一书中的有限域，特别不理解在GF(2 ^ 3)上的乘法运算，索性就上网查查资料，自己摸索一下其中的奥秘。
-GF(2 ^ 3)上的加法运算没得说，就是异或运算。但乘法就有些稀奇古怪了，它是怎么
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/">
-            <i class="iconfont iconmore" pointer style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/" class="lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-09-15</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/09/15/CTFSHOW-unusualrsa/">CTFSHOW-unusualrsa</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/CTFSHOW/">CTFSHOW</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/09/15/CTFSHOW-unusualrsa/" class="lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            unusualrsa1题目如下：
-# ********************
-# @Author: Lazzaro
-# ********************
-
-from Crypto.Util.number import getPri
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/09/15/CTFSHOW-unusualrsa/">
-            <i class="iconfont iconmore" pointer style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/09/15/CTFSHOW-unusualrsa/" class="lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-09-14</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/">传统加密技术</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E4%BC%A0%E7%BB%9F%E5%AF%86%E7%A0%81%E5%AD%A6/">传统密码学</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/" class="lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            传统密码学密码分析学和穷举攻击攻击传统的密码体制有两种通用的方法：
-密码分析学：密码分析学攻击依赖于算法的性质、明文的一般特征和某些明密文对。这种形式的攻击企图利用算法的特征来推导出特定的明文或使用的密钥。
-穷举攻击：攻击者对一条密文尝试所
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/">
-            <i class="iconfont iconmore" pointer style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/" class="lazyload" data-original="/medias/11.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-09-07</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/">BUUCTF-Crypto系列[97-112]WP</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/">BUUCTF</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/" class="lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            四面八方题目如下：
-key1:security
-key2:information
-
-密文啊这是，骚年加油：zhnjinhoopcfcuktlj
-
-看了大佬的博客才知道这是四方密码，科普一下：
-四方密码是一种对称式加密法，由法国人Felix 
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/">
-            <i class="iconfont iconmore" pointer style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/" class="lazyload" data-original="/medias/15.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-08-26</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/08/26/CTFSHOW-%E5%90%83%E7%93%9C%E6%9D%AF-Crypto%E7%B3%BB%E5%88%97/">CTFSHOW-吃瓜杯-Crypto系列</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/CTFSHOW/">CTFSHOW</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/08/26/CTFSHOW-%E5%90%83%E7%93%9C%E6%9D%AF-Crypto%E7%B3%BB%E5%88%97/" class="lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            闪电五连鞭·一鞭题目如下：
-1bian.sage:
-from Crypto.Util.number import *
-
-n = 88706194873397893490339322175139089536095396519499864899
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/08/26/CTFSHOW-%E5%90%83%E7%93%9C%E6%9D%AF-Crypto%E7%B3%BB%E5%88%97/">
-            <i class="iconfont iconmore" pointer style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/08/26/CTFSHOW-%E5%90%83%E7%93%9C%E6%9D%AF-Crypto%E7%B3%BB%E5%88%97/" class="lazyload" data-original="/medias/8.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="flex-direction: row-reverse;">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-08-17</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/08/17/BUUCTF-Crypto%E7%B3%BB%E5%88%97-81-96-WP/">BUUCTF-Crypto系列[81-96]WP</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/">BUUCTF</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/08/17/BUUCTF-Crypto%E7%B3%BB%E5%88%97-81-96-WP/" class="lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            RSA &amp; what题目如下：
-HUB1:
-7850954197182682868665082143048169854470772937668193987280464111669178108204847593142910289764
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/08/17/BUUCTF-Crypto%E7%B3%BB%E5%88%97-81-96-WP/">
-            <i class="iconfont iconmore" pointer style="float: right;" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/08/17/BUUCTF-Crypto%E7%B3%BB%E5%88%97-81-96-WP/" class="lazyload" data-original="/medias/13.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-    <article class="post" data-aos="fade-up"
-      style="">
-      <div class="post-main">
-        <div class="post-info">
-          <div class="post-time">
-            <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <span class="post-time">2021-08-07</span>
-          </div>
-          <div class="post-title">
-            <a class="post-title-link" href="/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/">BUUCTF-Crypto系列[65-80]WP</a>
-          </div>
-          <div class="post-meta">
-            <div class="post-tags">
-              <!-- 文章详情页的标签 -->
-
-    <i class="iconfont icontag"></i>
-    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li></ul>
-
-            </div>
-            <div class="post-categories">
-              <!-- 文章详情页的分类 -->
-
-<div class="article-category">
-  <i class="iconfont iconbookmark1"></i>
-  <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a> <a class="article-category-link" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/">BUUCTF</a>
-</div>
-
-
-            </div>
-          </div>
-          <div class="post-img-mobile">
-            
-              
-              <a href="/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
-                background-position: center center;">
-              </a>
-            
-          </div>
-          <div class="post-content">
-            浪里淘沙题目如下：
-
-tonightsuccessnoticenoticewewesuccesstonightweexamplecryptoshouldwebackspacetonightbackspaceexamplelearnwesub
-          </div>
-        </div>
-        <div class="post-more">
-          <a href="/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/">
-            <i class="iconfont iconmore" pointer style="" title="阅读更多"></i>
-          </a>
-        </div>
-      </div>
-      <div class="post-img">
-        
-          <a href="/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/" class="lazyload" data-original="/medias/6.jpg" style="background-size: cover; 
-            background-position: center center;">
-          </a>
-        
-      </div>
-    </article>
-    
-  </section>
-</div>
-
-  <!-- <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/page/2/">2</a><a class="extend next" rel="next" href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/page/2/">Next</a>
-  </nav> -->
-  <div class="page-nav">
-    
-    <div class="page-info">
-        <div class="page-info-text">1 / 2</div>
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="/medias/1.jpg" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        RSARSA之费马分解遇上两个素数的差较小
+      </span>
     </div>
     
-      <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/page/2/"
-         class="page-nav-next">
-          <span class="mr-5">Next</span><i class="fa fa-angle-right"></i>
-      </a>
+    
       
+        <span class="post-detail-header_date">
+          <i class="fa fa-calendar"></i> Published in：2021-09-29 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> category：
+          
+            <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/" class="post-detail-header_category">
+              密码学
+            </a>
+          
+            <a href="/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/" class="post-detail-header_category">
+              RSA
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+<div class="row justify-position">
+  <div class="main-content">
+    <article class="post post-detail">
+      
+      <div class="post-content">
+        <h2 id="ctfshow切记务必一定要简单"><a href="#ctfshow切记务必一定要简单" class="headerlink" title="ctfshow切记务必一定要简单"></a>ctfshow切记务必一定要简单</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">import</span> random<span class="token punctuation">,</span> sys
+
+<span class="token keyword">def</span> <span class="token function">get_prime</span><span class="token punctuation">(</span>base<span class="token punctuation">,</span> offset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    l <span class="token operator">=</span> base <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> offset<span class="token punctuation">)</span>
+    r <span class="token operator">=</span> base <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> offset<span class="token punctuation">)</span>
+    p <span class="token operator">=</span> random<span class="token punctuation">.</span>randrange<span class="token punctuation">(</span>l<span class="token punctuation">,</span> r<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token keyword">not</span> isPrime<span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        p <span class="token operator">+=</span> <span class="token number">2</span>
+    <span class="token keyword">return</span> p
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    p <span class="token operator">=</span> getPrime<span class="token punctuation">(</span><span class="token number">1127</span><span class="token punctuation">)</span>
+    q0 <span class="token operator">=</span> p <span class="token operator">*</span> <span class="token number">13</span> <span class="token operator">//</span> <span class="token number">17</span>
+    q <span class="token operator">=</span> get_prime<span class="token punctuation">(</span>q0<span class="token punctuation">,</span> <span class="token number">573</span><span class="token punctuation">)</span> <span class="token comment"># Konami</span>
+    <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'flag.txt'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        flag <span class="token operator">=</span> bytes_to_long<span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    N <span class="token operator">=</span> p <span class="token operator">*</span> q
+    <span class="token keyword">assert</span> isPrime<span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token keyword">and</span> isPrime<span class="token punctuation">(</span>q<span class="token punctuation">)</span> <span class="token keyword">and</span> flag <span class="token operator">&lt;</span> N
+    e <span class="token operator">=</span> <span class="token number">0x10001</span>
+    c <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>flag<span class="token punctuation">,</span> e<span class="token punctuation">,</span> N<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"N = </span><span class="token interpolation"><span class="token punctuation">&#123;</span>N<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"e = </span><span class="token interpolation"><span class="token punctuation">&#123;</span>e<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"c = </span><span class="token interpolation"><span class="token punctuation">&#123;</span>c<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>p是一个1127位的素数，q是介于[p * 13 - 17 - 2^573，p * 13 - 17 + 2^573]。题目还给了一个<a target="_blank" rel="noopener" href="https://ctf-wiki.org/crypto/asymmetric/rsa/rsa_module_attack/">相关链接</a></p>
+<p>根据q的生成算法，直接定位到p - q较小，2^573可不小啊。。。</p>
+<p>费马分解的原理是这样的：</p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/29/RSARSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3%E9%81%87%E4%B8%8A%E4%B8%A4%E4%B8%AA%E7%B4%A0%E6%95%B0%E7%9A%84%E5%B7%AE%E8%BE%83%E5%B0%8F/Post17_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p>令a = (p + q) / 2，因为(p - q)较小，所以a^2和n很接近，所以我们可以从根号n开始往后遍历，如果a^-n能够开平方，则表明我们找到了n的因子。这里的很明显是px13 - 17xq较小。所以套用上面的公式：</p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/29/RSARSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3%E9%81%87%E4%B8%8A%E4%B8%A4%E4%B8%AA%E7%B4%A0%E6%95%B0%E7%9A%84%E5%B7%AE%E8%BE%83%E5%B0%8F/Post17_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p>脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
+<span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token keyword">from</span> sympy <span class="token keyword">import</span> <span class="token operator">*</span>
+
+N <span class="token operator">=</span> <span class="token number">2537578464060405716805986209629349306801585799475566769629753550869939275098596985321844853409568013133264210149682740766024366488982429837531169509250859483526118776072099712258599263748732430570800661306460224380741403478451009927665855604092871949705081574682507168392533782265954982321389235080917435497979848348321877319477780053855288297818739223795823021264136388271573286209636548206594797813576810688640228747147522219625866870777713858310084857747151891233766790129427051420839675334815589489194938107230004427317376438129284740257550482956744843496127593401991789197386269415091390162278183972481279010769071314265529328954115911712467352483233380953386631332500882467</span>
+e <span class="token operator">=</span> <span class="token number">65537</span>
+c <span class="token operator">=</span> <span class="token number">1595212140002311449986774328911538131302021292459414446518934463751924694901681197719356391632660947700772362140375795419149621042035212501260054901239960931458611414432758551692762707025705203714868544808208482382713403084945106505851948109261999900909705955010772382362799626266428855540493176898287751627555377040483120618564113186968911259319525250268854097054159722810266326281435235140862840574780793343440289233893489065111751815693510473980454574606688640074455096644717769189843656600438932454630073349737743755427817726253307163184245099133341515200474243399626081459226215410055396366269535409932990065250476999485239927630147382130648035686165068584532121265385100009</span>
+
+N <span class="token operator">=</span> <span class="token number">221</span> <span class="token operator">*</span> N
+a <span class="token operator">=</span> iroot<span class="token punctuation">(</span>N<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> gmpy2<span class="token punctuation">.</span>iroot<span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>a<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> N<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        k <span class="token operator">=</span> gmpy2<span class="token punctuation">.</span>iroot<span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>a<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> N<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        p <span class="token operator">=</span> Symbol<span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">)</span>
+        q <span class="token operator">=</span> Symbol<span class="token punctuation">(</span><span class="token string">'q'</span><span class="token punctuation">)</span>
+        re <span class="token operator">=</span> solve<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">221</span> <span class="token operator">*</span> p <span class="token operator">*</span> q <span class="token operator">-</span> N<span class="token punctuation">,</span> <span class="token number">13</span> <span class="token operator">*</span> p <span class="token operator">-</span> <span class="token number">17</span> <span class="token operator">*</span> q <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">*</span> k<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>p<span class="token punctuation">,</span> q<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        p <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>re<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        q <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">abs</span><span class="token punctuation">(</span>re<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">assert</span> p <span class="token operator">*</span> q <span class="token operator">==</span> N <span class="token operator">//</span> <span class="token number">221</span>
+        d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> N <span class="token operator">//</span> <span class="token number">221</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+    a <span class="token operator">+=</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="">
+              博客
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>sinanya</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/2021/09/29/RSARSA之费马分解遇上两个素数的差较小/" target="_blank" title="RSARSA之费马分解遇上两个素数的差较小">https://sinanya.github.io/2021/09/29/RSARSA之费马分解遇上两个素数的差较小/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img lazyload" data-original="/medias/14.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/2021/09/30/2021%E9%95%BF%E5%9F%8E%E6%9D%AF%E5%A4%8D%E7%8E%B0/" class="post-nav-link">
+      <div class="title">
+        <i class="fa fa-angle-left"></i> Prev:
+        <div class="title-text">2021长城杯复现</div>
+      </div>
+      
+      <!-- <div class="content">
+        baby_rsa比赛中就这一题，我们先来看看题目：
+#!/usr/bin/env python3
+
+from Crypt
+      </div> -->
+    </a>
   </div>
 
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img lazyload" data-original="/medias/1.jpg" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fa fa-angle-right"></i>
+        <div class="title-text">伽罗华域</div>
+      </div>
+      <!-- <div class="content">
+        GF(2 ^ 3)今天看到《密码编码学与网络安全》一书中的有限域，特别不理解在GF(2 ^ 3)上的乘法运算，索性就上网
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
+	
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fa fa-list-ul" aria-hidden="true"></i><span>catalog</span>
+        
+          <div class="toc-open-close">catalog</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+  <!-- js在scripts目录下的的toc.ejs里面 -->
+  
+
+  <script>
+    function openBtnClickFn () {
+      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+      let open = eval('' || 'true');
+      openOrCloseBtn.click(function() {
+        if (open === true) {
+          $(".toc-aside").css({'width': 0, 'padding': 0});
+          $(".toc-content").css({'width': 0});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+          open = false;
+        } else {
+          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+          $(".toc-content").css({'width': '300px'});
+          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+          open = true;
+        }
+      });
+    };
+    openBtnClickFn();
+    document.addEventListener('pjax:complete', function () {
+      openBtnClickFn();
+    })
+  </script>
+
+
+  
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+    <transition-group tag="ul" :name="names">
+        <li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+            <img :src="image" class="bg-swiper-img">
+        </li>
+    </transition-group>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#appBgSwiper',
+        data: {
+            names: '' || 'fade' || 'fade', // translate-fade fade
+            mark: 0,
+            img: [],
+            bgColor: '',
+            time: null
+        },
+        methods: {   //添加方法
+            change(i, m) {
+                if (i > m) {
+                    // this.names = 'fade';
+                } else if (i < m) {
+                    // this.names = 'fade';
+                } else {
+                    return;
+                }
+                this.mark = i;
+            },
+            prev() {
+                // this.names = 'fade';
+                this.mark--;
+                if (this.mark === -1) {
+                    this.mark = 3;
+                    return
+                }
+            },
+            next() {
+                // this.names = 'fade';
+                this.mark++;
+                if (this.mark === this.img.length) {
+                    this.mark = 0;
+                    return
+                }
+            },
+            autoPlay() {
+                // this.names = 'fade';
+                this.mark++;
+                if (this.mark === this.img.length) {
+                    this.mark = 0;
+                    return
+                }
+            },
+            play() {
+                let bgImgDelay = '' || '180000'
+                let delay = parseInt(bgImgDelay) || 180000;
+                this.time = setInterval(this.autoPlay, delay);
+            },
+            enter() {
+                clearInterval(this.time);
+            },
+            leave() {
+                this.play();
+            }
+        },
+        created() {
+            this.play()
+        },
+        beforeDestroy() {
+            clearInterval(this.time);
+        },
+        mounted() {
+            let prop = ''|| '';
+            let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://') 
+            if (isImg) {
+                let img = prop.split(',');
+                let configRoot = '/'
+                let arrImg = [];
+                img.forEach(el => {
+                    var Expression=/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+			        var objExp = new RegExp(Expression);
+
+                    if(objExp.test(el)) {
+                        // http or https
+                        arrImg.push(el);
+                    } else {
+                        // 非http or https开头
+                        // 本地文件
+                        let firstStr = el.charAt(0);
+                        if (firstStr == '/') {
+                            el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+                        }
+                        el = configRoot + el;
+                        arrImg.push(el);
+                    }
+                })
+                this.img = arrImg;
+            } else {
+                this.bgColor = prop;
+            }
+        }
+    })
+</script>
+
+<style>
+    .bg-swiper-box {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .bg-swiper-img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
 
     </main>
 
