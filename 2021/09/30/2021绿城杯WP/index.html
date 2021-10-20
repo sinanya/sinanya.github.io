@@ -682,14 +682,14 @@ c <span class="token operator">=</span> <span class="token builtin">pow</span><s
 <p>看见大佬博客里的c = kp，why？推导如下：</p>
 <p><img "" class="lazyload placeholder" data-original="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/Post18_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>p是一个1024位数，k = 2021 <em> m </em> 1001，k的数量级是小于p的数量级，这样就不满足模运算的规则，因为模数的倍数一定是一个整数。所以为了满足模数的倍数一定是一个整数条件，p是不能被除干净的。进而，在c和n中存在公因子p。阅读了大佬的WP，膜拜于他是怎样证明c中有p因子，这里也记录一下以便后面复习：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/Post18_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
-<p>m中有p，所以我们令(2021 <em> m </em> 1001)^e = k1 * p，则：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/Post18_image4.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
-<p>n中也有p，令n = k2 * p，则：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/Post18_image5.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
-<p>经过移项，有：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/Post18_image6.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
-<p>脚本如下：</p>
+<script type="math/tex; mode=display">
+(2021 * m * 1001) ^ e = c\ (mod\ n)</script><p>m中有p，所以我们令(2021 <em> m </em> 1001)^e = k1 * p，则：</p>
+<script type="math/tex; mode=display">
+k1 * p = c\ (mod\ n)</script><p>n中也有p，令n = k2 * p，则：</p>
+<script type="math/tex; mode=display">
+k1 * p = k2 * p + c</script><p>经过移项，有：</p>
+<script type="math/tex; mode=display">
+c = (k2 - k1) * p</script><p>脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> gcd
 
