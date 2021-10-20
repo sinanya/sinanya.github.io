@@ -555,33 +555,33 @@
       <div class="post-content">
         <h2 id="GF-2-3"><a href="#GF-2-3" class="headerlink" title="GF(2 ^ 3)"></a>GF(2 ^ 3)</h2><p>今天看到《密码编码学与网络安全》一书中的有限域，特别不理解在GF(2 ^ 3)上的乘法运算，索性就上网查查资料，自己摸索一下其中的奥秘。</p>
 <p>GF(2 ^ 3)上的加法运算没得说，就是异或运算。但乘法就有些稀奇古怪了，它是怎么算的？先把表放在下面：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post16_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post16_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>伽罗华域上的多项式乘法，其结果需要mod P(x)</p>
 <p>在经过一番搜索后，发现它需要构造出一个本原多项式。什么是本原多项式？</p>
 <p>本原多项式满足以下条件：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post16_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post16_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>GF(2 ^ 8)的本原多项式是：x^8 + x^4 + x^3 + x + 1。</p>
 <p>GF(2 ^ 3)的本原多项式是：x^3 + x + 1。</p>
-<p>拿表中的一组数据举例：101 * 010 &lt;=&gt; (x^2 + 1) * x = x^3 + x，这样它除以本原多项式后余1，正好等于表格中数据。</p>
-<p>再举个例子：111*010 &lt;=&gt; (x^2 + x + 1) * (x) = x^3 + x^2 + x，除以本原多项式后为x^2 + 1 &lt;=&gt; 101 = 5，也正好等于表中的数据。</p>
+<p>拿表中的一组数据举例：101 <em> 010 &lt;=&gt; (x^2 + 1) </em> x = x^3 + x，这样它除以本原多项式后余1，正好等于表格中数据。</p>
+<p>再举个例子：111<em>010 &lt;=&gt; (x^2 + x + 1) </em> (x) = x^3 + x^2 + x，除以本原多项式后为x^2 + 1 &lt;=&gt; 101 = 5，也正好等于表中的数据。</p>
 <p>模运算：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image9.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p>一般地，在GF(2^n)上对于n次多项式p(x)，有x^n mod p(x) = [p(x) - x^n]。————-①</p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image9.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
+<p>一般地，在GF(2^n)上对于n次多项式p(x)，有x^n mod p(x) = [p(x) - x^n]。——————-①</p>
 <p>考虑GF(2^8)上的多项式：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image10.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image10.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>将它乘以x可得：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image11.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image11.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>如果b7 = 0，那么结果就是一个次数小于8的多项式，已经是约化后的形式，不需要进一步计算。如果b7 = 1，那么可以通过式①进行模m(x)的约化：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image12.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image12.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>这表明乘以x（即00000010）的运算可以通过左移一位后再根据条件按位异或00011011(其代表x^4 + x^3 + x + 1)来实现。总结如下：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image13.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image14.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image13.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/Post15_image14.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <hr>
 <p>参考：</p>
-<p>《密码编码学与网络安全–原理与实践》（第六版）</p>
+<p>《密码编码学与网络安全—原理与实践》（第六版）</p>
 <p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9C%AC%E5%8E%9F%E5%A4%9A%E9%A1%B9%E5%BC%8F/3246261?fr=aladdin">https://baike.baidu.com/item/%E6%9C%AC%E5%8E%9F%E5%A4%9A%E9%A1%B9%E5%BC%8F/3246261?fr=aladdin</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shelldon/article/details/54729687">https://blog.csdn.net/shelldon/article/details/54729687</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44840079/article/details/104963985?utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~default-2.no_search_link">https://blog.csdn.net/qq_44840079/article/details/104963985?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44840079/article/details/104963985?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link">https://blog.csdn.net/qq_44840079/article/details/104963985?utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7Edefault-2.no_search_link</a></p>
 
       </div>
       <div class="post-tags-categories">
@@ -1544,20 +1544,5 @@ import rand
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>

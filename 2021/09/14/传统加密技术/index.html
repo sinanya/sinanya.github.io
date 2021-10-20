@@ -556,7 +556,7 @@
         <h1 id="传统密码学"><a href="#传统密码学" class="headerlink" title="传统密码学"></a>传统密码学</h1><h2 id="密码分析学和穷举攻击"><a href="#密码分析学和穷举攻击" class="headerlink" title="密码分析学和穷举攻击"></a>密码分析学和穷举攻击</h2><p>攻击传统的密码体制有两种通用的方法：</p>
 <p><strong>密码分析学</strong>：密码分析学攻击依赖于算法的性质、明文的一般特征和某些明密文对。这种形式的攻击企图利用算法的特征来推导出特定的明文或使用的密钥。</p>
 <p><strong>穷举攻击</strong>：攻击者对一条密文尝试所有可能的密钥直到把它转化为可读的有意义的明文。平均而言，获得成功至少要尝试所有可能密钥的一半。</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>​    表中的唯密文攻击难度最大。一种情况是攻击者知道加密算法，那么一种可能的攻击就是攻击者试遍所有可能密钥的穷举攻击。如果密钥空间非常大，这种方法是行不通的。因此攻击者必须依赖于对密文分身的分析，这一版是运用各种统计方法。使用这种方法，攻击者对隐含的明文类型必须有所了解，比如说明文是英文文本、exe文件、会计文本等。</p>
 <p>​    唯密文攻击时对容易防范的，因为攻击者拥有的信息量最少。但在某些情况下，分析者可以捕获到一段或是更多的明文信息及相应密文，也可能知道某段明文信息的格式等。</p>
 <p>​    与已知明文攻击相关的时可能词攻击。如果攻击者处理的是一般散文信息，他可能对信息的内容一无所知，但如果它处理的是一些特定信息，就可能知道其中的部分内容。例如：知道某件开头的某些关键词，公司的版权信息放在哪个位置。</p>
@@ -580,45 +580,49 @@
 <p>​    单表代替密码较容易被攻破，因为它带有原始字母使用频率的一些统计学特征。有两种主要的办法可以减少代替密码里明文结构在密文中的残留度：一种是对明文中的多个字母一起加密，另一种是采用多表替代密码。</p>
 <p><strong>Playfair密码</strong></p>
 <p>​    Playfair算法基于一个由密钥词构成的5*5字母矩阵。填充矩阵的方法是：首先将密钥词（去掉重复字母）从左往右、从上到下填再矩阵的格子中，再将剩余的字母按字母表的顺序从左往右、从上到下填在矩阵剩下的格子里。字母I和J暂且当成一个字母。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th align="center">M</th>
-<th align="center">O</th>
-<th align="center">N</th>
-<th align="center">A</th>
-<th align="center">R</th>
+<th style="text-align:center">M</th>
+<th style="text-align:center">O</th>
+<th style="text-align:center">N</th>
+<th style="text-align:center">A</th>
+<th style="text-align:center">R</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center"><strong>C</strong></td>
-<td align="center"><strong>H</strong></td>
-<td align="center"><strong>Y</strong></td>
-<td align="center"><strong>B</strong></td>
-<td align="center"><strong>D</strong></td>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>C</strong></td>
+<td style="text-align:center"><strong>H</strong></td>
+<td style="text-align:center"><strong>Y</strong></td>
+<td style="text-align:center"><strong>B</strong></td>
+<td style="text-align:center"><strong>D</strong></td>
 </tr>
 <tr>
-<td align="center"><strong>E</strong></td>
-<td align="center"><strong>F</strong></td>
-<td align="center"><strong>G</strong></td>
-<td align="center"><strong>I/J</strong></td>
-<td align="center"><strong>K</strong></td>
+<td style="text-align:center"><strong>E</strong></td>
+<td style="text-align:center"><strong>F</strong></td>
+<td style="text-align:center"><strong>G</strong></td>
+<td style="text-align:center"><strong>I/J</strong></td>
+<td style="text-align:center"><strong>K</strong></td>
 </tr>
 <tr>
-<td align="center"><strong>L</strong></td>
-<td align="center"><strong>P</strong></td>
-<td align="center"><strong>Q</strong></td>
-<td align="center"><strong>S</strong></td>
-<td align="center"><strong>T</strong></td>
+<td style="text-align:center"><strong>L</strong></td>
+<td style="text-align:center"><strong>P</strong></td>
+<td style="text-align:center"><strong>Q</strong></td>
+<td style="text-align:center"><strong>S</strong></td>
+<td style="text-align:center"><strong>T</strong></td>
 </tr>
 <tr>
-<td align="center"><strong>U</strong></td>
-<td align="center"><strong>V</strong></td>
-<td align="center"><strong>W</strong></td>
-<td align="center"><strong>X</strong></td>
-<td align="center"><strong>Z</strong></td>
+<td style="text-align:center"><strong>U</strong></td>
+<td style="text-align:center"><strong>V</strong></td>
+<td style="text-align:center"><strong>W</strong></td>
+<td style="text-align:center"><strong>X</strong></td>
+<td style="text-align:center"><strong>Z</strong></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>对明文按如下规则一次加密两个字母：</p>
 <ul>
 <li>如果该字母对的两个字母是相同的，那么在他们之间加一个填充字母，比如x。例如：balloon先把它变成ba lx lo on 这样的4个字母对。</li>
@@ -627,12 +631,12 @@
 <li>其他的每组明文字母对中的字母如下方式替代，该字母所在行为密文所在行，另以字母所在列为密文所在列。比如：hs变成BP，ea变成IM（或JM）。</li>
 </ul>
 <p>​    Playfair密码相对于简单的单表密码是一种巨大的进步。尽管只有26个字母，担忧26 x 26 = 676个字母对，因此识别出单个字母对要困难得多。而且，单个字母得相对频率比字母对的相对频率变化得幅度大，在统计规律上要好，这样利用频率分析字母对就更困难一些。</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>​    曲线体现了加密后字母频率分布被掩盖的程度，而按字母的频率分布来分析替代密码是一种简单的方法。如果频率分布的信息被完全被加密过程给隐藏了，那么密文的频率曲线应该是一条水平的线。图中，Playfair密码虽然有比明文稍平坦的频率分布曲线，但是任然透露大量的信息给密码分析者。</p>
 <p><strong>Hill密码</strong></p>
 <p>由于前面的博客中提及Hill密码的加解密算法，所以这里不再赘述。</p>
 <p>​    同Playfair密码相比，Hill密码的优点是完全隐藏了单字母频率特性。实际上，Hill用的矩阵越大隐藏的频率信息越多。因此一个3 x 3的Hill密码不仅隐藏了单字母的频率特性，还隐藏了双字母的特性。</p>
-<p>​    尽管Hill密码足以抵抗唯密文攻击，但是它较易被已知明文攻击（可以参考**[97-112WP]UTCTF2020hill**）。</p>
+<p>​    尽管Hill密码足以抵抗唯密文攻击，但是它较易被已知明文攻击（可以参考<strong>[97-112WP]UTCTF2020hill</strong>）。</p>
 <hr>
 <h3 id="多表代替技术"><a href="#多表代替技术" class="headerlink" title="多表代替技术"></a>多表代替技术</h3><p>​    对简单单表代替的改进方法是在明文消息中采用不停的单表替代。这种方法一般称之为对标代替密码。所有这些方法都有以下的共同特征：</p>
 <ul>
@@ -642,9 +646,9 @@
 <p><strong>Vigenere密码</strong></p>
 <p>​    多表代替密码中最著名的和最简单的是Vigenere密码。它的代替规则集由26个Caesar密码的代替表组成，其中每一个代替表是对明文字母表以为0~25次后得到的代替单表。典型的是密钥长度小于明文长度，加密一条消息需要与消息一样长的密钥，通常是密钥词的重复而构成的。</p>
 <p>加密的一般过程：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>其本质上是每一个明文字母根据相应的密钥字母用不同的Caesar密码加密。解密方程如下：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image4.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image4.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>​    如果密钥词的长度是m，那么密码实际上包含了m个单表代替。例如：以DECEPTIVE作为密钥词，那么处在1，10，19．．．，的字母的加密实际上是单表密码。因此，可以用明文语言的频率特征对这样的单表密码分别进行攻击。为了解决这种攻击，Vigenere提出用一个所谓的”密钥自动生成系统“，它将密钥词和明文自身连接来生成不重复的密钥词。</p>
 <p>例如：</p>
 <p>密钥：deceptivewearediscoveredsav</p>
@@ -652,13 +656,13 @@
 <p>​    即使采用了这个方案，它也是易受攻击的。因为密钥和明文具有相同的频率分布特征，所以可以使用统计学的方法对其攻击。</p>
 <p><strong>Vernam密码</strong></p>
 <p>该加密体制可以表述为：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image5.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image5.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>其中：</p>
 <p>​        pi是明文第i个二级制位。</p>
 <p>​        ki是密钥第i个二进制位。</p>
 <p>​        ci是密文第i个二进制位。</p>
 <p>解密体制：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image6.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/Post14_image6.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>​    其本质在于构造密钥的方式，Vernam提出使用连续的额磁带，其最终也将循环。所以事实上该体制是使用周期很大的循环周期。尽管使用了很大的循环周期，但是如果有足够的密文，使用已知或可能的明文序列，该方案是可以被破解的。</p>
 <p><strong>一次一密(OTP)</strong></p>
 <p>​    Mauborgne提出了一种对Vernam密码的改进方案，从而达到了最完善的安全性。他建议使用与消息一样长且无重复的随机密钥来加密消息，另外，密钥只对一个消息进行加密，之后丢弃不用。<strong>每一条消息都需要一个与其等长的新密钥</strong>。这是著名的一次一密，它是不可攻破的。它产生的随机输出与明文没有任何统计关系，因为密文不包含明文的任何信息，所以无法攻破。</p>
@@ -674,6 +678,7 @@
 <h2 id="置换技术"><a href="#置换技术" class="headerlink" title="置换技术"></a>置换技术</h2><p>简单的例子就是<strong>栅栏密码</strong>。</p>
 <p>注意：<strong>置换技术只是改变明文中字符的位置，而不是像替代技术那样改变了明文的内容。</strong></p>
 <p>例子：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -686,7 +691,8 @@
 <th>7</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>a</td>
 <td>T</td>
 <td>t</td>
@@ -722,9 +728,11 @@
 <td>y</td>
 <td>z</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p>​    其中第一行就是密钥，下面都是明文。加密的原理就是密钥中的数字代表加密后其下面的明文是密文矩阵的第几列。单纯的置换密码因为有者与原始明文相同的字母频率特征而已被识别，上面的列变换密码，密码分析很直观，可以从密文排列成矩阵入手，再来处理列的位置。双字母音节和三字母音节频率表分析可以派上用场。对于上述的加密算法，可以使用相同的密钥对原始明文的多次列变换，从而达到不易被识别的效果。</p>
-<h2 id="转轮机"><a href="#转轮机" class="headerlink" title="转轮机"></a>转轮机</h2><p>​    它利用的是<strong>多层加密原理</strong>。转轮机包括一组相互独立的旋转圆筒，电脉冲可以通过它。每个圆筒有26个输入引脚和26个输出引脚。内部连线使每一个输入仅同唯一一个输出连接。<strong>如果把每个输入输出引脚当作字母表中的一个字母，那么一个圆筒定义了一个单表替换。</strong>每次按下一个输入键，圆筒就旋转一个位置，内部连线也就相应改变了。经过26个明文字母后，圆筒回到初始位置，于是可以得到一个周期为26的多表代替密码。以三个转筒（转子）为例，如果最左边的圆筒转完一圈后（26次），中间的圆筒就转一个引脚的位置。相同，中间的圆筒转完一圈后，第三个圆筒就转一个引脚的位置。所以整个系统重复使用26 * 26 * 26 = 17576个不同的替换字母表。<strong>一个五筒转轮机相当于密钥长度为11881376的Vigenere密码</strong>。</p>
+<h2 id="转轮机"><a href="#转轮机" class="headerlink" title="转轮机"></a>转轮机</h2><p>​    它利用的是<strong>多层加密原理</strong>。转轮机包括一组相互独立的旋转圆筒，电脉冲可以通过它。每个圆筒有26个输入引脚和26个输出引脚。内部连线使每一个输入仅同唯一一个输出连接。<strong>如果把每个输入输出引脚当作字母表中的一个字母，那么一个圆筒定义了一个单表替换。</strong>每次按下一个输入键，圆筒就旋转一个位置，内部连线也就相应改变了。经过26个明文字母后，圆筒回到初始位置，于是可以得到一个周期为26的多表代替密码。以三个转筒（转子）为例，如果最左边的圆筒转完一圈后（26次），中间的圆筒就转一个引脚的位置。相同，中间的圆筒转完一圈后，第三个圆筒就转一个引脚的位置。所以整个系统重复使用26 <em> 26 </em> 26 = 17576个不同的替换字母表。<strong>一个五筒转轮机相当于密钥长度为11881376的Vigenere密码</strong>。</p>
 <h2 id="隐写术"><a href="#隐写术" class="headerlink" title="隐写术"></a>隐写术</h2><p>​    说起隐写术，就会想起谍战片里的加密方法：不可见墨水（加热或其他的方法）可以看见纸上的内容。还有就是双方约定在每句话的第几个字符连起来是明文，字符标记，针刺，打字机的色带校正等等。这些都是比较旧的加密方法，给现代得隐写术指明了方向，比如在暑假就做到一题base64隐写的题目[81-96]RSA &amp; what。</p>
 <p>​    同加密相比，其缺点体现在它需要许多额外的付出来隐藏相对较少的信息。</p>
 
@@ -1692,20 +1700,5 @@ key2:information
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>

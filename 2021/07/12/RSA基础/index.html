@@ -570,7 +570,7 @@
 <p>欧拉定理：m^Φ(n) ≡ 1 (mod n) 表示对于任何一个与n互质的正整数m取它的Φ(n)次方，并除于n取余数，结果都永远等于1。</p>
 <p>Φ(n)是欧拉函数，它表示小于等于n的正整数中，有多少个与n互质的数。</p>
 <p>例子：取 n = 6， 会发现在小于6的正整数中只有1和5与6互质，所以Φ(6) = 2。</p>
-<p>对欧拉定理进行简单的变换：首先在等式的两边同取k（任意的正整数）次幂，m^(Φ(n) * k) ≡ 1^ k (mod n) ；接着在两端同乘以m，     m^(Φ(n) * k + 1) ≡ m (mod n) ；将模运算写在等式的左边 m^(Φ(n) * k + 1) mod n = m。与 m^(e * d) mod n = m 进行比对可以发现     e * d = Φ(n) * k + 1（Φ(n) * k + 1就是1 % Φ(n)，k∈Z , 成功推导出上面的⑤) ,  所以e和d的关系可以表示成e = Φ(n) * k + 1/d 。公式      看起来简单，但Φ(n)的计算并不容易，Φ(n)的计算恰恰是公钥加密中最关键的部分。要计算出Φ(n)的唯一办法就是对这个数n做质因数    分解，然而大数的质因数分解是非常困难的。但如果n本身是一个质数，情况就有所不同了。例如对于质数7，小于7并于7互质的数有    1-6，因此Φ(7) = 6。我们可以推广到对于一个质数p，Φ(p) = p - 1。Φ函数还有一个重要的特性：对于任意两个互质的整数p和q，Φ(p     * q) = Φ(p) * Φ(q)，再结合上面推导的Φ(p) = p - 1，就得到了③公式。</p>
+<p>对欧拉定理进行简单的变换：首先在等式的两边同取k（任意的正整数）次幂，m^(Φ(n) <em> k) ≡ 1^ k (mod n) ；接着在两端同乘以m，     m^(Φ(n) </em> k + 1) ≡ m (mod n) ；将模运算写在等式的左边 m^(Φ(n) <em> k + 1) mod n = m。与 m^(e </em> d) mod n = m 进行比对可以发现     e <em> d = Φ(n) </em> k + 1（Φ(n) <em> k + 1就是1 % Φ(n)，k∈Z , 成功推导出上面的⑤) ,  所以e和d的关系可以表示成e = Φ(n) </em> k + 1/d 。公式      看起来简单，但Φ(n)的计算并不容易，Φ(n)的计算恰恰是公钥加密中最关键的部分。要计算出Φ(n)的唯一办法就是对这个数n做质因数    分解，然而大数的质因数分解是非常困难的。但如果n本身是一个质数，情况就有所不同了。例如对于质数7，小于7并于7互质的数有    1-6，因此Φ(7) = 6。我们可以推广到对于一个质数p，Φ(p) = p - 1。Φ函数还有一个重要的特性：对于任意两个互质的整数p和q，Φ(p     <em> q) = Φ(p) </em> Φ(q)，再结合上面推导的Φ(p) = p - 1，就得到了③公式。</p>
 <h3 id="加密算法"><a href="#加密算法" class="headerlink" title="加密算法"></a>加密算法</h3><p>给定公钥(E,N)和明文m，则加密函数为：</p>
 <p>​                        c ≡ m^e mod n</p>
 <p>其中c, m ∈ &#x2124;n。</p>
@@ -601,11 +601,10 @@ d <span class="token operator">=</span> inverse<span class="token punctuation">(
 
 
 <span class="token comment">#flag&#123;53616899001&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>2.</p>
 <p><img "" class="lazyload placeholder" data-original="/2021/07/12/RSA%E5%9F%BA%E7%A1%80/Post2_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt="第二题"></p>
 <p>解题思路：</p>
-<p>由 d * e ≡ 1 mod Φ(n),  Φ(n) =  (p - 1)(q - 1), n = p * q,  求得d之后，将其带入到 m ≡ c^d mod n，可求得m</p>
+<p>由 d <em> e ≡ 1 mod Φ(n),  Φ(n) =  (p - 1)(q - 1), n = p </em> q,  求得d之后，将其带入到 m ≡ c^d mod n，可求得m</p>
 <p>附上代码：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> inverse
 <span class="token keyword">import</span> gmpy2
@@ -621,7 +620,6 @@ d <span class="token operator">=</span> inverse<span class="token punctuation">(
 
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 
       </div>
@@ -674,7 +672,7 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
       </div>
       
       <!-- <div class="content">
-        base64​    base64加密的原理：3 * 8 = 4 * 6，也就是将原来的3个字节转换成4个6位二进制数，
+        base64​    base64加密的原理：3  8 = 4  6，也就是将原来的3个字节转换成4个6位二进制数，而且
       </div> -->
     </a>
   </div>
@@ -1582,20 +1580,5 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>

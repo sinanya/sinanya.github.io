@@ -585,13 +585,11 @@
 15808773921165746378224649554032774095198531782455904169552223303513940968292896814159288417499220739875833754573943607047855256739976161598599903932981169979509871591999964856806929597805904134099901826858367778386342376768508031554802249075072366710038889306268806744179086648684738023073458982906066972340414398928411147970593935244077925448732772473619783079328351522269170879807064111318871074291073581343039389561175391039766936376267875184581643335916049461784753341115227515163545709454746272514827000601853735356551495685229995637483506735448900656885365353434308639412035003119516693303377081576975540948311
 (40625981017250262945230548450738951725566520252163410124565622126754739693681271649127104109038164852787767296403697462475459670540845822150397639923013223102912674748402427501588018866490878394678482061561521253365550029075565507988232729032055298992792712574569704846075514624824654127691743944112075703814043622599530496100713378696761879982542679917631570451072107893348792817321652593471794974227183476732980623835483991067080345184978482191342430627490398516912714451984152960348899589532751919272583098764118161056078536781341750142553197082925070730178092561314400518151019955104989790911460357848366016263083, 43001726046955078981344016981790445980199072066019323382068244142888931539602812318023095256474939697257802646150348546779647545152288158607555239302887689137645748628421247685225463346118081238718049701320726295435376733215681415774255258419418661466010403928591242961434178730846537471236142683517399109466429776377360118355173431016107543977241358064093102741819626163467139833352454094472229349598479358367203452452606833796483111892076343745958394932132199442718048720633556310467019222434693785423996656306612262714609076119634814783438111843773649519101169326072793596027594057988365133037041133566146897868269, 39796272592331896400626784951713239526857273168732133046667572399622660330587881579319314094557011554851873068389016629085963086136116425352535902598378739)
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在比赛过程中，还是有些手忙脚乱的，只解出了后半部分的flag，先来看看后半部分。令k = ((fac[0]+fac[1]+fac[2]) &lt;&lt; 1) - 1，看看数据的数量级，明文小于512位的数据，查看了n和k的数量级，分别是2051位和516位。重点：k的数量级大于m的数量级，所以可以把k当作是新的n。分解k：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">p1 <span class="token operator">=</span> <span class="token number">191</span>
 p2 <span class="token operator">=</span> <span class="token number">193</span>
 p3 <span class="token operator">=</span> <span class="token number">627383</span>
 p4 <span class="token operator">=</span> <span class="token number">1720754738477317127758682285465031939891059835873975157555031327070111123628789833299433549669619325160679719355338187877758311485785197492710491</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>接着就是求d，发现n也可以分解，这样d就不难求，脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">c1 <span class="token operator">=</span> cipher2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 n1 <span class="token operator">=</span> cipher2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
@@ -605,7 +603,6 @@ phin2 <span class="token operator">=</span> <span class="token punctuation">(</s
 d2 <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phin2<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> d2<span class="token punctuation">,</span> shift<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>再来看看第一部分的加密，只对flag的前20位加密，总的长度为160位，小于p的1024位，所以这里只要求出p就可以了。p是介于1021到1027位，只能爆破了，题目没有给出其他关于v和m的信息。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">100000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> m <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span>log<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">1021</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">int</span><span class="token punctuation">(</span>log<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">**</span><span class="token number">1027</span><span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -616,7 +613,6 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
             m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>cipher1<span class="token punctuation">,</span> d1<span class="token punctuation">,</span> p<span class="token punctuation">)</span>
             <span class="token keyword">if</span> <span class="token string">'flag&#123;'</span> <span class="token keyword">in</span> <span class="token builtin">str</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
                 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>完整脚本：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> math <span class="token keyword">import</span> log
@@ -648,7 +644,6 @@ phin2 <span class="token operator">=</span> <span class="token punctuation">(</s
 d2 <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phin2<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> d2<span class="token punctuation">,</span> shift<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
       </div>
       <div class="post-tags-categories">
@@ -1611,20 +1606,5 @@ import rand
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>

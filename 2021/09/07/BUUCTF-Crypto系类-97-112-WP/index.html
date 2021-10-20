@@ -558,7 +558,6 @@
 key2:information
 
 密文啊这是，骚年加油：zhnjinhoopcfcuktlj<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>看了大佬的博客才知道这是四方密码，科普一下：</p>
 <p>四方密码是一种对称式加密法，由法国人Felix Delastelle（1840年–1902年）发明。</p>
 <p>这种方法将字母两个一组，然后采用多字母替换密码。 [1] </p>
@@ -575,14 +574,14 @@ key2:information
 <p>得到的这两个字母就是加密过的讯息。</p>
 <p>he lp me ob iw an ke no bi的加密结果：FY NF NE HW BX AF FO KH MD</p>
 <p>引用大佬博客中的一张图片：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/Post13_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/Post13_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>通过<a target="_blank" rel="noopener" href="http://ctf.ssleye.com/four.html">在线解密工具</a>，如下图：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/Post13_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/Post13_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>在进行爆破：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/Post13_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/Post13_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>就是flag啦。</p>
 <hr>
-<h2 id="AFCTF2018-你听过一次一密么？"><a href="#AFCTF2018-你听过一次一密么？" class="headerlink" title="[AFCTF2018]你听过一次一密么？"></a>[AFCTF2018]你听过一次一密么？</h2><p>这里直接贴上大佬的博客链接（<a target="_blank" rel="noopener" href="https://www.ruanx.net/many-time-pad/%EF%BC%89">https://www.ruanx.net/many-time-pad/）</a></p>
+<h2 id="AFCTF2018-你听过一次一密么？"><a href="#AFCTF2018-你听过一次一密么？" class="headerlink" title="[AFCTF2018]你听过一次一密么？"></a>[AFCTF2018]你听过一次一密么？</h2><p>这里直接贴上大佬的博客链接（<a target="_blank" rel="noopener" href="https://www.ruanx.net/many-time-pad/）">https://www.ruanx.net/many-time-pad/）</a></p>
 <hr>
 <h2 id="MRCTF2020-Easy-RSA"><a href="#MRCTF2020-Easy-RSA" class="headerlink" title="[MRCTF2020]Easy_RSA"></a>[MRCTF2020]Easy_RSA</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> sympy
@@ -650,15 +649,13 @@ Q_n =  2071429833816044974954536074368801884287727405454085209645948528393680234
 Q_E_D =  100772079222298134586116156850742817855408127716962891929259868746672572602333918958075582671752493618259518286336122772703330183037221105058298653490794337885098499073583821832532798309513538383175233429533467348390389323225198805294950484802068148590902907221150968539067980432831310376368202773212266320112670699737501054831646286585142281419237572222713975646843555024731855688573834108711874406149540078253774349708158063055754932812675786123700768288048445326199880983717504538825498103789304873682191053050366806825802602658674268440844577955499368404019114913934477160428428662847012289516655310680119638600315228284298935201
 Ciphertext =  40855937355228438525361161524441274634175356845950884889338630813182607485910094677909779126550263304194796000904384775495000943424070396334435810126536165332565417336797036611773382728344687175253081047586602838685027428292621557914514629024324794275772522013126464926990620140406412999485728750385876868115091735425577555027394033416643032644774339644654011686716639760512353355719065795222201167219831780961308225780478482467294410828543488412258764446494815238766185728454416691898859462532083437213793104823759147317613637881419787581920745151430394526712790608442960106537539121880514269830696341737507717448946962021
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>是一个RSA加密过程，属于RSA嵌套题，分别利用第一重RSA生成p和q，在进行对明文的加密。所以我们需要对题目中给出的几个常量来求得p和q。首先是利用P_n和P_F_n来求p，P_n = p1 * q1， P_F_n = (p1 - 1) * (q1 - 1)，这样两个未知数两个方程可以求得p1和q1，注意的是p1小于q1。</p>
+<p>是一个RSA加密过程，属于RSA嵌套题，分别利用第一重RSA生成p和q，在进行对明文的加密。所以我们需要对题目中给出的几个常量来求得p和q。首先是利用P_n和P_F_n来求p，P_n = p1 <em> q1， P_F_n = (p1 - 1) </em> (q1 - 1)，这样两个未知数两个方程可以求得p1和q1，注意的是p1小于q1。</p>
 <p>脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sympy <span class="token keyword">import</span> <span class="token operator">*</span>
 
 x <span class="token operator">=</span> Symbol<span class="token punctuation">(</span><span class="token string">'x'</span><span class="token punctuation">)</span>
 y <span class="token operator">=</span> Symbol<span class="token punctuation">(</span><span class="token string">'y'</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>solve<span class="token punctuation">(</span><span class="token punctuation">[</span>x <span class="token operator">*</span> y <span class="token operator">-</span> P_n<span class="token punctuation">,</span> <span class="token punctuation">(</span>x <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>y <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">-</span> P_F_n<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>再来看看生成q的函数，这里直接进行对Q_n的因数分解。在csdn上看到了大佬分解Q_n的操作：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#coding=utf-8</span>
 <span class="token keyword">from</span> random <span class="token keyword">import</span> randint
@@ -724,14 +721,12 @@ y <span class="token operator">=</span> Symbol<span class="token punctuation">(<
 n <span class="token operator">=</span>  <span class="token number">20714298338160449749545360743688018842877274054540852096459485283936802341271363766157976112525034004319938054034934880860956966585051684483662535780621673316774842614701726445870630109196016676725183412879870463432277629916669130494040403733295593655306104176367902352484367520262917943100467697540593925707162162616635533550262718808746254599456286578409187895171015796991910123804529825519519278388910483133813330902530160448972926096083990208243274548561238253002789474920730760001104048093295680593033327818821255300893423412192265814418546134015557579236219461780344469127987669565138930308525189944897421753947</span>
 e_d<span class="token operator">=</span>  <span class="token number">100772079222298134586116156850742817855408127716962891929259868746672572602333918958075582671752493618259518286336122772703330183037221105058298653490794337885098499073583821832532798309513538383175233429533467348390389323225198805294950484802068148590902907221150968539067980432831310376368202773212266320112670699737501054831646286585142281419237572222713975646843555024731855688573834108711874406149540078253774349708158063055754932812675786123700768288048445326199880983717504538825498103789304873682191053050366806825802602658674268440844577955499368404019114913934477160428428662847012289516655310680119638600315228284298935201</span>
 deciphering<span class="token punctuation">(</span>e_d<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>最后就是正常的RSA解密了。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">n <span class="token operator">=</span> p <span class="token operator">*</span> q
 phin <span class="token operator">=</span> <span class="token punctuation">(</span>p <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span>q <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
 d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phin<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>Ciphertext<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="De1CTF2019-babyrsa"><a href="#De1CTF2019-babyrsa" class="headerlink" title="[De1CTF2019]babyrsa"></a>[De1CTF2019]babyrsa</h2><hr>
 <h2 id="ACTF新生赛2020-crypto-aes"><a href="#ACTF新生赛2020-crypto-aes" class="headerlink" title="[ACTF新生赛2020]crypto-aes"></a>[ACTF新生赛2020]crypto-aes</h2><p>题目如下：</p>
@@ -755,7 +750,6 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
 output<span class="token punctuation">:</span>
 <span class="token number">91144196586662942563895769614300232343026691029427747065707381728622849079757</span>
 <span class="token string">b'\x8c-\xcd\xde\xa7\xe9\x7f.b\x8aKs\xf1\xba\xc75\xc4d\x13\x07\xac\xa4&amp;\xd6\x91\xfe\xf3\x14\x10|\xf8p'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>在加密算法中os.urandom()函数的作用是随机生成一个适合加密的字节，语法如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">语法  os.urandom（size）
 参数：
@@ -764,21 +758,17 @@ output<span class="token punctuation">:</span>
 例 os.urandom(1)
 输出：b&#39;\x91&#39;
 二进制：10010001 （8bits）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>AES.new(key, mode, *args, **kwargs)</p>
+<p>AES.new(key, mode, <em>args, *</em>kwargs)</p>
 <pre class="line-numbers language-none"><code class="language-none">param key(参数密钥):
 在对称密码中使用的秘密密钥。
 它必须为16、24或32个字节长（分别用于AES-128， AES-192或AES-256）。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-none"><code class="language-none">mode（模式）
 模式（支持的MODE_*常量之一）–用于加密或解密的链接模式。
 学习链接：https:&#x2F;&#x2F;pycryptodome.readthedocs.io&#x2F;en&#x2F;latest&#x2F;src&#x2F;cipher&#x2F;aes.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-none"><code class="language-none">Keyword Arguments（关键字参数）：
 IV（字节，字节组，memoryview） - （只适用于MODE_CBC，MODE_CFB，MODE_OFB，和MODE_OPENPGP模式）。
 用于加密或解密的初始化向量。
 对于MODE_CBC，MODE_CFB和MODE_OFB它必须是16个字节。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>解题的关键在于获取key和iv，通过观察发现key的生成是先生成2个字节的数据然后复制16份形成32字节的数据。iv是直接生成一个16字节的数据。接着key的低16位和iv进行异或就是output中的第一个数据的二进制数，而key的高16位是没有发生变动的，high_key_16 = xor_16。这样我们可以通过异或的结果的高16位来得到key，得到key之后再和xor异或就可以得到iv，最后就是构造出aes对象对enc_flag解密。脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Cipher <span class="token keyword">import</span> AES
 <span class="token keyword">import</span> os
@@ -795,7 +785,6 @@ iv <span class="token operator">=</span> long_to_bytes<span class="token punctua
 aes<span class="token operator">=</span>AES<span class="token punctuation">.</span>new<span class="token punctuation">(</span>key<span class="token punctuation">,</span>AES<span class="token punctuation">.</span>MODE_CBC<span class="token punctuation">,</span>iv<span class="token punctuation">)</span>
 flag <span class="token operator">=</span> aes<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>enc_flag<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="INSHack2019-Yet-Another-RSA-Challenge-Part-1"><a href="#INSHack2019-Yet-Another-RSA-Challenge-Part-1" class="headerlink" title="[INSHack2019]Yet Another RSA Challenge - Part 1"></a>[INSHack2019]Yet Another RSA Challenge - Part 1</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> subprocess
@@ -814,7 +803,6 @@ output<span class="token punctuation">:</span>
 <span class="token number">0xDCC5A0BD3A1FC0BEB0DA1C2E8CF6B474481B7C12849B76E03C4C946724DB577D2825D6AA193DB559BC9DBABE1DDE8B5E7805E48749EF002F622F7CDBD7853B200E2A027E87E331AFCFD066ED9900F1E5F5E5196A451A6F9E329EB889D773F08E5FBF45AACB818FD186DD74626180294DCC31805A88D1B71DE5BFEF3ED01F12678D906A833A78EDCE9BDAF22BBE45C0BFB7A82AFE42C1C3B8581C83BF43DFE31BFD81527E507686956458905CC9A660604552A060109DC81D01F229A264AB67C6D7168721AB36DE769CEAFB97F238050193EC942078DDF5329A387F46253A4411A9C8BB71F9AEB11AC9623E41C14FCD2739D76E69283E57DDB11FC531B4611EE3</span>
 
 <span class="token number">596380963583874022971492302071822444225514552231574984926542429117396590795270181084030717066220888052607057994262255729890598322976783889090993129161030148064314476199052180347747135088933481343974996843632511300255010825580875930722684714290535684951679115573751200980708359500292172387447570080875531002842462002727646367063816531958020271149645805755077133231395881833164790825731218786554806777097126212126561056170733032553159740167058242065879953688453169613384659653035659118823444582576657499974059388261153064772228570460351169216103620379299362366574826080703907036316546232196313193923841110510170689800892941998845140534954264505413254429240789223724066502818922164419890197058252325607667959185100118251170368909192832882776642565026481260424714348087206462283972676596101498123547647078981435969530082351104111747783346230914935599764345176602456069568419879060577771404946743580809330315332836749661503035076868102720709045692483171306425207758972682717326821412843569770615848397477633761506670219845039890098105484693890695897858251238713238301401843678654564558196040100908796513657968507381392735855990706254646471937809011610992016368630851454275478216664521360246605400986428230407975530880206404171034278692756</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>题目中告诉了我们p，不过其中的十六进制数被替换了，这里就直接使用爆破恢复原来的p。脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">import</span> gmpy2
@@ -844,7 +832,6 @@ d <span class="token operator">=</span> gmpy2<span class="token punctuation">.</
 <span class="token comment"># print(type(c))</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>cipher<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="AFCTF2018-花开藏宝地"><a href="#AFCTF2018-花开藏宝地" class="headerlink" title="[AFCTF2018]花开藏宝地"></a>[AFCTF2018]花开藏宝地</h2><p>题目如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">题面.txt:
@@ -869,7 +856,6 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
 你是这样的勇者吗？
 ------------------------------------------------------------------------------------------------------------
 另外还有4个加密的压缩包，和没有加密的内容为空的压缩包。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>初步分析这5个压缩包就是那五位贤者分到的包藏图。</p>
 <p>刚开始的想法：按照题目给的意思打开其中的三个压缩包，然后把包藏图的序号进行5等分，再看看里面有什么奥秘。</p>
 <p>后来发现并不能提供什么关键的线索，然后想了想不如看看原始数据有社么内容，直接long_to_bytes()。</p>
@@ -878,21 +864,16 @@ m <span class="token operator">=</span> <span class="token builtin">pow</span><s
 m <span class="token operator">=</span> <span class="token number">80804238007977405688648566160504278593148666302626415149704905628622876270862865768337953835725801963142685182510812938072115996355782396318303927020705623120652014080032809421180400984242061592520733710243483947230962631945045134540159517488288781666622635328316972979183761952842010806304748313326215619695085380586052550443025074501971925005072999275628549710915357400946408857</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">#b"A treasure map is a map that marks the location of buried treasure, a lost mine, a valuable secret or a hidden locale. So flag is afctf&#123;1sn't_s0_int3Resting&#125;\x99"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>haha，flag就在里面了。</p>
 <hr>
 <h2 id="GUET-CTF2019-NO-SOS"><a href="#GUET-CTF2019-NO-SOS" class="headerlink" title="[GUET-CTF2019]NO SOS"></a>[GUET-CTF2019]NO SOS</h2><p>题目如下：</p>
 <pre class="line-numbers language-none"><code class="language-none">..-.-.-.–…….–..-…-..-…–.-.-….-..-..–.-.-..-.-..—-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>其中的’.’和’–’被修改过，恢复至原样：</p>
 <pre class="line-numbers language-none"><code class="language-none">..-.-.-.--.......--..-...-..-...--.-.-....-..-..--.-.-..-.-..----<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>把’.’换成0，把’-‘换成’1’。二进制转16进制：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">aababababbaaaaaaabbaabaaabaabaaabbababaaaabaabaabbababaababaabbbb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>就是熟悉的培根密码，进行解密：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">FLAGISGUETKKP<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <hr>
 <h2 id="NPUCTF2020-共-模-攻-击-（很好的题，打个tag）"><a href="#NPUCTF2020-共-模-攻-击-（很好的题，打个tag）" class="headerlink" title="[NPUCTF2020]共 模 攻 击      （很好的题，打个tag）"></a>[NPUCTF2020]共 模 攻 击      （<strong>很好的题，打个tag</strong>）</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">hint<span class="token punctuation">.</span>py<span class="token punctuation">:</span>
@@ -942,7 +923,6 @@ c1<span class="token punctuation">,</span> c2 <span class="token operator">=</sp
 96860654235275202217368130195089839608037558388884522737500611121271571335123981588807994043800468529002147570655597610639680977780779494880330669466389788497046710319213376228391138021976388925171307760030058456934898771589435836261317283743951614505136840364638706914424433566782044926111639955612412134198
 9566853166416448316408476072940703716510748416699965603380497338943730666656667456274146023583837768495637484138572090891246105018219222267465595710692705776272469703739932909158740030049375350999465338363044226512016686534246611049299981674236577960786526527933966681954486377462298197949323271904405241585
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>先从hint入手，思路是：通过共模攻击得到c，再由c的到明文。值得注意的是明文的加密过程中模数使用的是p，是一个素数，所以这里需要用到sympy.nthroot_mod()函数，脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> sympy <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -986,18 +966,17 @@ p <span class="token operator">=</span> <span class="token number">1073169757712
 m <span class="token operator">=</span> nthroot_mod<span class="token punctuation">(</span>c<span class="token punctuation">,</span> <span class="token number">256</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">#b'm.bit_length() &lt; 400'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>提示了m的长度，这样我们可以联想到CopperSmith定理。<strong>Coppersmith定理的内容为：在一个e阶的mod n多项式f(x)中，如果有一个根小于n^1/e，就可以运用一个O(log n)的算法求出这些根</strong>。</p>
 <p>从task文件中我们知道c1 = m^p mod n, c2 = m^q mod n。p和q都是512位，n是在1024位左右，整除512后肯定比m大，因为m小于400位，这样我们就可以利用CopperSmith定理了。</p>
 <p>推导：</p>
 <p>m^p ≡ m mod p; m^q ≡ m mod q。</p>
-<p>c1 = k1 * p + m + k2 * p * q –&gt; 整理得 c1 = m + i * p</p>
-<p>c2 = h1 * q + m + h2 * p * q –&gt; 整理得 c2 = m + j * q</p>
+<p>c1 = k1 <em> p + m + k2 </em> p <em> q —&gt; 整理得 c1 = m + i </em> p</p>
+<p>c2 = h1 <em> q + m + h2 </em> p <em> q —&gt; 整理得 c2 = m + j </em> q</p>
 <hr>
-<p>c1 + c2 = 2m + (i * p + j * q)   —————–①</p>
-<p>c1 * c2 = m ^ 2 + m * (i * p + j * q) + i * p * j * q  —————–②</p>
-<p>通过两个方程消去(i * p + j * q)有关的项，生成等式：</p>
-<p>m ^ 2 - (c1 + c2)*m + c1 * c2 = ijn ≡ 0 mod n</p>
+<p>c1 + c2 = 2m + (i <em> p + j </em> q)   ————————-①</p>
+<p>c1 <em> c2 = m ^ 2 + m </em> (i <em> p + j </em> q) + i <em> p </em> j * q  ————————-②</p>
+<p>通过两个方程消去(i <em> p + j </em> q)有关的项，生成等式：</p>
+<p>m ^ 2 - (c1 + c2)<em>m + c1 </em> c2 = ijn ≡ 0 mod n</p>
 <p>这样就可以利用sage，在n的整数群里找出m。</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">sage<span class="token punctuation">:</span> n <span class="token operator">=</span> <span class="token number">1282053047437519858896793511958367994343243469961297538962349179826472</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">:</span> <span class="token number">54577214018524580290192396070591032007818847697193260130051396080104704981</span>
@@ -1020,7 +999,6 @@ sage<span class="token punctuation">:</span> PR<span class="token punctuation">.
 sage<span class="token punctuation">:</span> f <span class="token operator">=</span> m <span class="token operator">^</span> <span class="token number">2</span> <span class="token operator">-</span> a<span class="token operator">*</span>m <span class="token operator">+</span> b
 sage<span class="token punctuation">:</span> f<span class="token punctuation">.</span>small_roots<span class="token punctuation">(</span>X <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">^</span> <span class="token number">400</span><span class="token punctuation">)</span>
 <span class="token punctuation">[</span><span class="token number">4242839043019782000788118887372132807371568279472499477998758466224002905442227156537788110520335652385855</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>最后long_to_byte就是flag。</p>
 <hr>
 <h2 id="BJDCTF2020-伏羲六十四卦"><a href="#BJDCTF2020-伏羲六十四卦" class="headerlink" title="[BJDCTF2020]伏羲六十四卦"></a>[BJDCTF2020]伏羲六十四卦</h2><p>题目如下：</p>
@@ -1051,7 +1029,6 @@ flag：请按照格式BJD<span class="token punctuation">&#123;</span><span clas
     <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>enc<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         temp<span class="token operator">+=</span><span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span>enc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span>offset<span class="token operator">-</span>i<span class="token punctuation">)</span>
     <span class="token keyword">return</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>先是对64卦中的密文进行解密，因为在py文件中涉及到字符串，所以要构造出64卦的二进制数的字典。最后将二进制转为ASCII码，脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> base64
 
@@ -1075,12 +1052,10 @@ enc <span class="token operator">=</span> <span class="token string">''</span>
     enc <span class="token operator">+=</span> <span class="token builtin">chr</span><span class="token punctuation">(</span><span class="token builtin">eval</span><span class="token punctuation">(</span><span class="token string">'0b'</span> <span class="token operator">+</span> ans<span class="token punctuation">[</span>i<span class="token punctuation">:</span>i <span class="token operator">+</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>enc<span class="token punctuation">)</span>
 <span class="token comment">#bl1oXF1ra2FbW2VpV1dfUmBiT11dYE5NVVdXSUZYSFVDUA==</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>结果是一串base64密文，解密：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">b64plainer <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>enc<span class="token punctuation">)</span><span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>b64plainer<span class="token punctuation">)</span>
 <span class="token comment">#n]h\\]kka[[eiWW_R`bO]]`NMUWWIFXHUCP</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>最后再用到py文件的两个加密函数，分别构造出解密函数，由于不知道a是多少，所以直接进行爆破：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">decrypt5</span><span class="token punctuation">(</span>enc<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">for</span> a <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1095,7 +1070,6 @@ enc <span class="token operator">=</span> <span class="token string">''</span>
 plainer <span class="token operator">=</span> decrypt4<span class="token punctuation">(</span>b64plainer<span class="token punctuation">)</span>
 plainer <span class="token operator">=</span> decrypt5<span class="token punctuation">(</span>plainer<span class="token punctuation">)</span>
 <span class="token comment">#bjdcongratulationsongettingtheflag</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="UTCTF2020-OTP"><a href="#UTCTF2020-OTP" class="headerlink" title="[UTCTF2020]OTP"></a>[UTCTF2020]OTP</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">Encoded A<span class="token punctuation">:</span> <span class="token number">213c234c2322282057730b32492e720b35732b2124553d354c22352224237f1826283d7b0651</span>
@@ -1106,10 +1080,8 @@ Original B<span class="token punctuation">:</span> <span class="token number">4e
 
 A XOR A<span class="token punctuation">:</span> <span class="token number">7574666c61677b7477305f74696d335f703464737d7574666c61677b7477305f74696d335f70</span>
 B XOR B<span class="token punctuation">:</span> <span class="token number">7574666c61677b7477305f74696d335f703464737d7574666c61677b7477305f74696d335f70</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>一次一密，题目中的Encode A其实是Original A通过与某个数相异或而得到的，而题目恰恰给了这个神秘数字（key），所以我们就得到了flag，直接long_to_bytes()即可：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">utflag<span class="token punctuation">&#123;</span>tw0_tim3_p4ds<span class="token punctuation">&#125;</span>utflag<span class="token punctuation">&#123;</span>tw0_tim3_p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <hr>
 <h2 id="NPUCTF2020-认清形势，建立信心"><a href="#NPUCTF2020-认清形势，建立信心" class="headerlink" title="[NPUCTF2020]认清形势，建立信心"></a>[NPUCTF2020]认清形势，建立信心</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -1134,13 +1106,12 @@ c <span class="token operator">=</span> <span class="token builtin">pow</span><s
 518818742414340
 358553002064450
 '''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>根据题目提供的线索，有下列等式：</p>
 <p>y1 = 2^e % n</p>
 <p>y2 = 4^e % n</p>
 <p>y3 = 8^e % n</p>
 <p>其中y1、y2、y3是下面的三个数字。</p>
-<p>经过变换有：y2 = y1^2 % n；y3 = y1 * y2 % n。接着，我们通过y1^2 - y2 和 y1 * y2 - y3找到二者的最小公因数。脚本如下：</p>
+<p>经过变换有：y2 = y1^2 % n；y3 = y1 <em> y2 % n。接着，我们通过y1^2 - y2 和 y1 </em> y2 - y3找到二者的最小公因数。脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">c <span class="token operator">=</span> <span class="token number">169169912654178</span>
 y1 <span class="token operator">=</span> <span class="token number">128509160179202</span>
 y2 <span class="token operator">=</span> <span class="token number">518818742414340</span>
@@ -1148,7 +1119,6 @@ y3 <span class="token operator">=</span> <span class="token number">358553002064
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>gcd<span class="token punctuation">(</span>y1<span class="token operator">**</span><span class="token number">2</span> <span class="token operator">-</span> y2<span class="token punctuation">,</span> y1 <span class="token operator">*</span> y2 <span class="token operator">-</span> y3<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">#1054494004042394</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>去factordb分解，可得到p和q（其中2舍去，因为我们上面所构造出的等式其实都是基于以2为底的指数），然后再通过离散对数找到e，最后就是基本的RSA解密操作了。完整脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> sympy <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -1168,11 +1138,9 @@ e <span class="token operator">=</span> discrete_log<span class="token punctuati
 d <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e<span class="token punctuation">,</span> phin<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="UTCTF2020-hill"><a href="#UTCTF2020-hill" class="headerlink" title="[UTCTF2020]hill"></a>[UTCTF2020]hill</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">wznqca<span class="token punctuation">&#123;</span>d4uqop0fk_q1nwofDbzg_eu<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>希尔密码：</p>
 <p>26个字母一次编号：0、1、2、……25。把要加密的密文中的字符依次映射，放入到一个n*n的矩阵，加密的矩阵是自定义的，所以加密的过程是：</p>
 <p>M * A = C</p>
@@ -1198,7 +1166,6 @@ flag <span class="token operator">=</span> <span class="token string">""</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
 <span class="token comment">#utflag&#123;d4nger0us_c1pherText_qq&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="De1CTF2019-babyrsa-1"><a href="#De1CTF2019-babyrsa-1" class="headerlink" title="[De1CTF2019]babyrsa"></a>[De1CTF2019]babyrsa</h2><p>题目如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> binascii
@@ -1233,7 +1200,6 @@ c1 <span class="token operator">=</span>  <span class="token number">26273997575
 c2 <span class="token operator">=</span>  <span class="token number">7395591129228876649030819616685821899204832684995757724924450812977470787822266387122334722132760470911599176362617225218345404468270014548817267727669872896838106451520392806497466576907063295603746660003188440170919490157250829308173310715318925771643105064882620746171266499859049038016902162599261409050907140823352990750298239508355767238575709803167676810456559665476121149766947851911064706646506705397091626648713684511780456955453552020460909638016134124590438425738826828694773960514221910109473941451471431637903182205738738109429736425025621308300895473186381826756650667842656050416299166317372707709596</span>
 <span class="token keyword">assert</span><span class="token punctuation">(</span>c1<span class="token operator">==</span><span class="token builtin">pow</span><span class="token punctuation">(</span>flag<span class="token punctuation">,</span>e1<span class="token punctuation">,</span>p<span class="token operator">*</span>q1<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">assert</span><span class="token punctuation">(</span>c2<span class="token operator">==</span><span class="token builtin">pow</span><span class="token punctuation">(</span>flag<span class="token punctuation">,</span>e2<span class="token punctuation">,</span>p<span class="token operator">*</span>q2<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>看到最后的加密算法，用到了e1、e2、p、q1、q2等需要求解的数。首先看看p怎么求的吧，map函数将参数应用到f函数，相当于有4个p^4 %n = c，所以这里用到的是中国剩余定理。</p>
 <p>转到第二段的e1和e2的加密算法，c1比n小数十个数量级，有可能是因为e1的42次方很小导致模n没有效果，所以直接对c1开42次方。ee2很小，直接用低加密指数攻击获取(e2+tmp)。</p>
 <p>看到第三段加密算法，q1q和q1p相乘得到n，对n进行分解就可以得到了。hint内容：orz…you.found.me.but.sorry.no.hint…keep.on.and.enjoy.it!</p>
@@ -1316,7 +1282,6 @@ phin <span class="token operator">=</span> <span class="token punctuation">(</sp
 d <span class="token operator">=</span> inverse<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> phin<span class="token punctuation">)</span>
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> d<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>gmpy2<span class="token punctuation">.</span>iroot<span class="token punctuation">(</span>m<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 
       </div>
@@ -2278,20 +2243,5 @@ assert(len(open('flag.txt', 'rb').read()) &lt;
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>

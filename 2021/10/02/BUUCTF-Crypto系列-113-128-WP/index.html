@@ -583,7 +583,6 @@ And your exponent is: 10369
 Last but not least, your secret is: 338230230737795357907632634565480424320738100416872971593313504623031636549506308515885211507225139575284223841381475563865888650857636729319870056097265003381655374810743643787055050913356678153093440043937297044556267703050582739481148800234028265995678045070593516597241200279290432036592464223968778632301959998956082387007036826439290490046693942095006926116019667542427239110629330500882759564195704755475923049022289141527406786806241793809546426372343971278513127134648233599072200913066293287533269250758307985763118372706166149682768349327629911555785267589749222331760647201324907861960876452039787203524
 You will know the secret after I give you P,Q.
 See you next time!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>观察发现，Alice的N和Dave的一样，采用共模攻击：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
@@ -624,11 +623,9 @@ s2 <span class="token operator">=</span> s<span class="token punctuation">[</spa
 m <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span>s1<span class="token punctuation">,</span>n<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c2<span class="token punctuation">,</span>s2<span class="token punctuation">,</span>n<span class="token punctuation">)</span> <span class="token operator">%</span> n
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>libnum<span class="token punctuation">.</span>n2s<span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="ACTF新生赛2020-crypto-des"><a href="#ACTF新生赛2020-crypto-des" class="headerlink" title="[ACTF新生赛2020]crypto-des"></a>[ACTF新生赛2020]crypto-des</h2><p>先来看看hint：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">To solve the key<span class="token punctuation">,</span> Maybe you know some interesting data <span class="token builtin">format</span> about C language?<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>点开加密文件，里面是7个浮点数，转化成byte：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> libnum <span class="token keyword">import</span><span class="token operator">*</span>
 <span class="token keyword">import</span> struct
@@ -651,9 +648,7 @@ a <span class="token operator">=</span> <span class="token number">0x496e7465726
 b <span class="token operator">=</span> <span class="token number">0x74707972747079727470797274707972747079727470797274707972</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>n2s<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>n2s<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">Interestring Idea to encrypt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>输入密码得到加密算法：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pyDes
 <span class="token keyword">import</span> base64
@@ -681,7 +676,6 @@ DES<span class="token punctuation">.</span>Kn <span class="token operator">=</sp
 		<span class="token punctuation">]</span>
 cipher_list <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64encode<span class="token punctuation">(</span>DES<span class="token punctuation">.</span>encrypt<span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">#b'vrkgBqeK7+h7mPyWujP8r5FqH5yyVlqv0CXudqoNHVAVdNO8ML4lM4zgez7weQXo'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>DES的密钥都给了，直接base64解密再DES解密：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pyDes
 <span class="token keyword">import</span> base64
@@ -711,7 +705,6 @@ cipher_list <span class="token operator">=</span> <span class="token string">'vr
 cipher_list <span class="token operator">=</span> base64<span class="token punctuation">.</span>b64decode<span class="token punctuation">(</span>cipher_list<span class="token punctuation">)</span>
 plainer_text <span class="token operator">=</span> DES<span class="token punctuation">.</span>decrypt<span class="token punctuation">(</span>cipher_list<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>plainer_text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 <h2 id="NCTF2019-Sore"><a href="#NCTF2019-Sore" class="headerlink" title="[NCTF2019]Sore"></a>[NCTF2019]Sore</h2><p>加密算法：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> string <span class="token keyword">import</span> ascii_letters
@@ -730,17 +723,16 @@ plain <span class="token operator">=</span> <span class="token string">''</span>
 cipher <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span> itoc<span class="token punctuation">(</span> <span class="token punctuation">(</span> ctoi<span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">+</span> ctoi<span class="token punctuation">(</span> key<span class="token punctuation">[</span>i <span class="token operator">%</span> len_key<span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">52</span> <span class="token punctuation">)</span>  <span class="token keyword">for</span> i<span class="token punctuation">,</span>p <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>plain<span class="token punctuation">)</span> <span class="token punctuation">)</span>
 
 <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'ciphertext.txt'</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>write<span class="token punctuation">(</span>cipher<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>对应的明文字母的ASCII码和key列表中的模key长度的字符的ASCII码相加后再模52对应的字符，仿射密码。key不知道，但有大量的密文，可以猜测key的长度。算是一题密码分析学的题目了，放到在线网站上爆破：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/Post19_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/Post19_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>提交key，发现不对。。看了别人的博客发现是x是大写的。</p>
 <hr>
 <h2 id="De1CTF2019-xorz"><a href="#De1CTF2019-xorz" class="headerlink" title="[De1CTF2019]xorz"></a>[De1CTF2019]xorz</h2><hr>
 <h2 id="AFCTF2018-One-Secret-Two-encryption"><a href="#AFCTF2018-One-Secret-Two-encryption" class="headerlink" title="[AFCTF2018]One Secret, Two encryption"></a>[AFCTF2018]One Secret, Two encryption</h2><p>两个公钥文件，分别进行解析：</p>
 <p>publickey1：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/Post19_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/Post19_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>publickey2:</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/Post19_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+<p><img "" class="lazyload placeholder" data-original="/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/Post19_image3.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>e1很大，想到低解密指数攻击，可惜d不存在。给了两组公钥，试试两个n有没有公因数，发现正好有一个公因数且不为1：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 <span class="token keyword">from</span> gmpy2 <span class="token keyword">import</span> gcd
@@ -775,7 +767,6 @@ phin2 <span class="token operator">=</span> <span class="token punctuation">(</s
 d2 <span class="token operator">=</span> inverse<span class="token punctuation">(</span>e2<span class="token punctuation">,</span> phin2<span class="token punctuation">)</span>
 m2 <span class="token operator">=</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>c1<span class="token punctuation">,</span> d2<span class="token punctuation">,</span> n2<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>long_to_bytes<span class="token punctuation">(</span>m2<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 
       </div>
@@ -1721,20 +1712,5 @@ from
 
 
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>
