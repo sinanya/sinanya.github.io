@@ -740,8 +740,8 @@ m <span class="token operator">=</span> <span class="token number">52</span>
         <span class="token keyword">if</span> cipher <span class="token operator">==</span> i<span class="token punctuation">:</span>
             <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">chr</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>也可以通过模的性质，移相得到解密函数：</p>
-<p><img "" class="lazyload placeholder" data-original="/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/Post18_image2.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
-<p>脚本如下：</p>
+<script type="math/tex; mode=display">
+plainer\_text = a^{-1} * (addr - 10)\ mod\ m</script><p>脚本如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
 
 str1 <span class="token operator">=</span> <span class="token string">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'</span>
