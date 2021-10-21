@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>司南的博客</title>
+  <icon>https://sinanya.github.io/icon.png</icon>
+  
+  <link href="https://sinanya.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://sinanya.github.io/"/>
+  <updated>2021-10-20T16:54:11.255Z</updated>
+  <id>https://sinanya.github.io/</id>
+  
+  <author>
+    <name>sinanya</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列-[113-128]WP</title>
+    <link href="https://sinanya.github.io/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/"/>
+    <id>https://sinanya.github.io/2021/10/02/BUUCTF-Crypto%E7%B3%BB%E5%88%97-113-128-WP/</id>
+    <published>2021-10-02T13:34:19.000Z</published>
+    <updated>2021-10-20T16:54:11.255Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;XNUCA2018-Warmup&quot;&gt;&lt;a href=&quot;#XNUCA2018-Warmup&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021绿城杯WP</title>
+    <link href="https://sinanya.github.io/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/"/>
+    <id>https://sinanya.github.io/2021/09/30/2021%E7%BB%BF%E5%9F%8E%E6%9D%AFWP/</id>
+    <published>2021-09-30T12:10:39.000Z</published>
+    <updated>2021-10-20T16:15:06.382Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;RSA1&quot;&gt;&lt;a href=&quot;#RSA1&quot; class=&quot;headerlink&quot; title=&quot;RSA1&quot;&gt;&lt;/a&gt;RSA1&lt;/h2&gt;&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-python&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+    <category term="“比赛”" scheme="https://sinanya.github.io/tags/%E2%80%9C%E6%AF%94%E8%B5%9B%E2%80%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2021长城杯复现</title>
+    <link href="https://sinanya.github.io/2021/09/30/2021%E9%95%BF%E5%9F%8E%E6%9D%AF%E5%A4%8D%E7%8E%B0/"/>
+    <id>https://sinanya.github.io/2021/09/30/2021%E9%95%BF%E5%9F%8E%E6%9D%AF%E5%A4%8D%E7%8E%B0/</id>
+    <published>2021-09-29T16:32:41.000Z</published>
+    <updated>2021-09-30T16:51:45.122Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;baby-rsa&quot;&gt;&lt;a href=&quot;#baby-rsa&quot; class=&quot;headerlink&quot; title=&quot;baby_rsa&quot;&gt;&lt;/a&gt;baby_rsa&lt;/h2&gt;&lt;p&gt;比赛中就这一题，我们先来看看题目：&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+    <category term="“比赛”" scheme="https://sinanya.github.io/tags/%E2%80%9C%E6%AF%94%E8%B5%9B%E2%80%9D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RSA之费马分解</title>
+    <link href="https://sinanya.github.io/2021/09/29/RSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3/"/>
+    <id>https://sinanya.github.io/2021/09/29/RSA%E4%B9%8B%E8%B4%B9%E9%A9%AC%E5%88%86%E8%A7%A3/</id>
+    <published>2021-09-29T15:26:24.000Z</published>
+    <updated>2021-10-02T06:36:28.477Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;ctfshow切记务必一定要简单&quot;&gt;&lt;a href=&quot;#ctfshow切记务必一定要简单&quot; class=&quot;headerlink&quot; title=&quot;ctfshow切记务必一定要简单&quot;&gt;&lt;/a&gt;ctfshow切记务必一定要简单&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="RSA" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>伽罗华域</title>
+    <link href="https://sinanya.github.io/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/"/>
+    <id>https://sinanya.github.io/2021/09/22/%E4%BC%BD%E7%BD%97%E5%8D%8E%E5%9F%9F/</id>
+    <published>2021-09-21T16:05:47.000Z</published>
+    <updated>2021-09-27T02:56:43.314Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;GF-2-3&quot;&gt;&lt;a href=&quot;#GF-2-3&quot; class=&quot;headerlink&quot; title=&quot;GF(2 ^ 3)&quot;&gt;&lt;/a&gt;GF(2 ^ 3)&lt;/h2&gt;&lt;p&gt;今天看到《密码编码学与网络安全》一书中的有限域，特别不理解在GF(2 ^</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="有限域" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E6%9C%89%E9%99%90%E5%9F%9F/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CTFSHOW-unusualrsa</title>
+    <link href="https://sinanya.github.io/2021/09/15/CTFSHOW-unusualrsa/"/>
+    <id>https://sinanya.github.io/2021/09/15/CTFSHOW-unusualrsa/</id>
+    <published>2021-09-15T15:11:06.000Z</published>
+    <updated>2021-09-21T13:01:33.970Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;unusualrsa1&quot;&gt;&lt;a href=&quot;#unusualrsa1&quot; class=&quot;headerlink&quot; title=&quot;unusualrsa1&quot;&gt;&lt;/a&gt;unusualrsa1&lt;/h2&gt;&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="CTFSHOW" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/CTFSHOW/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>传统加密技术</title>
+    <link href="https://sinanya.github.io/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/"/>
+    <id>https://sinanya.github.io/2021/09/14/%E4%BC%A0%E7%BB%9F%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/</id>
+    <published>2021-09-14T01:45:43.000Z</published>
+    <updated>2021-09-14T15:49:24.327Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;传统密码学&quot;&gt;&lt;a href=&quot;#传统密码学&quot; class=&quot;headerlink&quot; title=&quot;传统密码学&quot;&gt;&lt;/a&gt;传统密码学&lt;/h1&gt;&lt;h2 id=&quot;密码分析学和穷举攻击&quot;&gt;&lt;a href=&quot;#密码分析学和穷举攻击&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="传统密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E4%BC%A0%E7%BB%9F%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列[97-112]WP</title>
+    <link href="https://sinanya.github.io/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/"/>
+    <id>https://sinanya.github.io/2021/09/07/BUUCTF-Crypto%E7%B3%BB%E7%B1%BB-97-112-WP/</id>
+    <published>2021-09-07T13:13:20.000Z</published>
+    <updated>2021-09-20T10:10:15.149Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;四面八方&quot;&gt;&lt;a href=&quot;#四面八方&quot; class=&quot;headerlink&quot; title=&quot;四面八方&quot;&gt;&lt;/a&gt;四面八方&lt;/h2&gt;&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DASCTF八月挑战赛-Crypto</title>
+    <link href="https://sinanya.github.io/2021/09/04/DASCTF%E5%85%AB%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B-Crypto/"/>
+    <id>https://sinanya.github.io/2021/09/04/DASCTF%E5%85%AB%E6%9C%88%E6%8C%91%E6%88%98%E8%B5%9B-Crypto/</id>
+    <published>2021-09-04T12:51:42.000Z</published>
+    <updated>2021-09-12T05:56:47.901Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;easymath&quot;&gt;&lt;a href=&quot;#easymath&quot; class=&quot;headerlink&quot; title=&quot;easymath&quot;&gt;&lt;/a&gt;easymath&lt;/h2&gt;&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CTFSHOW-吃瓜杯-Crypto系列</title>
+    <link href="https://sinanya.github.io/2021/08/26/CTFSHOW-%E5%90%83%E7%93%9C%E6%9D%AF-Crypto%E7%B3%BB%E5%88%97/"/>
+    <id>https://sinanya.github.io/2021/08/26/CTFSHOW-%E5%90%83%E7%93%9C%E6%9D%AF-Crypto%E7%B3%BB%E5%88%97/</id>
+    <published>2021-08-26T08:27:25.000Z</published>
+    <updated>2021-08-27T10:54:44.128Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;闪电五连鞭·一鞭&quot;&gt;&lt;a href=&quot;#闪电五连鞭·一鞭&quot; class=&quot;headerlink&quot; title=&quot;闪电五连鞭·一鞭&quot;&gt;&lt;/a&gt;闪电五连鞭·一鞭&lt;/h2&gt;&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="CTFSHOW" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/CTFSHOW/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列[81-96]WP</title>
+    <link href="https://sinanya.github.io/2021/08/17/BUUCTF-Crypto%E7%B3%BB%E5%88%97-81-96-WP/"/>
+    <id>https://sinanya.github.io/2021/08/17/BUUCTF-Crypto%E7%B3%BB%E5%88%97-81-96-WP/</id>
+    <published>2021-08-17T13:31:21.000Z</published>
+    <updated>2021-09-07T12:57:04.833Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;RSA-amp-what&quot;&gt;&lt;a href=&quot;#RSA-amp-what&quot; class=&quot;headerlink&quot; title=&quot;RSA &amp;amp; what&quot;&gt;&lt;/a&gt;RSA &amp;amp; what&lt;/h2&gt;&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列[65-80]WP</title>
+    <link href="https://sinanya.github.io/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/"/>
+    <id>https://sinanya.github.io/2021/08/07/BUUCTF-Crypto%E7%B3%BB%E5%88%97-65-80-WP/</id>
+    <published>2021-08-07T13:01:50.000Z</published>
+    <updated>2021-08-13T14:31:01.747Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;浪里淘沙&quot;&gt;&lt;a href=&quot;#浪里淘沙&quot; class=&quot;headerlink&quot; title=&quot;浪里淘沙&quot;&gt;&lt;/a&gt;浪里淘沙&lt;/h2&gt;&lt;p&gt;题目如下：&lt;/p&gt;
+&lt;p&gt;&lt;img &quot;&quot; class=&quot;lazyload placeholder&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列[49-64]WP</title>
+    <link href="https://sinanya.github.io/2021/08/05/BUUCTF-Crypto%E7%B3%BB%E5%88%97-49-64-WP/"/>
+    <id>https://sinanya.github.io/2021/08/05/BUUCTF-Crypto%E7%B3%BB%E5%88%97-49-64-WP/</id>
+    <published>2021-08-05T08:44:55.000Z</published>
+    <updated>2021-08-07T08:49:41.238Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;MRCTF2020-古典密码知多少&quot;&gt;&lt;a href=&quot;#MRCTF2020-古典密码知多少&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列[33-48]WP</title>
+    <link href="https://sinanya.github.io/2021/07/31/BUUCTF-Crypto%E7%B3%BB%E5%88%97-33-48-WP/"/>
+    <id>https://sinanya.github.io/2021/07/31/BUUCTF-Crypto%E7%B3%BB%E5%88%97-33-48-WP/</id>
+    <published>2021-07-31T13:03:19.000Z</published>
+    <updated>2021-08-04T15:01:54.857Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;robomunication&quot;&gt;&lt;a href=&quot;#robomunication&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈对称密码</title>
+    <link href="https://sinanya.github.io/2021/07/29/%E6%B5%85%E8%B0%88%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81/"/>
+    <id>https://sinanya.github.io/2021/07/29/%E6%B5%85%E8%B0%88%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81/</id>
+    <published>2021-07-29T13:18:48.000Z</published>
+    <updated>2021-07-29T14:47:28.634Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;序列密码与分组密码&quot;&gt;&lt;a href=&quot;#序列密码与分组密码&quot; class=&quot;headerlink&quot; title=&quot;序列密码与分组密码&quot;&gt;&lt;/a&gt;序列密码与分组密码&lt;/h2&gt;&lt;p&gt;&lt;img &quot;&quot; class=&quot;lazyload placeholder&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="对称密码" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列[17-32]WP</title>
+    <link href="https://sinanya.github.io/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-17-32-WP/"/>
+    <id>https://sinanya.github.io/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-17-32-WP/</id>
+    <published>2021-07-19T14:24:06.000Z</published>
+    <updated>2021-07-28T16:00:27.823Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;信息化时代的步伐&quot;&gt;&lt;a href=&quot;#信息化时代的步伐&quot; class=&quot;headerlink&quot; title=&quot;信息化时代的步伐&quot;&gt;&lt;/a&gt;信息化时代的步伐&lt;/h2&gt;&lt;p&gt;点开附件，密文如下：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BUUCTF-Crypto系列[1-16]WP</title>
+    <link href="https://sinanya.github.io/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/"/>
+    <id>https://sinanya.github.io/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-1-16-WP/</id>
+    <published>2021-07-18T16:59:00.000Z</published>
+    <updated>2021-07-22T08:50:38.839Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;MD5&quot;&gt;&lt;a href=&quot;#MD5&quot; class=&quot;headerlink&quot; title=&quot;MD5&quot;&gt;&lt;/a&gt;MD5&lt;/h2&gt;&lt;p&gt;MD5信息摘要算法（Message-Digest</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>攻防世界crypto新手区杂题</title>
+    <link href="https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/"/>
+    <id>https://sinanya.github.io/2021/07/15/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8Ccrypto%E6%96%B0%E6%89%8B%E5%8C%BA%E6%9D%82%E9%A2%98/</id>
+    <published>2021-07-15T04:15:11.000Z</published>
+    <updated>2021-07-23T09:16:08.953Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;base64&quot;&gt;&lt;a href=&quot;#base64&quot; class=&quot;headerlink&quot; title=&quot;base64&quot;&gt;&lt;/a&gt;base64&lt;/h2&gt;&lt;p&gt;​    base64加密的原理：3 &lt;em&gt; 8 = 4 &lt;/em&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="攻防世界" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RSA基础</title>
+    <link href="https://sinanya.github.io/2021/07/12/RSA%E5%9F%BA%E7%A1%80/"/>
+    <id>https://sinanya.github.io/2021/07/12/RSA%E5%9F%BA%E7%A1%80/</id>
+    <published>2021-07-12T15:31:07.000Z</published>
+    <updated>2021-07-19T16:15:50.916Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;RSA的加密与解密&quot;&gt;&lt;a href=&quot;#RSA的加密与解密&quot; class=&quot;headerlink&quot; title=&quot;RSA的加密与解密&quot;&gt;&lt;/a&gt;RSA的加密与解密&lt;/h1&gt;&lt;p&gt;​   </summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="RSA" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SQL注入——报错注入 sqli-labs Less-5 and Less-6</title>
+    <link href="https://sinanya.github.io/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://sinanya.github.io/2021/05/30/%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</id>
+    <published>2021-05-30T14:56:56.000Z</published>
+    <updated>2021-07-20T09:23:04.744Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;报错注入原理&quot;&gt;&lt;a href=&quot;#报错注入原理&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Web学习-sqlilabs" scheme="https://sinanya.github.io/categories/Web%E5%AD%A6%E4%B9%A0-sqlilabs/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
