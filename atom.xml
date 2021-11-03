@@ -6,7 +6,7 @@
   <link href="https://sinanya.github.io/atom.xml" rel="self"/>
   
   <link href="https://sinanya.github.io/"/>
-  <updated>2021-10-28T14:39:38.567Z</updated>
+  <updated>2021-11-03T16:19:49.351Z</updated>
   <id>https://sinanya.github.io/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LFSR</title>
+    <link href="https://sinanya.github.io/2021/11/03/LFSR/"/>
+    <id>https://sinanya.github.io/2021/11/03/LFSR/</id>
+    <published>2021-11-03T15:52:08.000Z</published>
+    <updated>2021-11-03T16:19:49.351Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;这篇博客记录一下平时做到的LRSF题型吧&quot;&gt;&lt;a href=&quot;#这篇博客记录一下平时做到的LRSF题型吧&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    <category term="LFSR" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/LFSR/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第四届强网拟态防御国际精英挑战赛Crypto方向复现</title>
     <link href="https://sinanya.github.io/2021/10/27/Crypto%E6%96%B9%E5%90%91%E5%A4%8D%E7%8E%B0/"/>
     <id>https://sinanya.github.io/2021/10/27/Crypto%E6%96%B9%E5%90%91%E5%A4%8D%E7%8E%B0/</id>
     <published>2021-10-27T14:48:09.000Z</published>
-    <updated>2021-10-28T14:39:38.567Z</updated>
+    <updated>2021-10-29T15:33:52.052Z</updated>
     
     
       
@@ -521,33 +548,6 @@
     <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
     <category term="攻防世界" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E6%94%BB%E9%98%B2%E4%B8%96%E7%95%8C/"/>
-    
-    
-    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RSA基础</title>
-    <link href="https://sinanya.github.io/2021/07/12/RSA%E5%9F%BA%E7%A1%80/"/>
-    <id>https://sinanya.github.io/2021/07/12/RSA%E5%9F%BA%E7%A1%80/</id>
-    <published>2021-07-12T15:31:07.000Z</published>
-    <updated>2021-07-19T16:15:50.916Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;RSA的加密与解密&quot;&gt;&lt;a href=&quot;#RSA的加密与解密&quot; class=&quot;headerlink&quot; title=&quot;RSA的加密与解密&quot;&gt;&lt;/a&gt;RSA的加密与解密&lt;/h1&gt;&lt;p&gt;​   </summary>
-        
-      
-    
-    
-    
-    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-    <category term="RSA" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/RSA/"/>
     
     
     <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
