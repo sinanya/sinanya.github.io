@@ -652,6 +652,66 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
 <span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>solve<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <hr>
+<h2 id="BUU-第七章-CTF之CRYPTO章-LFSR"><a href="#BUU-第七章-CTF之CRYPTO章-LFSR" class="headerlink" title="BUU [第七章 CTF之CRYPTO章]LFSR"></a>BUU [第七章 CTF之CRYPTO章]LFSR</h2><p>题目如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">seed <span class="token operator">=</span> <span class="token number">0x00000000</span> <span class="token comment"># you need to solve this</span>
+flag <span class="token operator">=</span> <span class="token string">'n1book&#123;%x&#125;'</span> <span class="token operator">%</span> seed
+
+state <span class="token operator">=</span> seed
+mask <span class="token operator">=</span> <span class="token number">0b10000000000000000000000001010111</span>
+
+<span class="token keyword">def</span> <span class="token function">lfsr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> state<span class="token punctuation">,</span> mask
+    output <span class="token operator">=</span> state <span class="token operator">&amp;</span> <span class="token number">1</span>
+    now <span class="token operator">=</span> state <span class="token operator">&amp;</span> mask
+    new <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">while</span> now<span class="token punctuation">:</span>
+        new <span class="token operator">^</span><span class="token operator">=</span> now <span class="token operator">&amp;</span> <span class="token number">1</span>
+        now <span class="token operator">>></span><span class="token operator">=</span> <span class="token number">1</span>
+    state <span class="token operator">=</span> <span class="token punctuation">(</span>new <span class="token operator">&lt;&lt;</span> <span class="token number">31</span><span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token punctuation">(</span>state <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> output
+
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    lfsr<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span> <span class="token string">'%x'</span> <span class="token operator">%</span> state <span class="token comment"># 155a796b</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这题和上一题差不多，就是异或出来的数据是插入到了最前面而不是插到后面。这里依然使用矩阵的形式进行对题目的分析：</p>
+<script type="math/tex; mode=display">
+\left\{ \begin{matrix} s_0 & s_1 & s_2 \cdots & s_{31}\\ n_0 & s_0 & s_1 \cdots &s_{30}\\ n_1 & n_0 & s_0 \cdots & s_{29}\\ \vdots & \vdots & \ddots & \vdots \\ n_{31} & n_{30} & \cdots & s_1 \end{matrix} \right\} . \left\{ \begin{matrix} m_0 \\m_1 \\ m_2 \\ \vdots \\ m_{31} \end{matrix} \right\}</script><p>矩阵中s是“state”，n是“new”，乘法是&amp;运算。n的生成通过s&amp;mask中1相异或的结果，所以我们要想得到原始的state，需要从最后一个state逆向求得上一个state，循环32次就可以得到最原始的state。由于我们知道由上一个state得到的n，就可以猜测出上一个state的最后一位是多少（因为不是0就是1）。脚本如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> <span class="token operator">*</span>
+mask <span class="token operator">=</span> <span class="token string">"10000000000000000000000001010111"</span>
+state <span class="token operator">=</span> <span class="token string">"00010101010110100111100101101011"</span>
+s <span class="token operator">=</span> <span class="token string">""</span>
+
+<span class="token keyword">def</span> <span class="token function">lfsr</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> mask<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">global</span> s
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        des <span class="token operator">=</span> state<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>des<span class="token punctuation">)</span>
+        state <span class="token operator">=</span> state<span class="token punctuation">[</span><span class="token number">1</span> <span class="token punctuation">:</span> <span class="token number">32</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+        a <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        state <span class="token operator">=</span> state <span class="token operator">+</span> a
+        <span class="token keyword">print</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+        now <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>state<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token builtin">int</span><span class="token punctuation">(</span>mask<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+        new <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>now<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            new <span class="token operator">^</span><span class="token operator">=</span> now <span class="token operator">&amp;</span> <span class="token number">1</span>
+            now <span class="token operator">>></span><span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>new<span class="token punctuation">)</span> <span class="token operator">==</span> des<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            state <span class="token operator">=</span> state
+            <span class="token keyword">print</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            state <span class="token operator">=</span> state<span class="token punctuation">[</span><span class="token number">0</span> <span class="token punctuation">:</span> <span class="token number">31</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> state
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>lfsr<span class="token punctuation">(</span>state<span class="token punctuation">,</span> mask<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">hex</span><span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token string">"01011111001101110101100111011111"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">flag<span class="token punctuation">&#123;</span><span class="token number">5f3759df</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>去掉’0x’是真的坑。。。</p>
+<hr>
+<p>后继续记录相关题型。下班~</p>
 
       </div>
       <div class="post-tags-categories">
