@@ -684,9 +684,9 @@ e2<span class="token operator">=</span><span class="token number">9647291</span>
 <p>接着引入<strong>扩展的欧几里得算法</strong>：扩展欧几里得算法是欧几里得算法（又叫辗转相除法）的扩展。除了计算a、b两个整数的最大公约数，此算法还能找到整数x、y（其中一个很可能是负数）。通常谈到最大公因子时, 我们都会提到一个非常基本的事实: 给予二整数 a 与 b, 必存在有整数 x 与 y 使得ax + by = gcd(a,b)。有两个数a,b，对它们进行辗转相除法，可得它们的最大公约数——这是众所周知的。然后，收集辗转相除法中产生的式子，倒回去，可以得到ax+by=gcd(a,b)的整数解。</p>
 <p>然后我们就可以通过扩展的欧几里得算法求得一组解[s1,s2]。</p>
 <p>c1 = m^e1 mod n，c2 = m ^ e2 mod n</p>
-<p>c1 ^ s1 <em> c2 ^ s2 = m ^ (e1 </em> s1) mod n <em> m ^ (e2 </em> s2) mod n</p>
-<p>c1 ^ s1 <em> c2 ^ s2 = m ^ (e1 </em> s1 + e2 * s2) mod n</p>
-<p>因为e1 <em> s1 + e2 </em> s2 = 1，所以上式变为 c1 ^ s1 * c2 ^ s2 = m ^ (1) mod n = m mod n = m。</p>
+<p>c1 ^ s1 <strong> c2 ^ s2 = m ^ (e1 </strong> s1) mod n <em> m ^ (e2 *</em> s2) mod n</p>
+<p>c1 ^ s1 <strong> c2 ^ s2 = m ^ (e1 </strong> s1 + e2 * s2) mod n</p>
+<p>因为e1 <strong> s1 + e2 </strong> s2 = 1，所以上式变为 c1 ^ s1 * c2 ^ s2 = m ^ (1) mod n = m mod n = m。</p>
 <p>推导系数：</p>
 <p><img "" class="lazyload placeholder" data-original="/2021/07/19/BUUCTF-Crypto%E7%B3%BB%E5%88%97-17-32-WP/Post5_image8.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <p>有一点要说明，s1 和 s2其中有一个是负数。数论模运算中，要求一个数的负数次幂，先计算c的模反元素cr，然后求cr的-s次幂。</p>
@@ -737,10 +737,10 @@ n <span class="token operator">=</span> <span class="token number">2482540078515
 dp <span class="token operator">=</span> <span class="token number">905074498052346904643025132879518330691925174573054004621877253318682675055421970943552016695528560364834446303196939207056642927148093290374440210503657</span>
 c <span class="token operator">=</span> <span class="token number">140423670976252696807533673586209400575664282100684119784203527124521188996403826597436883766041879067494280957410201958935737360380801845453829293997433414188838725751796261702622028587211560353362847191060306578510511380965162133472698713063592621028959167072781482562673683090590521214218071160287665180751</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这题考查的是dp泄露，推导如下：</p>
-<p>d ≡ dp mod (p - 1)，两边同乘e，e <em> d ≡ (e </em> dp) mod (p - 1) —&gt; e <em> d = k1 </em> e <em> (p - 1) + e </em> dp ——————①。</p>
-<p>e <em> d = 1 mod Φ(n)，Φ(n) = (p - 1) </em> (q - 1) —&gt; e <em> d = k2 </em> (p - 1) * (q - 1) + 1 —————②。</p>
-<p>由①和②得k1 <em> e </em> (p - 1) + e <em> dp = k2 </em> (p - 1) <em> (q - 1) + 1 —&gt; e </em> dp = (p - 1) <em> (k2 </em> (q - 1) - k1) + 1。记(k2 * (q - 1) - k1) = x，则</p>
-<p>e <em> dp = (p - 1) </em> x + 1。因为dp &lt; p - 1，所以1 &lt; x &lt; e。遍历e就可以求得p，代码如下：</p>
+<p>d ≡ dp mod (p - 1)，两边同乘e，e <strong> d ≡ (e </strong> dp) mod (p - 1) —&gt; e <strong> d = k1 </strong> e <strong> (p - 1) + e </strong> dp ——————①。</p>
+<p>e <strong> d = 1 mod Φ(n)，Φ(n) = (p - 1) </strong> (q - 1) —&gt; e <strong> d = k2 </strong> (p - 1) ** (q - 1) + 1 —————②。</p>
+<p>由①和②得k1 <strong> e </strong> (p - 1) + e <strong> dp = k2 </strong> (p - 1) <strong> (q - 1) + 1 —&gt; e </strong> dp = (p - 1) <strong> (k2 </strong> (q - 1) - k1) + 1。记(k2 * (q - 1) - k1) = x，则</p>
+<p>e <strong> dp = (p - 1) </strong> x + 1。因为dp &lt; p - 1，所以1 &lt; x &lt; e。遍历e就可以求得p，代码如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> Crypto<span class="token punctuation">.</span>Util<span class="token punctuation">.</span>number <span class="token keyword">import</span> inverse
 <span class="token keyword">import</span> libnum
 
