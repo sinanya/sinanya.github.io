@@ -613,8 +613,8 @@ c <span class="token operator">=</span> <span class="token number">2472230540388
 <p>把⑤式代入①式得：</p>
 <p>m1 ≡ c ^ (dp mod (p - 1)) mod p</p>
 <p>m1 ≡ c ^ (dp + k*(p - 1)) mod p</p>
-<p>m1 ≡ c ^ dp mod p + c ^ k * (p - 1) mod p ————————-⑥</p>
-<p>由费马小定理可知，存在质数p，如果有gcd(k,p) = 1，则k ^ (p - 1) ≡ 1 mod dp。</p>
+<p>m1 ≡ c ^ dp mod p <em> c ^ k </em> (p - 1) mod p ————————-⑥</p>
+<p>由费马小定理可知，存在质数p，如果有gcd(k,p) = 1，则k ^ (p - 1) ≡ 1 mod p。</p>
 <p>所以⑥式可以简化为 m1 ≡ c ^ dp mod p，同理m2 ≡ c ^ dq mod q。这样可求得c ^ d，进步可求得m。</p>
 <p>脚本部分：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> gmpy2
