@@ -587,6 +587,72 @@ for (int i &#x3D; 0; i &lt;&#x3D; 255; i ++)
 <p>RC4原理图</p>
 <p><img "" class="lazyload placeholder" data-original="/2022/01/24/RC4/Post23_image1.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif" alt></p>
 <h3 id="RC4的强度"><a href="#RC4的强度" class="headerlink" title="RC4的强度"></a>RC4的强度</h3><p>​    RC4存在弱点，已经禁止使用了。</p>
+<p>加解密代码：</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;string&gt;
+using namespace std;
+
+int s[256];
+int t[256];
+
+string key&#x3D;&quot;0123456789&quot;;
+
+void swap(int* s1,int* s2)&#123;
+    int temp&#x3D;*s1;
+    *s1&#x3D;*s2;
+    *s2&#x3D;temp;
+&#125;
+
+void init()&#123;
+    &#x2F;&#x2F;初始化s和t数组
+    for(int i&#x3D;0;i&lt;256;i++)&#123;
+        s[i]&#x3D;i;
+        t[i]&#x3D;atoi(&amp;(const char)(key.at(i%key.length()))); &#x2F;&#x2F; t保存char的地址
+    &#125;
+
+    int j&#x3D;0;
+    for(int i&#x3D;0;i&lt;256;i++)&#123;
+        j&#x3D;(j+s[j]+t[j])%256;
+        swap(s+i,s+j);  &#x2F;&#x2F; 打乱S数组
+    &#125;
+&#125;
+
+void encode(int* start,int length)&#123;
+    int pos&#x3D;0;
+    int i&#x3D;0,j&#x3D;0;
+    while(pos++&lt;length)&#123;
+        i&#x3D;(i+1)%256;
+        j&#x3D;(j+s[i])%256;
+        swap(s+i,s+j); &#x2F;&#x2F;再次打乱
+
+        int temp&#x3D;(s[i]+s[j])%256;
+        int k&#x3D;s[temp];&#x2F;&#x2F;这里取值
+        *start^&#x3D;k;&#x2F;&#x2F;异或
+        start++;
+    &#125;
+&#125;
+void decode(int* start,int length)&#123;
+    encode(start,length);&#x2F;&#x2F;重复做一遍即可解密
+&#125;
+
+void print(int* a,int length,string startMessage&#x3D;&quot;&quot;)&#123;
+    cout&lt;&lt;startMessage&lt;&lt;&quot; &quot;;
+    for(int i&#x3D;0;i&lt;length;i++)&#123;
+        cout&lt;&lt;*(a+i)&lt;&lt;&quot; &quot;;
+    &#125;
+    cout&lt;&lt;endl;
+&#125;
+
+int main()&#123;
+    init();
+    int a[10]&#x3D;&#123;0,1,2,3,4,5,6,7,8,9&#125;;
+    print(a,10,&quot;原数组&quot;);
+    encode(a,10);
+    print(a,10,&quot;加密后&quot;);
+    init();
+    decode(a,10);
+    print(a,10,&quot;解密后&quot;);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       </div>
       <div class="post-tags-categories">
