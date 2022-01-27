@@ -288,7 +288,7 @@ mjx-container[display="true"] + br {
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="/friend" class="drawer-menu-item-link">
+                <a href="/friends" class="drawer-menu-item-link">
                   
                   <span class="name">Friends</span>
                 </a>
@@ -413,7 +413,7 @@ mjx-container[display="true"] + br {
           
             <li class="menu-item" style="position: relative;">
               
-                <a href="/friend" class="menu-item-link" title="Friends">
+                <a href="/friends" class="menu-item-link" title="Friends">
                   
                   <span class="name">Friends</span>
                 </a>
@@ -2474,5 +2474,20 @@ GF(2 ^ 3)上的加法运算没得说，就是异或运算。但乘法就有些�
 
 
 
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
