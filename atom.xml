@@ -6,7 +6,7 @@
   <link href="https://sinanya.github.io/atom.xml" rel="self"/>
   
   <link href="https://sinanya.github.io/"/>
-  <updated>2022-01-24T16:22:08.156Z</updated>
+  <updated>2022-02-02T16:16:50.484Z</updated>
   <id>https://sinanya.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>有限域补缺补漏</title>
+    <link href="https://sinanya.github.io/2022/02/02/%E6%9C%89%E9%99%90%E5%9F%9F%E8%A1%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/"/>
+    <id>https://sinanya.github.io/2022/02/02/%E6%9C%89%E9%99%90%E5%9F%9F%E8%A1%A5%E7%BC%BA%E8%A1%A5%E6%BC%8F/</id>
+    <published>2022-02-02T06:02:33.000Z</published>
+    <updated>2022-02-02T16:16:50.484Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​    今天看到“域”，一时间想不起来其概念和性质，所以写一篇博客来记录这部分的知识点，以防不时之需。&lt;/p&gt;
+&lt;p&gt;&lt;img &quot;&quot; class=&quot;lazyload placeholder&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
+    
+    
+    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>RC4</title>
@@ -521,33 +547,6 @@
     <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
     
     <category term="BUUCTF" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/BUUCTF/"/>
-    
-    
-    <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅谈对称密码</title>
-    <link href="https://sinanya.github.io/2021/07/29/%E6%B5%85%E8%B0%88%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81/"/>
-    <id>https://sinanya.github.io/2021/07/29/%E6%B5%85%E8%B0%88%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81/</id>
-    <published>2021-07-29T13:18:48.000Z</published>
-    <updated>2021-07-29T14:47:28.634Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;序列密码与分组密码&quot;&gt;&lt;a href=&quot;#序列密码与分组密码&quot; class=&quot;headerlink&quot; title=&quot;序列密码与分组密码&quot;&gt;&lt;/a&gt;序列密码与分组密码&lt;/h2&gt;&lt;p&gt;&lt;img &quot;&quot; class=&quot;lazyload placeholder&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="密码学" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/"/>
-    
-    <category term="对称密码" scheme="https://sinanya.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6/%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81/"/>
     
     
     <category term="博客" scheme="https://sinanya.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
